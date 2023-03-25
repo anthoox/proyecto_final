@@ -34,7 +34,7 @@
     </main>
     <?php
         //Carga del fichero footer.php
-        require "./layout/footer.php";
+        require "./views/layout/footer.php";
     ?>
 </body>
 
