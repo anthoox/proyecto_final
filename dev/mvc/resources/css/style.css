@@ -1,0 +1,122 @@
+*{
+    font-family: 'nunito', Arial, Helvetica, sans-serif, 'Open sans';
+    font-size: 14px;
+    /* font-weight: 400; */
+}
+body{
+    height: 100vh;
+}
+/* body{
+    display: grid;
+    grid-template-rows: 1fr 65% 1fr;
+    height: 100vh;
+} */
+
+.body-grid{
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+
+.body__grid--contact{
+    
+    display: grid;
+    grid-template-rows: 50px minmax(50%, auto) 50px;
+}
+
+.header__cnt{
+    height: 50px;
+}
+
+.title__h1{
+    font-size: 2em;
+}
+.title__h2{
+    font-size: 3em;
+}
+/* 
+main{
+    position: relative;
+    top:  50px;
+} */
+
+.main__position--top{
+    position: relative;
+    top:  50px; 
+}
+
+.form__input::placeholder{
+    font-size: 1em;
+}
+
+
+.button{
+    width: 100px;
+    margin: auto;
+}
+
+.button__index{
+    width: 100%;
+    margin: 1em auto;
+}
+
+.button__add_list{
+    
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+}
+
+
+.figure>img{
+    max-width: 200px;
+}
+
+.main__trash{
+    top: 40px;
+}
+.main__user{
+    position: relative;
+    top: 50px;
+}
+.section__position--top{
+    max-height: 40px;
+    top: 50px;
+}
+
+.ul__position--top{
+    /* position: relative; */
+    top: 90px;
+}
+.main__items__section{
+    overflow-x: scroll;
+    overflow-wrap: normal;
+    width: 1500px;
+}
+.li__hover{
+    transition: all 250ms;
+    
+}
+.li__hover:hover{
+    
+border-color: rgb(166, 74, 238) !important;
+/* background-color: rgb(255, 255, 255 ); */
+    cursor: pointer;
+
+
+
+}
+
+
+
+.parraf__contact--justify{
+    text-align: justify;
+}
+
+.section__contact--social{
+    max-width: 200px;
+}
+
+.ul__li{
+    position: relative;
+    height: 50px;
+}
