@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
@@ -36,9 +39,9 @@
                 <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
             </div>
             <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
-                <p class="m-0 text-center"><a class="fw-bold fs-6 text-secondary text-decoration-none " href="#">Correo no regitrado/Correo enviado<a></p>
+                <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#">Correo no regitrado/Correo enviado<a></p>
             </div>
-            <p class="text-center m-0 mb-3"><a class="fw-bold fs-6 text-success text-decoration-none" href="#">Volver atras</a></p>
+            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="#">Volver atras</a></p>
             <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="btn btn-primary text-white border  p-1 fs-5 button">Enviar</button>
         </form>

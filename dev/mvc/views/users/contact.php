@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
@@ -25,7 +28,7 @@
     <?php
         require "../layout/header.php";
     ?>
-    <main class="container-xxl d-flex flex-column position-relative p-0 main__trash">
+    <main class="mt-3 container-xxl d-flex flex-column  p-0 main__trash">
         <section class="d-flex justify-content-between flex-column align-items-center m-0 p-2 pt-0">
             <p class="p-1 fs-5 parraf__contact--justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce purus mauris, porttitor facilisis nisi sed, bibendum vestibulum lorem. Fusce non iaculis quam, quis laoreet dui. Donec sed sodales orci, sit amet accumsan ante. Fusce id purus sit amet dolor vestibulum pharetra. Donec id leo dapibus, rhoncus justo et, lacinia erat. In hac habitasse platea dictumst. Quisque eget risus neque. Maecenas sed lacus blandit, bibendum lectus non, fringilla magna.</p>
             <p class="fs-5 text-left">Correo de contacto: <span class="fw-bolder fs-5">prueba@correo.com</span></p>

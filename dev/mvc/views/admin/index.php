@@ -23,16 +23,16 @@
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
 
-<body class="d-flex flex-column justify-content-between p-3">
+<body class="d-flex flex-column justify-content-between p-3 h-100">
     <?php
         require "../layout/header.php";
     ?>
-    <main class="container-fluid d-flex  flex-column mb-5 position-relative main__trash">
+    <main class="container-xxl d-flex flex-column mb-5 position-relative main__trash">
         <h2 class="mt-3 text-success title title__h2 fw-bolder ">
-            Editar <br>
-            Usuario
+            Alta de <br>
+            Usuarios
         </h2>
-        <form class=" d-flex flex-column justify-content-center  form">
+        <form class=" d-flex flex-column justify-content-center">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
                 <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
@@ -41,24 +41,28 @@
                 <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
                 <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
             </div>
-            <div >
-            <label for="" class=" form-label text-muted text-decoration-none fs-5 fw-semibold">Rol</label>
-            <select class="form-select fs-5  p-2" aria-label="Default select example">
-                <option selected>Seleccionar el rol</option>
-                <option class="fs-5" value="1">Usuario</option>
-                <option class="fs-5" value="2">Administrador</option>
-            </select>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
+                <input type="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña">
             </div>
-            <div class="d-flex  flex-wrap justify-content-between align-items-center ">
-                <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Recuperar cuenta</button>
-                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar listas</button>
-                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Vaciar papelera</button>
-                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar usuario</button>
-            </div>
-            <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>
-            
-        </form>
+            <p class="text-center  m-0 text-secondary fs-6 fw-semibold form__parraf--error ">El correo ya esta registrado/Registrado</p>
+            <button type="submit" class="mt-3 mb-5 btn btn-secondary text-white border mt-1 p-1 fs-5 button">Registrar</button>
         
+        <hr class="m-0">
+        <h2 class="mt-4 text-success title title__h2 fw-bolder ">
+            Buscar <br>
+            Usuario
+        </h2>
+        
+            
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
+                <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
+            </div>
+            <p class="text-center  m-0 text-secondary fs-6 fw-semibold form__parraf--error ">El correo no existe</p>
+            <button type="submit" class="mt-3 mb-5  btn btn-primary text-white border mt-1 p-1 fs-5 button">Buscar</button>
+
+        </form>
     </main>
 </body>
 

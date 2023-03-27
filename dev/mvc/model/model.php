@@ -1,6 +1,6 @@
 <?php
 /**Carpeta con archivos clases para establecer la conexión con la base de datos */ 
-require_once('../config/config.php');
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
 
 //Clase para conectar y desconectar a la base de datos:
 class Db_connection{
@@ -15,7 +15,7 @@ class Db_connection{
 		try {
             $this->connection = new PDO('mysql:host='.$this->host.'; dbname='.$this->db, $this->user, $this->pass);
 			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			echo "conexion correcta<br>";
+			// echo "conexion correcta<br>";
 		} catch (PDOException $e) {
             echo "Error al conectar a la base de datos. " . $e->getMessage();
             exit();
@@ -207,14 +207,13 @@ class Users{
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_NUM);
-			echo "comprobanción de lista lanzada <br>";
-			$this->connection->closeConnection();
-			return $result;
+			$result = $query->fetchAll(PDO::FETCH_NUM);
+			echo "comprobanción de email lanzada <br>";
+			
 		}catch(PDOException $e){
 			echo "Erro en la comprobación del email. " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		return $result;
 	}
 	
 	/**Método para crear usuarios en la base de datos. Los usuarios creados por este método son usuarios normales */
@@ -223,14 +222,14 @@ class Users{
 		$registration_date = date('Y-m-d H:i:s');
 		$result = $this->existEmail($email);
 		if(!$result){
-			$sql = "INSERT INTO " . $this->table . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 2)";
+			$sql = "INSERT INTO " . $this->table . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 1)";
 			$query = $this->connection->getConnection()->prepare($sql);
 			$query->bindParam(1, $name);
 			$query->bindParam(2, $email);
 			$query->bindParam(3, $passwordHased);
 			$query->bindParam(4, $registration_date);
-
-			session_start();//Prueba para almacenar la sesión.
+			
+			// session_start();//Prueba para almacenar la sesión.
 
 			try{
 				$query->execute();
@@ -244,7 +243,9 @@ class Users{
 		$this->connection->closeConnection();
 	}
 
-	/**Método para borrar usuarios de la base de datos */
+	/**Método para borrar usuarios de la base de datos 
+	 * A esto le falta porque al eliminar elementos da error por las claves foraneas
+	*/
 	public function deleteUser($id){
 		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
@@ -274,13 +275,13 @@ class Users{
 	}
 
 	/**Método para obtener los datos de un usuario */
-	public function getInfoUser($idUser){
-		$sql = "SELECT * FROM users  WHERE id_user = ?";
+	public function getInfoUser($email){
+		$sql = "SELECT * FROM users  WHERE email = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idUser);
+		$query->bindParam(1, $email);
 		try{
 			$query->execute();
-			echo "Información obtenida";
+			
 			$result = $query->fetch(PDO::FETCH_ASSOC);
 		}catch(PDOException $e){
 			echo "Error al obtener la información. " . $e->getMessage();
@@ -288,9 +289,45 @@ class Users{
 		$this->connection->closeConnection();		
 		return $result;
 	}
+
+	//Convertirla en una sesion de iniciar como el ejemplo de la web y chatgpt
+	public function validateUser($email, $password){
+		
+		$sql = "SELECT password FROM " . $this->table . " WHERE email = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $email);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			// print_r($result['password']);
+			if(!$result){
+				// echo "sdafsdfaaaaaaaaaaaaaaa";
+				$this->connection->closeConnection();
+			}else{
+				$passwordHased = hash('sha512', $password); 
+				// echo  "<br>" . $passwordHased . "<br>";
+				if($result['password'] === $passwordHased){
+					// echo "sadfasdf";
+					return true;
+				}else{
+					// echo "Error en la validación de la contraseña";
+					$this->connection->closeConnection();
+					return false;
+					
+				}
+			}			
+		}catch(PDOException $e){
+			echo "Erro en la comprobación del email. " . $e->getMessage();
+		}
+	}
+
+	public function exit(){
+		$this->connection->closeConnection();
+	}
 }
 // $prueba2 = new Users();
-// $prueba2->createUser('pepsdde','pruebadsfa@paado.com','caca');
+// $prueba2->createUser('jhon', 'ja@ja', 'caca');
+// $prueba2->validateUser('prusfaaa@pado.com','caca');
 // $prueba2->isTheEmail('prueba@prueba.com');
 
 class Items{

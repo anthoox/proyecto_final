@@ -16,16 +16,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
 
-<body>
+<body class="d-flex flex-column p-3">
     <?php
         require "../layout/header.php";
     ?>
-    <main class="container-fluid d-flex flex-column p-0 main__trash">
-        <section class="bg-light fixed-top z-3 p-0 m-0 border-top d-flex align-items-center justify-content-between  border-bottom section__position--top">
+    <main class="container-xxl d-flex flex-column p-0 main__trash">
+        <section class="bg-light fixed-top z-3  border-top d-flex align-items-center justify-content-between  border-bottom section__position--top">
             <div class="d-flex justify-content-between p-4 pt-2 pb-2 w-100"  >
                 <p class="fs-4 m-0">Total de listas: <span class="fw-semibold fs-4">5</span></p>
                 <div class="d-flex align-items-center">
@@ -39,99 +42,99 @@
             </div>
         </section>
 
-        <ul class="ps-2 pe-2 position-relative ul__position--top">
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+        <ul class="p-0 m-0 main__trash2">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>
                     <i class="la-2x las la-trash-alt"></i>
                 </div>
             </li>
-            <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
+            <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom">
                 <p class="fs-4 m-0">Lista 1</p>    
                 <div class="d-flex align-items-center">
                     <i class="la-2x las la-undo-alt me-2"></i>

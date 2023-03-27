@@ -16,77 +16,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
 
-<body class="body-grid">
+<body class="d-flex flex-column justify-content-between p-3">
     <?php
-        require "../header/header.php";
+        require "../layout/header.php";
     ?>
-    <main class="container-xxl d-flex flex-column p-0">     
-            <ul class="ps-2 pe-2 mb-0">
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">ID:</p>
-                    <p class="fs-3 m-0"> 12</p>
+    <main class="container-xxl d-flex flex-column p-0 main__trash2">     
+            <ul class="p-0 m-0">
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">ID lista:</p>
+                    <p class="fs-4 m-0"> 12</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Total de elementos:</p>
-                    <p class="fs-3 m-0">100</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Total de elementos:</p>
+                    <p class="fs-4 m-0">100</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Precio total:</p>
-                    <p class="fs-3 m-0">50</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Precio total:</p>
+                    <p class="fs-4 m-0">50</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Tiempo de trabajo:</p>
-                    <p class="fs-3 m-0">02:10:00</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Tiempo de trabajo:</p>
+                    <p class="fs-4 m-0">02:10:00</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Tiempo de descansos:</p>
-                    <p class="fs-3 m-0">02:10:00</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Tiempo de descansos:</p>
+                    <p class="fs-4 m-0">02:10:00</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Tiempo extra:</p>
-                    <p class="fs-3 m-0">02:10:00</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Tiempo extra:</p>
+                    <p class="fs-4 m-0">02:10:00</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Fecha creación:</p>
-                    <p class="fs-3 m-0">01/01/2023</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Fecha creación:</p>
+                    <p class="fs-4 m-0">01/01/2023</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Ultima modificación:</p>
-                    <p class="fs-3 m-0">01/01/2023</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Ultima modificación:</p>
+                    <p class="fs-4 m-0">01/01/2023</p>
                 </li>
-                <li class="d-flex justify-content-between align-items-center p-3 pt-3 pb-3 border-bottom">
-                    <p class="fs-3 m-0 ">Fecha notificación:</p>
-                    <p class="fs-3 m-0">01/01/2023</p>
+                <li class="d-flex justify-content-between align-items-center p-1 pt-3 pb-3 border-bottom ">
+                    <p class="fs-4 m-0 ">Fecha notificación:</p>
+                    <p class="fs-4 m-0">01/01/2023</p>
                 </li>
             </ul>
-            <section class=" ms-2 me-2 mb-0 accordion accordion-flush border-bottom" id="accordionFlushExample">
+            <section class="accordion accordion-flush border-bottom" id="accordionFlushExample">
                 <div class="bg-light  accordion-item">
                     <!-- <h2 class="accordion-header" id="flush-headingOne"> -->
-                    <button class="ps-3 pe-3 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <span class=" fs-3   ">Elementos de lista:</span>
+                    <button class="p-1 pt-3 pb-3 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <span class=" fs-4   ">Elementos de lista:</span>
                     </button>
                     <!-- </h2> -->
-                    <div id="flush-collapseOne" class="border-end border-start ps-1 pe-1 accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class=" accordion-body m-0 fs-3">elemento 1</div>
+                    <div id="flush-collapseOne" class="border-end border-start p-1 accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class=" accordion-body m-0 fs-4">elemento 1</div>
                         <hr class="m-0 ms-2 me-2">
-                        <div class="accordion-body m-0 fs-3">elemento 1</div>
+                        <div class="accordion-body m-0 fs-4">elemento 1</div>
                         <hr class="m-0 ms-2 me-2">
-                        <div class="accordion-body m-0 fs-3">elemento 1</div>
+                        <div class="accordion-body m-0 fs-4">elemento 1</div>
                         <hr class="m-0 ms-2 me-2">
-                        <div class="accordion-body m-0 fs-3">elemento 1</div>
+                        <div class="accordion-body m-0 fs-4">elemento 1</div>
                         <hr class="m-0 ms-2 me-2">
-                        <div class="accordion-body m-0 fs-3">elemento 1</div>
+                        <div class="accordion-body m-0 fs-4">elemento 1</div>
+                        
                     </div>
                 </div>
                 
             </section>
-            <section class="mt-2 p-2 ps-4 pe-4 d-flex justify-content-between align-items-center">
-                <p class="fs-3 m-0">Descargar en PDF:</p>
-                <button class="btn btn-primary text-white border mt-1 p-2 fs-4 button m-0">Enviar</button>
+            <section class="mt-2 p-1 d-flex justify-content-between align-items-center">
+                <p class="fs-4 m-0">Descargar en PDF:</p>
+                <button class="btn btn-primary text-white border mt-1 p-1 fs-5 button m-0">Enviar</button>
             </section>
             
     </main>

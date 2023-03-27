@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
@@ -24,11 +27,11 @@
     <?php
         require "../layout/header.php";
     ?>
-    <main class="container-fluid d-flex flex-column align-items-center p-4 main__user">
+    <main class="container-xxl d-flex flex-column align-items-center pt-4 main__user">
         <figure class=" figure">
             <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-user.png" class="border border-primary border-2 figure-img img-fluid rounded rounded-circle" alt="...">
         </figure>
-        <form class=" d-flex flex-column justify-content-center fw-semibold">
+        <form class=" d-flex flex-column justify-content-center fw-semibold" >
             <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de usuario</label>
             <input type="text" class="mb-3 form-control fs-5  p-2 form__input" id="exampleInputEmail1"  placeholder="Usuario">
             <label for="formFileLg" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Cambiar de foto</label>
@@ -38,7 +41,7 @@
                 <p class=" fs-5">01/01/2023</p>
             </section>
             <section class="p-2 d-flex justify-content-between align-items-center">
-                <p class="fs-5 m-0">Descargar datos en PDF</p>
+                <p class="fs-5 m-0">Descargar datos</p>
                 <button class="btn btn-primary text-white border mt-1 p-1 fs-5 button m-0">Enviar</button>
             </section>         
             <button type="submit" class="btn mt-5 btn-secondary fs-5 text-light p-1 button">Guardar</button>

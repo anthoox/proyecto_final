@@ -16,19 +16,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
 
-<body >
+<body class="d-flex flex-column p-3 ">
     <!-- Aqui puede que falte la clase que tienen los otrs body -->
     <?php
         require "../layout/header.php";
-        echo "hola";
     ?>
-    <main class="container-fluid d-flex flex-column position-relative p-0">    
-        <ul class="ps-2 pe-2 position-relative section__position--top">
-            <li class="d-flex justify-content-between align-items-center p-1 ps-3 pe-3 border-bottom li__hover">
+    <main class="container-xxl d-flex  flex-column p-0 main__trash">    
+        <ul class="p-0 m-0 ">
+            <li class="d-flex justify-content-between align-items-center p-2 pt-3 pb-3 border-bottom li__hover">
                 <div class="m-0 d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" value="">  
                     <div class="input-group d-flex flex-column ms-3 m-0">                 
@@ -39,7 +41,7 @@
                 <i class="la-2x las la-trash-alt"></i>
             </li>
 
-            <li class="d-flex justify-content-between align-items-center p-1 ps-3 pe-3 border-bottom li__hover">
+            <li class="d-flex justify-content-between align-items-center p-2 pt-3 pb-3 border-bottom li__hover">
                 <div class="m-0 d-flex align-items-center ">
                 <label for="exampleInputEmail1" class="m-0 form-label><span class="fw-semibold fs-4"></label>
                     <input class="form-check-input" type="checkbox" value="">  
@@ -52,7 +54,7 @@
                 <i class="la-2x las la-trash-alt"></i>
             </li>
 
-            <li class="d-flex justify-content-between align-items-center p-1 ps-3 pe-3 border-bottom li__hover">
+            <li class="d-flex justify-content-between align-items-center p-2 pt-3 pb-3 border-bottom li__hover">
                 <div class="m-0 d-flex align-items-center ">
                 <label for="exampleInputEmail1" class="m-0 form-label><span class="fw-semibold fs-4"></label>
                     <input class="form-check-input" type="checkbox" value="">  
