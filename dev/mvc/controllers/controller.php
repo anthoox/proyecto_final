@@ -1,40 +1,56 @@
 <?php 
+
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/model/model.php';
 
 class loginController{
-    public $dataUser;
-    public $rol;
-    public $pageTitle;
-    public $viewAdmin;
-    public $viewUser;
-    public $user;
-
+    private $user;
     public function __construct(){
-        $this->viewUser = '';
-        $this->viewAdmin = '';
+        
         $this->user = new Users();
     }
     
 
     public function startSession($email, $password){
-        $this->viewUser = 'location:../users/index.php';
-        $this->viewAdmin = 'location:../admin/index.php';
-
+ 
 
         $data = $this->user->validateUser($email, $password);
         if($data == true){
-            // session_start();
-            echo "casi";
-            $infoUser = $this->user->getInfoUser($email);
-            // print_r($infoUser['rol']);
-                if($infoUser['rol'] == 2){
+            
+            // echo "casi";
+            $userData = $this->user->getInfoUser($email);
+            session_start();
+            // $_SESSION = array_merge($_SESSION, $userData);
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            $_SESSION['id'] = $userData['id_user'];
+
+                if($userData['rol'] == 1){
+                    $_SESSION['rol'] = 1;
                     header('location:../admin/index.php');
-                }else if($infoUser['rol'] == 1){
+                }else if($userData['rol'] == 2){
+                    $_SESSION['rol'] = 2;
                     header('location:../users/index.php');
                 }
             }else{
                 // echo "errorazo";
                 return false;
             }
-        }     
+    }     
+}
+
+class userList{
+    private $pageTitle;
+    private $lists;
+
+    public function __construct(){
+        
+        $this->pageTitle = "";
+        $this->lists = new Lists();
+    }
+
+    public function listar($data){
+        // $this->pageTitle = "Listas de " . $userData['name'];
+        return $this->lists->getAllLists('id_user', $data);
+    }
+
 }

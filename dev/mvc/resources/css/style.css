@@ -9,6 +9,7 @@ body{
 
 .header__cnt{
     height: 50px;
+    max-height: 50px;
 }
 
 .title__h1{
@@ -23,10 +24,35 @@ body{
     top:  50px; 
 }
 
+.ul__li--size{
+    height: 70px;
+    transition: all 250ms;
+}
+
+.ul__li--size:hover{
+    
+    transform: scale(1.015);
+
+}
+.ul__li--size p:hover{
+    
+    /* transform: scale(1); */
+
+}
+.ul__li--size:active{
+    
+    transform: scale(1);
+
+}
+.ul__li___div--size{
+    width: 40px;
+}
 /* .form__input::placeholder{
     font-size: 1em;
 } */
-
+.li__div__icon{
+    height: 20px;
+}
 
 .button{
     width: 100px;

@@ -1,3 +1,20 @@
+<?php    
+    require_once 'C:/xampp/htdocs/proyecto/dev/mvc/model/model.php';
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(!empty($_POST)){        
+            //Confirmación de definicion de las variables 
+            if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+                $newUser = new Users();
+
+                $result = $newUser->createUser($_POST["name"], $_POST["email"], $_POST["password"]);
+                if($result){
+                    header('location:../login/login.php');
+                }
+                // echo $_POST["name"];
+            }
+        } 
+    }   
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,18 +50,18 @@
             Lista <br>
             Simple
         </h2>
-        <form class=" d-flex flex-column justify-content-center fw-semibold form">
+        <form method="POST" class=" d-flex flex-column justify-content-center fw-semibold form">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-                <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
+                <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
+                <input type="text" name="name" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
-                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
+                <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
+                <input type="email" name="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
-                <input type="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña">
+                <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
+                <input type="password" name="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña">
             </div>
             <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
                 <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#">El correo ya esta registrado/Registrado<a></p>

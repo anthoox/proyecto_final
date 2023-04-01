@@ -1,4 +1,5 @@
 <?php
+
 /**Carpeta con archivos clases para establecer la conexión con la base de datos */ 
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
 
@@ -36,18 +37,13 @@ class Db_connection{
 class Lists {
 	
 	private $table = 'lists';
+
 	private $connection;
 	public function __construct() {
 		$this->connection = new Db_connection();
 	}
 
-	/**Método para conectar con el servidor */
-	// public function getconnection(){
-	// 	$db = new Db_connection();
-	// 	$this->connection = $db->connection;
-	// }
-		
-	/**Método para comprobar si existe la cuenta de correo */
+	/**Método para comprobar si existe la cuenta de correo al darse de alta*/
 	public function existList($data){
 		$sql = "SELECT list_name FROM " . $this->table . " WHERE list_name = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
@@ -95,8 +91,8 @@ class Lists {
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			$afectedRows = $query->rowCount();
-			if($afectedRows == 0){
+			$rows = $query->rowCount();
+			if($rows == 0){
 				echo "La lista no existe";
 			}else{
 				echo "Lista/s Borrado/as con exito de la base de datos";
@@ -104,26 +100,27 @@ class Lists {
 		}catch(PDOException $e){
 			echo "Erro al borrar" . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 
-	/**Método para mostrar una o todas las listas que cumplan una condición, vale para obtener todas las listas de un usuario*/
+	/**Método para mostrar información una o todas las listas que cumplan una condición*/
 	public function getAllLists($atribute, $data){
 		$sql = "SELECT * FROM $this->table WHERE $atribute = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			$result = $query->fetchAll(PDO::FETCH_ASSOC);
+			$result = $query->fetch(PDO::FETCH_ASSOC);
 			echo "Consulta realizada con éxito";
 		}catch(PDOException $e){
 			echo "Error al obtener la/s lista/s " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 		return $result;
 	}	
 	
-	/**Metodo para modificar algún atributo de la lista. Vale para recuperar una lista de la papelera o moverla a la papelera.*/
+	/**Metodo para modificar algún atributo de cualquier lista.*/
+
 	public function modifList($idList, $atribute, $data){
 		$modifDate = date('Y-m-d H:i:s');
 		$sql = "UPDATE lists SET $atribute = ?, modif_date = '$modifDate' WHERE id_list = ?";
@@ -139,30 +136,23 @@ class Lists {
 		$this->connection->closeConnection();
 	}
 		
-	/**Método para obtener información de la lista */
-	public function getInfoList($idList){
-		$sql = "SELECT * FROM lists  WHERE id_list = ?";
-		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idList);
-		try{
-			$query->execute();
-			echo "Información obtenida";
-			$result = $query->fetch(PDO::FETCH_ASSOC);
-		}catch(PDOException $e){
-			echo "Error al obtener la información";
-		}
-		$this->connection->closeConnection();				
-		return $result;
-	}
 
 	//Metodo para recuperar todas las listas que tiene un usuario en la papelera
-	public function clearTrash($idUser){
-		$sql = "UPDATE $this->table SET in_trash = '' WHERE in_trash = 'si' and id_user = ?";
+	public function restoreList($idUser){
+		$sql = "UPDATE $this->table SET in_trash = 0 WHERE in_trash = 1 and id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			echo "Se ha quitado de la papelera";
+			$rows = $query->rowCount();
+			if($rows > 0 and $rows == 1){
+				echo "Se ha restaurado la lista";
+			}else if($rows>2){
+				echo "Se han restaurado las listas";
+			}else{
+				echo "La papelera esta vacia";
+			}
+			
 		}catch(PDOException $e){
 			echo "Error a la hora de quitar de la papelera. " . $e->getMessage();
 		}
@@ -171,16 +161,84 @@ class Lists {
 
 	//Metodo para eliminar/vaciar todas las listas que tienen un si en in_trash
 	public function emptyTrash($idUser){
-		$sql = "DELETE FROM $this->table WHERE in_trash = 'si' and id_user = ?";
+		$sql = "DELETE FROM $this->table WHERE in_trash = 1 and id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			echo "Se ha vaciado la papelera";
+			$rows = $query->rowCount();
+			if($rows > 0){
+				echo "Se ha vaciado la papelera";
+			}else{
+				echo "La papelera esta vacia";
+			}
 		}catch(PDOException $e){
 			echo "Error a la hora de vaciar de la papelera. " . $e->getMessage();
 		}
 		$this->connection->closeConnection();
+	}
+
+
+	//Selecciones especiales de listas
+	/**Método para seleccionar todas las litas de un usuario que no esten en la papelera */
+	public function getActiveLists($idUser, $data){
+		$sql = "SELECT * FROM $this->table where id_user = ? and trash = 0 order by creation_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $data);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				echo "Si tiene listas";
+				return $result;
+			}else{
+				echo "No tiene listas creadas aún";
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
+		// $this->connection->closeConnection();
+	}
+
+	/**Método para obtener las listas de la papelera */
+	public function trashLists($idUser){
+		$sql = "SELECT * FROM $this->table where id_user = ? and papelera = 1 order by list_name";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				echo "Si tiene listas";
+				return $result;
+			}else{
+				echo "La papelera esta vacia";
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
+	}
+
+	/**Método para obtener la información de una lista que no este en la papelera y el nombre de los items que tiene esa lista */
+	public function infoList($idList){
+		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? and trash = 0 order by lists.creation_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				echo "Si tiene listas";
+				return $result;
+			}else{
+				echo "No tiene listas";
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
 	}
 }
 // $prueba2 = new Lists();
@@ -195,6 +253,8 @@ class Lists {
 class Users{
 	private $table = 'users'; //Para que puedan usarlo sus clases hijas
 	private $connection;
+	private $items;
+	private $lists;
 
 	/**Método para conectar con el servidor */
 	public function __construct() {
@@ -222,18 +282,23 @@ class Users{
 		$registration_date = date('Y-m-d H:i:s');
 		$result = $this->existEmail($email);
 		if(!$result){
-			$sql = "INSERT INTO " . $this->table . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 1)";
+			$sql = "INSERT INTO " . $this->table . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 2)";
 			$query = $this->connection->getConnection()->prepare($sql);
 			$query->bindParam(1, $name);
 			$query->bindParam(2, $email);
 			$query->bindParam(3, $passwordHased);
 			$query->bindParam(4, $registration_date);
-			
-			// session_start();//Prueba para almacenar la sesión.
 
 			try{
 				$query->execute();
-				echo "usuario creado";
+				$rows = $query->rowCount();
+				if($rows>0){
+					echo "usuario creado";
+					return true;
+				}else{
+					echo "usuario no creado";
+				}
+				
 			}catch(PDOException $e){
 				echo "Error en la creación del usuario." . $e->getMessage();
 			}
@@ -247,12 +312,22 @@ class Users{
 	 * A esto le falta porque al eliminar elementos da error por las claves foraneas
 	*/
 	public function deleteUser($id){
+		$this->items = new Items();
+		$this->items->delItem('id_user', $id);
+		$this->lists = new Lists();
+		$this->lists->delList('id_user', $id);
 		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $id);
 		try{
 			$query->execute();
-			echo "usuario borrado";
+			$rows = $query->rowCount();
+			if($rows>0){
+				echo "usuario borrado";
+			}else{
+				echo "el usuario no existe";
+			}
+			
 		}catch(PDOException $e){
 			echo "Error al borrar al usuario." . $e->getMessage();
 		}
@@ -260,14 +335,20 @@ class Users{
 	}
 
 	/**Método para modificar cualquier atributo de user */
-	public function modifUSer($idUser,$atribute, $data){
+	public function modifUSer($atribute, $data, $idUser){
 		$sql = "UPDATE users SET " . $atribute . " = ? WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $data);
 		$query->bindParam(2, $idUser);
 		try{
 			$query->execute();
-			echo "modificación realizada con éxito";
+			$rows = $query->rowCount();
+			if($rows>0){
+				echo "modificación realizada con éxito";
+			}else{
+				echo "no se ha modificado ninguna fila";
+			}
+			
 		}catch(PDOException $e){
 			echo "Error al realizar la modificación " . $e->getMessage();
 		}
@@ -281,13 +362,17 @@ class Users{
 		$query->bindParam(1, $email);
 		try{
 			$query->execute();
-			
 			$result = $query->fetch(PDO::FETCH_ASSOC);
+			if(!$result){
+				echo "no hay datos del usuario " . $email;
+			}else{
+				return $result;
+			}
 		}catch(PDOException $e){
 			echo "Error al obtener la información. " . $e->getMessage();
 		}		
-		$this->connection->closeConnection();		
-		return $result;
+		// $this->connection->closeConnection();		
+		// return $result;
 	}
 
 	//Convertirla en una sesion de iniciar como el ejemplo de la web y chatgpt
@@ -304,14 +389,15 @@ class Users{
 				// echo "sdafsdfaaaaaaaaaaaaaaa";
 				$this->connection->closeConnection();
 			}else{
-				$passwordHased = hash('sha512', $password); 
+				// session_start();
+				$hash = hash('sha512', $password); 
 				// echo  "<br>" . $passwordHased . "<br>";
-				if($result['password'] === $passwordHased){
+				if($result['password'] === $hash){
 					// echo "sadfasdf";
 					return true;
 				}else{
 					// echo "Error en la validación de la contraseña";
-					$this->connection->closeConnection();
+					// $this->connection->closeConnection();
 					return false;
 					
 				}
@@ -326,8 +412,7 @@ class Users{
 	}
 }
 // $prueba2 = new Users();
-// $prueba2->createUser('jhon', 'ja@ja', 'caca');
-// $prueba2->validateUser('prusfaaa@pado.com','caca');
+// $prueba2->deleteUser(5);
 // $prueba2->isTheEmail('prueba@prueba.com');
 
 class Items{
@@ -365,7 +450,7 @@ class Items{
 		}catch(PDOException $e){
 			echo "Error en al borrar item/s." . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 
 	/**Método para obtener los items de una lista o de un usuario */
@@ -398,108 +483,100 @@ class Items{
 		}
 		$this->connection->closeConnection();
 	}
+
+
+	/**Método para obtener las próximas listas */
+	public function nextLists($idUser){
+		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and alarm_date != null order by alarm_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows>0){
+				echo "Consulta realizada con éxito";
+				return $result;
+			}else{
+				echo "No tiene próximas";
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al obtener el/los items/s " . $e->getMessage();
+		}
+		$this->connection->closeConnection();
+		
+	}
+
+
+	/**Método para obtener las próximas listas */
+	public function pendingItems($idUser){
+		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and order by creation_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows>0){
+				echo "Consulta realizada con éxito";
+				return $result;
+			}else{
+				echo "No tiene pendientes";
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al obtener el/los items/s " . $e->getMessage();
+		}
+		$this->connection->closeConnection();
+		
+	}
+
+	/**Método para obtener items completados */
+	public function completedItems($idUser){
+		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 1";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows>0){
+				$result = $query->fetch(PDO::FETCH_ASSOC);
+				echo "Consulta realizada con éxito";
+				return $result;
+			}else{
+				echo "No tiene items completos";
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al obtener el/los items/s " . $e->getMessage();
+		}
+		// $this->connection->closeConnection();
+		
+	}
+
+	/**Método para obtener la suma total de los items de una lista que esten marcados teniendo en cuenta la cantidad de items que se tengan */
+	public function sumPriceItems($idList){
+		$sql = "SELECT SUM(price * quantity) FROM " . $this->table . " WHERE is_check = 1 and id_list = ?";
+		$query =$this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows>0){
+				echo "precio total calculado";
+				return $query;
+			}else{
+				echo 0;
+				return 0;
+			}
+		}catch(PDOException $e){
+			echo "Error en al borrar item/s." . $e->getMessage();
+		}
+		$this->connection->closeConnection();
+
+	}
 }
 // $prueba2 = new Items();
 // print_r($prueba2->getItems('id_list', 3 ));
-
-class UsersItems{
-	private $table = 'users_items';
-	private $connection;
-
-	public function __construct() {
-		$this->connection = new Db_connection();
-	}
-
-	/**Mñétodo para comprobar si existe el item */
-	public function existItem($idUser, $itemName){
-		$sql = "SELECT item_name FROM " . $this->table . " WHERE id_user = ? AND item_name = ?";
-		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idUser);
-		$query->bindParam(2, $itemName);
-		try{
-			$query->execute();
-			$result = $query->fetch(PDO::FETCH_NUM);
-			echo "Comprobado con éxito. ";
-			$this->connection->closeConnection();
-			return $result;
-		}catch(PDOException $e){
-			echo "Error al realizar la comprobación " . $e->getMessage();
-		}
-		$this->connection->closeConnection();
-	}
-	/**Método para para añadir un item a la lista de items de un usuario comprobando que no exista con anterioridad*/
-	public function addItem($idUser, $itemName){
-		$result = $this->existItem($idUser, $itemName);
-		if($result){
-			echo "El item ya existe en la lista";
-		}else{
-			$sql = "INSERT INTO $this->table (id_user, item_name ) VALUES (?,?)";
-			$query = $this->connection->getConnection()->prepare($sql);
-			$query->bindParam(1, $idUser);
-			$query->bindParam(2, $itemName);
-			try{
-				$query->execute();
-				echo "Item añadido correctamente ";
-			}catch(PDOException $e){
-				echo "NO se ha podido añadir el item. " . $e->getMessage();
-			}
-			$this->connection->closeConnection();
-		}
-	}
-
-	/**Método para obtener todos los items del usuario */
-	public function getUsersItems($idUser){
-		$sql = "SELECT item_name FROM " . $this->table . " WHERE id_user = ?";
-		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idUser);
-		try{
-			$query->execute();
-			$result = $query->fetchAll(PDO::FETCH_ASSOC);
-			echo "Consulta ejecutada correctamente. ";
-			if(!$result){
-				$result = "Usuario sin items";
-			}
-		}catch(PDOException $e){
-			echo "Error al seleccionar los items del usuario " . $e->getMessage();
-		}
-		$this->connection->closeConnection();
-		return $result;
-	}
-
-
-	/**Método para borrar todos los items de un usuario */
-	public function delALlUsersItems($idUser){
-		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ?";
-		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idUser);
-		try{
-			$query->execute();
-			echo " Items borrados de la lista del usuario $idUser ";
-		}catch(PDOException $e){
-			echo "error al borrar el item del usuario $idUser. " . $e->getMessage();
-		}
-		$this->connection->closeConnection();
-	}
-
-	/**Método para eliminar un item de la lista */
-	public function delUsersItem($idUser, $itemName){
-		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ? AND item_name = ?";
-		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $idUser);
-		$query->bindParam(2, $itemName);
-		try{
-			$query->execute();
-			echo " Item borrado de la lista del usuario $idUser ";
-		}catch(PDOException $e){
-			echo "error al borrar el item del usuario $idUser. " . $e->getMessage();
-		}
-		$this->connection->closeConnection();
-	}
-
-}
-
-// $prueba2 = new UsersItems();
-// $prueba2->addItem(5, 'calculjknar pesos');
-// $prueba2->delUsersItem(3, 'probando');
-// print_r($prueba2->getUsersItems(6));
 

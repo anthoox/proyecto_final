@@ -1,18 +1,15 @@
-<?php
+<?php    
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
-    
-    $error;
-    $validator = new loginController();
-    //Comprobación si POST no esta vacia en el envio del formulario
-    if(!empty($_POST)){
-        //Confirmación de definicion de las variables 
-        if(isset($_POST["email"]) && isset($_POST["password"])) {
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-    
-            $validator->startSession($email, $password);
-        }
-    } 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(!empty($_POST)){        
+            //Confirmación de definicion de las variables 
+            if(isset($_POST["email"]) && isset($_POST["password"])) {
+                $validator = new loginController();
+                $validator->startSession($_POST["email"], $_POST["password"]);
+            }
+        } 
+    }   
+
 ?>
 
 <!DOCTYPE html> 
