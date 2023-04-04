@@ -173,7 +173,7 @@ class Lists {
 	}
 
 	/**Método para obtener las listas de la papelera */
-	public function trashLists($idUser){
+public function trashLists($idUser){
 		$sql = "SELECT * FROM $this->table where id_user = ? and papelera = 1 order by list_name";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);

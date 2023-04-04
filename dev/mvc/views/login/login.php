@@ -1,25 +1,40 @@
 <?php    
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
-    session_start();
+    
+
+    if(isset($_SESSION['user'])){
+        if($_SESSION['user']['rol'] == 1){
+            header('Content-Type: text/html; charset=utf-8');
+            header('location:../admin/index.php');
+        }else if($_SESSION['user']['rol'] == 2){
+            header('Content-Type: text/html; charset=utf-8');
+            header('location:../users/index.php');
+        }
+    }
+    
     //Eliminar los datos de sesión
+    unset($_SESSION['user']['id_user']);
+    unset($_SESSION['user']['email']);
+    unset($_SESSION['user']['password']);
+    unset($_SESSION['user']['rol']);
     unset($_SESSION['error_message']);
-    unset($_SESSION['email']);
-    unset($_SESSION['password']);
 
     $_SESSION['error_message'] = [];
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(!empty($_POST)){        
             if(isset($_POST['email']) && isset($_POST['password'])) {
-                $validator = new loginController();
+                $validator = new LoginController();
                 $result = $validator->startSession($_POST["email"], $_POST["password"]);
                 if(!$result){                    
                     $_SESSION['error_message']['log'] = "Usuario o contraseña incorrectos";
                 }else{
-                    $_SESSION['id_user'] = $result['id_user'];
-                    $_SESSION['name'] = $result['name'];
-                    $_SESSION['password'] = $result['password'];
-                    $_SESSION['email'] = $result['email'];
+                    session_start();
+                    $_SESSION['user']['id_user'] = $result['id_user'];
+                    $_SESSION['user']['name'] = $result['name'];
+                    $_SESSION['user']['password'] = $result['password'];
+                    $_SESSION['user']['email'] = $result['email'];
+                    $_SESSION['user']['rol'] = $result['rol'];
                 }
             }
         }
@@ -31,6 +46,9 @@
 <html lang="es">
 
 <head>
+    <?php
+        
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,11 +95,9 @@
                     <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#" >' . $_SESSION['error_message']['log'] .'<a></p>
                 </div>';
                 }
-            ?>
-            
+            ?>            
             
             <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="#">¿Olvidaste la contraseña?</a></p>
-            <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="btn btn-primary text-white border p-1 fs-5 button">Entrar</button>
         </form>
     </main>

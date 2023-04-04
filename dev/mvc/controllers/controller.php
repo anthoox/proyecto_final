@@ -2,7 +2,7 @@
 
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/model/model.php';
 
-class loginController{
+class LoginController{
     private $user;
     public function __construct(){
         
@@ -30,7 +30,7 @@ class loginController{
     }     
 }
 
-class userList{
+class UserList{
     private $pageTitle;
     private $lists;
     private $items;
@@ -41,14 +41,37 @@ class userList{
         $this->items = new Items();
     }
 
-    public function listar($data){
-        // $this->pageTitle = "Listas de " . $userData['name'];
-        return $this->lists->getAllLists('id_user', $data);
-    }
+    // public function listar($data){
+    //     // $this->pageTitle = "Listas de " . $userData['name'];
+    //     return $this->lists->getAllLists('id_user', $data);
+    // }
 
     public function toList($idUser){
-        // $activeLists = $this->lists->getActiveLists($_SESSION['id_user']);
-        // $totalP = $this->items->fullPriceItems($_SESSION['id_user']);
+        return $this->lists->getActiveLists($_SESSION['id_user']);
+
+    }
+
+}
+
+class UserItems{
+    private $pageTitle;
+    private $lists;
+    private $items;
+
+    public function __construct(){
+        $this->lists = new Lists();
+        $this->items = new Items();
+    }
+
+    public function itemsUser($atribute, $idList){
+        return $this->items->getItems($atribute, $idList);
+    }
+    public function itemsChecked($idList){
+        return $this->lists->checked($idList);
+    }
+
+    public function itemsPrice($idList){
+        return $this->items->sumPriceItems($idList);
     }
 
 }

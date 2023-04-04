@@ -1,0 +1,17 @@
+.cnt{
+    padding: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    border: 10px solid black;
+}
+
+.a{
+    background-color:aqua;
+    height: 50%;
+}
+
+.b{
+    background-color: red;
+    height: 50%;
+}
