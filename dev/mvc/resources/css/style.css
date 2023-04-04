@@ -6,6 +6,10 @@ body{
     height: 100vh;
 }
 
+.p{
+    position: relative;
+    scroll-snap-align: center;
+}
 
 .header__cnt{
     height: 50px;
@@ -25,8 +29,9 @@ body{
 }
 
 .ul__li--size{
+    
     height: 70px;
-    transition: all 250ms;
+    transition: all 300ms;
 }
 
 .ul__li--size:hover{
@@ -34,11 +39,7 @@ body{
     transform: scale(1.015);
 
 }
-.ul__li--size p:hover{
-    
-    /* transform: scale(1); */
 
-}
 .ul__li--size:active{
     
     transform: scale(1);
@@ -71,6 +72,27 @@ body{
     right: 1em;
 }
 
+.las:hover, .la:active{
+    cursor: pointer;
+    transform: scale(1.09);
+}
+.ul__li__div--scroll{
+    overflow-x:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ul__li__div--scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Para otros navegadores */
+.ul__li__div--scroll {
+    scrollbar-width: none;
+}
+
+.section__btn--size{
+    width: 80px;
+}
 
 .figure>img{
     max-width: 200px;

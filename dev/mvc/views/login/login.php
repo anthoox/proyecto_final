@@ -1,14 +1,29 @@
 <?php    
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
+    session_start();
+    //Eliminar los datos de sesión
+    unset($_SESSION['error_message']);
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+
+    $_SESSION['error_message'] = [];
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(!empty($_POST)){        
-            //Confirmación de definicion de las variables 
-            if(isset($_POST["email"]) && isset($_POST["password"])) {
+            if(isset($_POST['email']) && isset($_POST['password'])) {
                 $validator = new loginController();
-                $validator->startSession($_POST["email"], $_POST["password"]);
+                $result = $validator->startSession($_POST["email"], $_POST["password"]);
+                if(!$result){                    
+                    $_SESSION['error_message']['log'] = "Usuario o contraseña incorrectos";
+                }else{
+                    $_SESSION['id_user'] = $result['id_user'];
+                    $_SESSION['name'] = $result['name'];
+                    $_SESSION['password'] = $result['password'];
+                    $_SESSION['email'] = $result['email'];
+                }
             }
-        } 
-    }   
+        }
+    }
 
 ?>
 
@@ -57,11 +72,11 @@
                 <input type="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña" name="password">
             </div>
             <?php
-                // if($error){
-                //     echo '<div class="m-0 mb-1 d-flex justify-content-center align-items-center" id="pruebax">
-                //     <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#" >Usuario o contraseña erroneos<a></p>
-                // </div>';
-                // }
+                if($_SESSION['error_message']){
+                    echo '<div class="m-0 mb-1 d-flex justify-content-center align-items-center" id="pruebax">
+                    <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#" >' . $_SESSION['error_message']['log'] .'<a></p>
+                </div>';
+                }
             ?>
             
             

@@ -10,47 +10,45 @@ class loginController{
     }
     
 
-    public function startSession($email, $password){
- 
+    public function startSession($email, $password){ 
 
-        $data = $this->user->validateUser($email, $password);
-        if($data == true){
-            
-            // echo "casi";
-            $userData = $this->user->getInfoUser($email);
-            session_start();
-            // $_SESSION = array_merge($_SESSION, $userData);
-            $_SESSION['email'] = $email;
-            $_SESSION['password'] = $password;
-            $_SESSION['id'] = $userData['id_user'];
-
-                if($userData['rol'] == 1){
-                    $_SESSION['rol'] = 1;
-                    header('location:../admin/index.php');
-                }else if($userData['rol'] == 2){
-                    $_SESSION['rol'] = 2;
-                    header('location:../users/index.php');
-                }
-            }else{
-                // echo "errorazo";
-                return false;
+        $result = $this->user->validateUser($email, $password);
+        if($result){          
+            if($result['rol'] == 1){
+                header('Content-Type: text/html; charset=utf-8');
+                header('location:../admin/index.php');
+                return $result;
+            }else if($result['rol'] == 2){
+                header('Content-Type: text/html; charset=utf-8');
+                header('location:../users/index.php');
+                return $result;
             }
+        }else{
+            
+            return false;
+        }        
     }     
 }
 
 class userList{
     private $pageTitle;
     private $lists;
+    private $items;
 
     public function __construct(){
-        
-        $this->pageTitle = "";
+
         $this->lists = new Lists();
+        $this->items = new Items();
     }
 
     public function listar($data){
         // $this->pageTitle = "Listas de " . $userData['name'];
         return $this->lists->getAllLists('id_user', $data);
+    }
+
+    public function toList($idUser){
+        // $activeLists = $this->lists->getActiveLists($_SESSION['id_user']);
+        // $totalP = $this->items->fullPriceItems($_SESSION['id_user']);
     }
 
 }

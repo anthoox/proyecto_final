@@ -1,38 +1,8 @@
 <?php
 
 /**Carpeta con archivos clases para establecer la conexión con la base de datos */ 
-require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/connection.php';
 
-//Clase para conectar y desconectar a la base de datos:
-class Db_connection{
-    private $host = DB_HOST;
-	private $db = DB;
-	private $user = DB_USER;
-	private $pass = DB_PASS;
-	public $connection;
-
-	//Constructor para establecer directamente la conexión al instanciar un objeto,
-	public function __construct() {		
-		try {
-            $this->connection = new PDO('mysql:host='.$this->host.'; dbname='.$this->db, $this->user, $this->pass);
-			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			// echo "conexion correcta<br>";
-		} catch (PDOException $e) {
-            echo "Error al conectar a la base de datos. " . $e->getMessage();
-            exit();
-        }
-	}
-
-	/**Método para establecer la conexión */
-	public function getConnection() {
-        return $this->connection;
-    }
-
-	//Método para cerrar la conexion con la base de datos
-	public function closeConnection() {
-        $this->connection = null;
-    }
-} 
 
 class Lists {
 	
@@ -52,12 +22,12 @@ class Lists {
 			$query->execute();
 			$result = $query->fetch(PDO::FETCH_NUM);
 			echo "comprobanción de lista lanzada <br>";
-			$this->connection->closeConnection();
+			// $this->connection->closeConnection();
 			return $result;
 		}catch(PDOException $e){
 			echo "Erro en la comprobación del email. " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 	
 	/**Método para añadir una lista nueva a la base de datos*/
@@ -181,19 +151,20 @@ class Lists {
 
 	//Selecciones especiales de listas
 	/**Método para seleccionar todas las litas de un usuario que no esten en la papelera */
-	public function getActiveLists($idUser, $data){
+	public function getActiveLists($idUser){
+		
 		$sql = "SELECT * FROM $this->table where id_user = ? and trash = 0 order by creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $data);
+		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows > 0){
-				echo "Si tiene listas";
 				return $result;
 			}else{
-				echo "No tiene listas creadas aún";
+				
+				return false;
 			}
 		}catch(PDOException $e){
 			echo "Error al obtener la/s lista/s " . $e->getMessage();
@@ -211,7 +182,7 @@ class Lists {
 			$result = $query->fetch(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows > 0){
-				echo "Si tiene listas";
+				// echo "Si tiene listas";
 				return $result;
 			}else{
 				echo "La papelera esta vacia";
@@ -221,9 +192,9 @@ class Lists {
 		}
 	}
 
-	/**Método para obtener la información de una lista que no este en la papelera y el nombre de los items que tiene esa lista */
+	/**Método para obtener el nombre de los items que tiene una lista */
 	public function infoList($idList){
-		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? and trash = 0 order by lists.creation_date";
+		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? order by lists.creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idList);
 		try{
@@ -231,24 +202,47 @@ class Lists {
 			$result = $query->fetch(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows > 0){
-				echo "Si tiene listas";
-				return $result;
+				// echo "Si tiene listas";
+				$result['items'] = $rows;
+				return $result ;
 			}else{
-				echo "No tiene listas";
+				// echo "No tiene listas";
 			}
 		}catch(PDOException $e){
 			echo "Error al obtener la/s lista/s " . $e->getMessage();
 		}
 	}
+
+	/**Método para obtener la información de una lista que no este en la papelera y el nombre de los items que tiene esa lista */
+	public function checked($idList){
+		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? and trash = 0 and items.is_check = 1 order by lists.creation_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				// echo "Si tiene listas";
+				$result['items'] = $rows;
+				return $result ;
+			}else{
+				return false;
+				// echo "No tiene listas";
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
+	}
+
 }
 // $prueba2 = new Lists();
-// $prueba2->createList(4, 'listacosa');
+// $prueba2->createList(4, 'pepito');
 // print_r($prueba2->getAllLists('id_user', 5));
 // print_r($prueba2->getInfoList(3));
 // $prueba2->emptyTrash(4);
 // print_r($prueba2->getAllLists('id_user', 4));
 // $prueba2->modifList(3, 'list_name', 'lista de prueba');
-
 
 class Users{
 	private $table = 'users'; //Para que puedan usarlo sus clases hijas
@@ -278,6 +272,7 @@ class Users{
 	
 	/**Método para crear usuarios en la base de datos. Los usuarios creados por este método son usuarios normales */
 	public function createUser($name, $email, $password){
+		//Añador sal aquí
 		$passwordHased = hash('sha512', $password); 
 		$registration_date = date('Y-m-d H:i:s');
 		$result = $this->existEmail($email);
@@ -376,30 +371,22 @@ class Users{
 	}
 
 	//Convertirla en una sesion de iniciar como el ejemplo de la web y chatgpt
-	public function validateUser($email, $password){
-		
-		$sql = "SELECT password FROM " . $this->table . " WHERE email = ?";
+	public function validateUser($email, $password){		
+		$sql = "SELECT * FROM " . $this->table . " WHERE email = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $email);
 		try{
 			$query->execute();
 			$result = $query->fetch(PDO::FETCH_ASSOC);
-			// print_r($result['password']);
-			if(!$result){
-				// echo "sdafsdfaaaaaaaaaaaaaaa";
+			if(!$result){				
 				$this->connection->closeConnection();
 			}else{
-				// session_start();
+				//añadir sal aquí
 				$hash = hash('sha512', $password); 
-				// echo  "<br>" . $passwordHased . "<br>";
 				if($result['password'] === $hash){
-					// echo "sadfasdf";
-					return true;
+					return $result;
 				}else{
-					// echo "Error en la validación de la contraseña";
-					// $this->connection->closeConnection();
 					return false;
-					
 				}
 			}			
 		}catch(PDOException $e){
@@ -424,19 +411,21 @@ class Items{
 	}
 
 	/**Método para añadir un item a la tabla */
-	public function createItem($idList, $itemNAmem, $creationDate){
-		$sql = "INSERT INTO " . $this->table . " (id_list, item_name, creation_date) VALUES (?, ?, ?)";
+	public function createItem($idList,$idUser, $itemName){
+		$creationDate = date('Y-m-d H:i:s');;
+		$sql = "INSERT INTO " . $this->table . " (id_list, id_user, item_name, creation_date) VALUES (?, ?, ?, ?)";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idList);
-		$query->bindParam(2, $itemNAmem);
-		$query->bindParam(3, $creationDate);
+		$query->bindParam(2, $idUser);
+		$query->bindParam(3, $itemName);
+		$query->bindParam(4, $creationDate);
 		try{
 			$query->execute();
 			echo "item creado";
 		}catch(PDOException $e){
 			echo "Error en la creación del item." . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 
 	/**Método para eliminar un item de la lista o todos los items de una lista */
@@ -460,13 +449,22 @@ class Items{
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
-			echo "Consulta realizada con éxito";
+			$rows = $query->rowCount();
+			if($rows>0){
+				$result = $query->fetch(PDO::FETCH_ASSOC);
+				$result['rows'] = $rows;
+				
+				return $result;
+			}else{
+				return false;
+			}
+			
+			// echo "Consulta realizada con éxito";
 		}catch(PDOException $e){
 			echo "Error al obtener el/los items/s " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
-		return $result;
+		// $this->connection->closeConnection();
+		
 	}
 
 	/**Método para modificar cualquier atributo de un item */
@@ -551,12 +549,13 @@ class Items{
 		}catch(PDOException $e){
 			echo "Error al obtener el/los items/s " . $e->getMessage();
 		}
-		// $this->connection->closeConnection();
+		// $this->connection->closeConnection();k
 		
 	}
 
 	/**Método para obtener la suma total de los items de una lista que esten marcados teniendo en cuenta la cantidad de items que se tengan */
 	public function sumPriceItems($idList){
+		
 		$sql = "SELECT SUM(price * quantity) FROM " . $this->table . " WHERE is_check = 1 and id_list = ?";
 		$query =$this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idList);
@@ -564,19 +563,45 @@ class Items{
 			$query->execute();
 			$rows = $query->rowCount();
 			if($rows>0){
-				echo "precio total calculado";
-				return $query;
+				$result = $query->fetch(PDO::FETCH_NUM);				
+				return $result;
 			}else{
-				echo 0;
-				return 0;
+				
+				return false;
 			}
 		}catch(PDOException $e){
-			echo "Error en al borrar item/s." . $e->getMessage();
+			echo "Error al cargar el precio de los items." . $e->getMessage();
 		}
 		$this->connection->closeConnection();
 
 	}
+
+	/**Método para obtener el precio de todos los items de todas las listas de un usuario que esten con el check*/
+	public function fullPriceItems($idUser){
+		$sql = "SELECT SUM(items.price * items.quantity) FROM " . $this->table . " WHERE items.id_user = ? and is_check = 1";
+	
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows>0){
+				$result = $query->fetch(PDO::FETCH_NUM);
+				// echo "Consulta realizada con éxito";
+				return $result;
+			}else{
+				echo "No tiene items completos";
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al obtener el/los items/s " . $e->getMessage();
+		}
+		// $this->connection->closeConnection();
+
+		
+	}
 }
 // $prueba2 = new Items();
+// $prueba2->createItem(17, 'prueba2');
 // print_r($prueba2->getItems('id_list', 3 ));
 
