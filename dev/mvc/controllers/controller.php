@@ -47,7 +47,7 @@ class UserList{
     // }
 
     public function toList($idUser){
-        return $this->lists->getActiveLists($_SESSION['id_user']);
+        return $this->lists->getActiveLists($idUser);
 
     }
 

@@ -1,6 +1,6 @@
 <?php 
- session_start();
- require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
+//  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,34 +28,24 @@
 </head>
 
 <body class="d-flex flex-column">
-    <?php
-        require "../layout/header.php";
-    ?>
+    <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <div class=" d-flex justify-content-between align-items-center header__cnt">
+            <div class="d-flex align-items-center">
+                <i class="la-2x las la-bars"></i> <span class="ms-2 fs-5">Menú</span>
+            </div>
+            <h1 class="m-0 fw-semibold">Lista Simple</h1>
+        </div>
+    </header>
+
     <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section class="d-flex align-items-center justify-content-between">
-                    <!-- <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike">
-                    </div> -->
 
-                    <button class="btn fs-6 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
-                        Mis listas
-                    </button>
-                    <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
-                        Próximas
-                    </button>
-                    <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
-                        Pendientes
-                    </button>
-                    <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
-                        Completas
-                    </button>
+
+                    
         </section>   
 
         <section class="p-0 m-0">
-            <?php 
-                require_once '../layout/lists.php';
-                // require_once '../layout/items.php'
-            ?>
+            <?php require_once '../layout/items.php'?>
         </section>
     
         <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">

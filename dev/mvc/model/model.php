@@ -451,7 +451,7 @@ class Items{
 			$query->execute();
 			$rows = $query->rowCount();
 			if($rows>0){
-				$result = $query->fetch(PDO::FETCH_ASSOC);
+				$result = $query->fetchAll(PDO::FETCH_ASSOC);
 				$result['rows'] = $rows;
 				
 				return $result;
@@ -540,7 +540,6 @@ class Items{
 			$rows = $query->rowCount();
 			if($rows>0){
 				$result = $query->fetch(PDO::FETCH_ASSOC);
-				echo "Consulta realizada con éxito";
 				return $result;
 			}else{
 				echo "No tiene items completos";
@@ -578,8 +577,8 @@ class Items{
 
 	/**Método para obtener el precio de todos los items de todas las listas de un usuario que esten con el check*/
 	public function fullPriceItems($idUser){
+
 		$sql = "SELECT SUM(items.price * items.quantity) FROM " . $this->table . " WHERE items.id_user = ? and is_check = 1";
-	
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
@@ -599,6 +598,27 @@ class Items{
 		// $this->connection->closeConnection();
 
 		
+	}
+
+	//Obtiene la suma total de todos los tiempos total_time de cada item de la lista
+	public function totalItemsTime(){
+		$sql = "SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(total_time))) FROM items";
+		$query = $this->connection->getConnection()->prepare($sql);
+		// $query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows>0){
+				$result = $query->fetch(PDO::FETCH_NUM);
+				// echo "Consulta realizada con éxito";
+				return $result;
+			}else{
+				return false;
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al obtener el/los items/s " . $e->getMessage();
+		}
 	}
 }
 // $prueba2 = new Items();

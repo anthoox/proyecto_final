@@ -98,7 +98,7 @@
             ?>            
             
             <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="#">¿Olvidaste la contraseña?</a></p>
-            <button type="submit" class="btn btn-primary text-white border p-1 fs-5 button">Entrar</button>
+            <button type="submit" class="btn btn-primary text-white border p-1 fs-5 button ">Entrar</button>
         </form>
     </main>
     <?php

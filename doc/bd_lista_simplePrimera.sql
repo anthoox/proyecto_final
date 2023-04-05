@@ -8,6 +8,7 @@
 -- Estructura de tabla para la tabla `rols`
 --
 
+
 CREATE TABLE `roles` (
   `id_rol` int(11) NOT NULL PRIMARY KEY,
   `rol` varchar(10) NOT NULL
@@ -90,3 +91,58 @@ CREATE TABLE `users_items` (
 
 -- --------------------------------------------------------
 
+-------------------------
+
+-- CREATE TRIGGER sum_work_break_time
+-- BEFORE INSERT ON items
+-- FOR EACH ROW
+-- BEGIN
+--   IF NEW.work_time IS NOT NULL THEN
+--     SEC_TO_TIME(SUM(TIME_TO_SEC(work_time) + IFNULL(TIME_TO_SEC(break_time), 0)));
+--   END IF;
+-- END;
+
+
+--CREATE TRIGGER update_total_time AFTER UPDATE ON items 
+--FOR EACH ROW
+--BEGIN
+--  IF NEW.work_time IS NOT NULL THEN
+--    SET NEW.total_time = ADDTIME(NEW.work_time, COALESCE(NEW.break_time, '00:00:00'));
+--  END IF;
+--END;//probando
+
+-- DELIMITER//
+-- CREATE TRIGGER sum_work_break_time 
+-- BEFORE INSERT ON items 
+-- FOR EACH ROW 
+-- BEGIN 
+--   IF NEW.work_time IS NOT NULL THEN
+--    SET NEW.total_time = ADDTIME(NEW.work_time, COALESCE(NEW.break_time, '00:00:00'));
+--   END IF; 
+-- END;
+-- DELIMITER;
+
+DELIMITER //
+CREATE TRIGGER update_total_time AFTER UPDATE ON items
+FOR EACH ROW
+BEGIN
+    IF NEW.work_time IS NOT NULL THEN
+        UPDATE items SET total_time = IFNULL(NEW.work_time, 0) + IFNULL(break_time, 0) WHERE id_item = NEW.id_item;
+    END IF;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER update_total_time AFTER UPDATE ON items
+FOR EACH ROW
+BEGIN
+    UPDATE item_times
+    SET total_time = 
+        CASE 
+            WHEN NEW.break_time IS NOT NULL 
+            THEN NEW.work_time + NEW.break_time
+            ELSE NEW.work_time
+        END
+    WHERE id_item = NEW.id_item;
+END
+DELIMITER ;
