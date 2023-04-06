@@ -484,19 +484,19 @@ class Items{
 
 
 	/**Método para obtener las próximas listas */
-	public function nextLists($idUser){
-		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and alarm_date != null order by alarm_date";
+	public function next_items($idUser){
+		$sql = "SELECT * FROM " . $this->table . " WHERE id_user = ? and is_check = 0 and (alarm_date IS not NULL OR alarm_date > NOW())";
+		// $sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and alarm_date != null order by alarm_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows>0){
-				echo "Consulta realizada con éxito";
 				return $result;
 			}else{
-				echo "No tiene próximas";
+				return false;
 			}
 			
 		}catch(PDOException $e){
@@ -509,18 +509,17 @@ class Items{
 
 	/**Método para obtener las próximas listas */
 	public function pendingItems($idUser){
-		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and order by creation_date";
+		$sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 order by creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows>0){
-				echo "Consulta realizada con éxito";
 				return $result;
 			}else{
-				echo "No tiene pendientes";
+				return false;
 			}
 			
 		}catch(PDOException $e){
@@ -539,7 +538,7 @@ class Items{
 			$query->execute();
 			$rows = $query->rowCount();
 			if($rows>0){
-				$result = $query->fetch(PDO::FETCH_ASSOC);
+				$result = $query->fetchAll(PDO::FETCH_ASSOC);
 				return $result;
 			}else{
 				echo "No tiene items completos";

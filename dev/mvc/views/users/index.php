@@ -33,9 +33,11 @@
     ?>
     <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section class="d-flex align-items-center justify-content-between">
-                    <!-- <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
+                    <!-- 
+                    <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike">
-                    </div> -->
+                    </div> 
+                    -->
 
                     <button class="btn fs-6 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                         Mis listas
@@ -53,8 +55,10 @@
 
         <section class="p-0 m-0">
             <?php 
-                require_once '../layout/lists.php';
-                // require_once '../layout/items.php'
+                // require_once '../layout/lists.php';
+                // require_once '../layout/upcoming.php';
+                // require_once '../layout/pending.php';
+                require_once '../layout/completed.php';
             ?>
         </section>
     

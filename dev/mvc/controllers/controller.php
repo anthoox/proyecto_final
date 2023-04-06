@@ -36,7 +36,6 @@ class UserList{
     private $items;
 
     public function __construct(){
-
         $this->lists = new Lists();
         $this->items = new Items();
     }
@@ -48,7 +47,6 @@ class UserList{
 
     public function toList($idUser){
         return $this->lists->getActiveLists($idUser);
-
     }
 
 }
@@ -72,6 +70,18 @@ class UserItems{
 
     public function itemsPrice($idList){
         return $this->items->sumPriceItems($idList);
+    }
+
+    public function upcoming($idUser){
+        return $this->items->next_items($idUser);
+    }
+
+    public function pending($idUser){
+        return $this->items->pendingItems($idUser);
+    }
+
+    public function completed($idUser){
+        return $this->items->completedItems($idUser);
     }
 
 }
