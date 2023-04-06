@@ -66,7 +66,7 @@
             <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
                 <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#">El correo ya esta registrado/Registrado<a></p>
             </div>
-            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="#">Volver atras</a></p>
+            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="../../index.php">Volver atras</a></p>
             <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="btn btn-secondary text-white border  p-1 fs-5 button">Registrar</button>
         </form>

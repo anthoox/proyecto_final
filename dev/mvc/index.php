@@ -29,8 +29,8 @@
             Lista <br>
             Simple
         </h2>
-        <button class="btn btn-primary text-white border p-2 button button__index"><a class="text-white fs-5 text-decoration-none"href="#">Entrar</a></button>
-        <button class="btn btn-secondary  border p-2  button button__index"><a class="fs-5 text-white text-decoration-none"href="#">Crear cuenta</a></button>
+        <a class="text-decoration-none"href="./views/login/login.php"><button class="fs-5 btn btn-primary text-white border p-2 button button__index">Entrar</button></a>
+        <a class=" text-decoration-none"href="./views/login/record.php"><button class="fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
     </main>
     <?php
         //Carga del fichero footer.php

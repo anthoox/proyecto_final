@@ -92,13 +92,16 @@
             <?php
                 if($_SESSION['error_message']){
                     echo '<div class="m-0 mb-1 d-flex justify-content-center align-items-center" id="pruebax">
-                    <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#" >' . $_SESSION['error_message']['log'] .'<a></p>
+                    <p class="m-0 text-center fw-bold fs-5 text-secondary ">' . $_SESSION['error_message']['log'] .'</p>
                 </div>';
                 }
             ?>            
             
-            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="#">¿Olvidaste la contraseña?</a></p>
+            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="./recovery.php">¿Olvidaste la contraseña?</a></p>
+            
             <button type="submit" class="btn btn-primary text-white border p-1 fs-5 button ">Entrar</button>
+            <p class="text-center mt-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="../../index.php">Volver</a></p>
+            
         </form>
     </main>
     <?php
