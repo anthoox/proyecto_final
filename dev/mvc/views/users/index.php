@@ -55,10 +55,10 @@
 
         <section class="p-0 m-0">
             <?php 
-                // require_once '../layout/lists.php';
+                require_once '../layout/lists.php';
                 // require_once '../layout/upcoming.php';
                 // require_once '../layout/pending.php';
-                require_once '../layout/completed.php';
+                // require_once '../layout/completed.php';
             ?>
         </section>
     

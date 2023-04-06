@@ -41,7 +41,7 @@
                         <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                             <div class="w-100 ul__li__div--scroll">
                             <form >
-                                <p class="p-0 m-0 fs-4 fw-semibold " id="textToStrike"><a class="fs-4 fw-semibold text-decoration-none text-black" type="submit" href="../users/itemsList.php?id_list='.$user_list[$i]['id_list'].'">' . $user_list[$i]['list_name'] .'</a></p>
+                                <p class="p-0 m-0 fs-4 fw-semibold " id="textToStrike"><a class="fs-4 fw-semibold text-decoration-none text-black" type="submit" href="../users/itemsList.php?id_list='.$user_list[$i]['id_list'].'&list_name=' . $user_list[$i]['list_name'] .' " >' . $user_list[$i]['list_name'] .'</a></p>
                                 </form>
                             </div>
                             <div class="d-flex align-items-center  li__div__icon">

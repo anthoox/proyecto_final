@@ -36,6 +36,7 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
         
 
         $itemsList = $items->getItems('id_list',$_GET['id_list']);
+        
 
         $items_total_price = $items->totalItemsTime();
         $items_total_price = format_time($items_total_price[0]);
@@ -46,7 +47,7 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
                 <div class="d-flex align-items-center">
                     <a href="../users/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
                 </div>
-                <h1 class="m-0 fw-semibold">Lista Simple</h1>
+                <h1 class="m-0  fs-2 fw-semibold">' . $_GET['list_name'].'</h1>
             </div>
         </header>
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
