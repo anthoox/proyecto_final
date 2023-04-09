@@ -27,7 +27,20 @@ class LoginController{
             
             return false;
         }        
-    }     
+    }
+    
+    public function addUser($name, $email, $password){
+        return $this->user->createUser($name, $email, $password);
+    }
+
+    public function searchUser($email){
+        return $this->user->getInfoUser($email);
+    }
+
+    public function getTable($table, $text = ''){
+        return $this->user->getAny($table, $text);
+    }
+   
 }
 
 class UserList{
@@ -40,13 +53,12 @@ class UserList{
         $this->items = new Items();
     }
 
-    // public function listar($data){
-    //     // $this->pageTitle = "Listas de " . $userData['name'];
-    //     return $this->lists->getAllLists('id_user', $data);
-    // }
-
     public function toList($idUser){
         return $this->lists->getActiveLists($idUser);
+    }
+
+    public function listsUser($idUser){
+        return $this->lists->getAmountList($idUser);
     }
 
 }

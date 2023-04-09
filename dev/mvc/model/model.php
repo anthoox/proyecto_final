@@ -173,7 +173,7 @@ class Lists {
 	}
 
 	/**Método para obtener las listas de la papelera */
-public function trashLists($idUser){
+	public function trashLists($idUser){
 		$sql = "SELECT * FROM $this->table where id_user = ? and papelera = 1 order by list_name";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
@@ -235,9 +235,32 @@ public function trashLists($idUser){
 		}
 	}
 
+	public function getAmountList($idUser){
+		$sql = "SELECT * FROM " . $this->table . " WHERE id_user = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			//Esto es necesario si no no devuelve el número de columnas.
+			$query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				return $rows ;
+			}else if($rows == null){
+				$rows = '0';
+				return $rows ;
+			}else{
+				return false;
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
+
+	}
+
 }
-// $prueba2 = new Lists();
-// $prueba2->createList(4, 'pepito');
+
+
 // print_r($prueba2->getAllLists('id_user', 5));
 // print_r($prueba2->getInfoList(3));
 // $prueba2->emptyTrash(4);
@@ -261,13 +284,16 @@ class Users{
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			$result = $query->fetchAll(PDO::FETCH_NUM);
-			echo "comprobanción de email lanzada <br>";
+			$result = $query->fetch(PDO::FETCH_NUM);
+			if($result){
+				return $result;
+			}else{
+				return false;
+			}
 			
 		}catch(PDOException $e){
 			echo "Erro en la comprobación del email. " . $e->getMessage();
 		}
-		return $result;
 	}
 	
 	/**Método para crear usuarios en la base de datos. Los usuarios creados por este método son usuarios normales */
@@ -288,10 +314,11 @@ class Users{
 				$query->execute();
 				$rows = $query->rowCount();
 				if($rows>0){
-					echo "usuario creado";
+					// echo "usuario creado";
 					return true;
 				}else{
-					echo "usuario no creado";
+					// echo "usuario no creado";
+					return false;
 				}
 				
 			}catch(PDOException $e){
@@ -300,7 +327,7 @@ class Users{
 		}else{
 			echo "El email " . $email . " ya esta registrado en la base de datos";
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 
 	/**Método para borrar usuarios de la base de datos 
@@ -359,7 +386,7 @@ class Users{
 			$query->execute();
 			$result = $query->fetch(PDO::FETCH_ASSOC);
 			if(!$result){
-				echo "no hay datos del usuario " . $email;
+				return false;
 			}else{
 				return $result;
 			}
@@ -394,8 +421,25 @@ class Users{
 		}
 	}
 
-	public function exit(){
-		$this->connection->closeConnection();
+	// public function exit(){
+	// 	$this->connection->closeConnection();
+	// }
+
+	public function getAny($table, $text = ''){
+		$sql = "SELECT * FROM " . $table . $text;
+		$query = $this->connection->getConnection()->prepare($sql);
+		try{
+			$query->execute();
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
+			if($result){
+				return $result;
+			}else{
+				return false;
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener valores de la tabla  " . $table . " " . $e->getMessage();
+		}
+		
 	}
 }
 // $prueba2 = new Users();

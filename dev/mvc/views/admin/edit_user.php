@@ -1,3 +1,54 @@
+<?php
+session_start();
+
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
+
+if($_SESSION['user']){
+    if($_SESSION['user']['rol'] === 1){
+
+$msg_register = '';
+$msg_search = '';
+$result = '';
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(!empty($_POST)){        
+        if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+            if(($_POST['name'] != '') || ($_POST['email'] != '') || ($_POST['password'] != '')){
+                $new_user = new LoginController();
+                $result = $new_user->addUser($_POST['name'], $_POST['email'], $_POST['password']);
+                if(!$result){
+                    $msg_register = "La cuenta de correo ya esta registada en el sistema";
+                }else{
+                    $msg_register = "Usuario " . $_POST['name'] . "registrado con éxito";
+                }
+
+            }
+        }
+    }
+    
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(!empty($_POST)){        
+        if(isset($_POST['emailSearch'])) {
+            if(($_POST['emailSearch'] != '')){
+                $new_user = new LoginController();
+                $result = $new_user->searchUser($_POST['emailSearch']);
+                if(!$result){
+                    $msg_search = "El email no esta registrado en el sistema";
+                }else{
+                    $_SESSION['user_data'] = $result;
+                    header('Content-Type: text/html; charset=utf-8');
+                    header('location:../admin/edit_user.php'); 
+                }
+                
+            }
+        }
+    }
+}
+
+echo'
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,23 +74,38 @@
     <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
 </head>
 
-<body class="d-flex flex-column justify-content-between p-3">
-    <?php
-        require "../layout/header.php";
-    ?>
-    <main class="container-fluid d-flex  flex-column mb-5 position-relative main__trash">
-        <h2 class="mt-3 text-success title title__h2 fw-bolder ">
-            Editar <br>
-            Usuario
-        </h2>
+<body class="d-flex flex-column justify-content-between p-3">';
+        $rol;
+        if($_SESSION['user_data']['rol'] == 1){
+            $rol = "administrador";
+        }else if($_SESSION['user_data']['rol'] == 2){
+            $rol = "usuario";
+        }
+        echo
+        '<header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <div class=" d-flex justify-content-between align-items-center header__cnt">
+            <div class="d-flex align-items-center">
+                <a href="../admin/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+            </div>
+            <span class="fw-semibold fs-3 align-self-start mt-3">Perfil: '.$rol.'</span>
+        </div>
+    </header>
+        <main class="container-fluid d-flex  flex-column mb-5 position-relative main__trash">
+        
+            <h2 class="mt-3 text-success title title__h2 fw-bolder ">
+                Editar <br>
+                Usuario
+            </h2>
+            
+        
         <form class=" d-flex flex-column justify-content-center  form">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-                <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
+                <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="'.$_SESSION['user_data']['name'].'">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
-                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
+                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="'.$_SESSION['user_data']['email'].'">
             </div>
             <div >
             <label for="" class=" form-label text-muted text-decoration-none fs-5 fw-semibold">Rol</label>
@@ -58,8 +124,18 @@
             <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>
             
         </form>
-        
     </main>
 </body>
+</html>'
+;
+    }else{
+        header('Content-Type: text/html; charset=utf-8');
+        header('location:../login/login.php');
+    }
+}else{
+    header('Content-Type: text/html; charset=utf-8');
+    header('location:../login/login.php');
+}
 
-</html>
+
+?>
