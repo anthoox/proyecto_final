@@ -64,9 +64,13 @@ if($_SESSION['user']){
     
         <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
         <i class="la-2x las la-plus-circle"></i></button>
- 
-</main>
-    
+        <form id="myform" method="post" action="tu-pagina.php">
+            <input type="hidden" name="variable1" value="valor1">
+            <input type="hidden" name="variable2" value="valor2">
+        </form>
+</main>';
+require "menu.php";
+echo'    
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

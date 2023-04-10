@@ -33,24 +33,31 @@ class LoginController{
         return $this->user->createUser($name, $email, $password);
     }
 
-    public function searchUser($email){
-        return $this->user->getInfoUser($email);
+    public function searchUser($atribute, $email){
+        return $this->user->getInfoUser($atribute, $email);
     }
 
     public function getTable($table, $text = ''){
         return $this->user->getAny($table, $text);
     }
+
+    public function admin_edit_user($idUser, $name, $email, $rol){
+        return $this->user->adminEditUser($idUser, $name, $email, $rol);
+    }
+
    
 }
 
-class UserList{
+class UserList{//UserController
     private $pageTitle;
     private $lists;
+    private $user;
     private $items;
 
     public function __construct(){
         $this->lists = new Lists();
         $this->items = new Items();
+        $this->user = new Users();
     }
 
     public function toList($idUser){
@@ -59,6 +66,10 @@ class UserList{
 
     public function listsUser($idUser){
         return $this->lists->getAmountList($idUser);
+    }
+
+    public function trash($idUser){
+        return $this->lists->trashLists($idUser);
     }
 
 }
@@ -78,6 +89,10 @@ class UserItems{
     }
     public function itemsChecked($idList){
         return $this->lists->checked($idList);
+    }
+
+    public function trashItemsChecked($idList){
+        return $this->lists->checkedTrash($idList);
     }
 
     public function itemsPrice($idList){

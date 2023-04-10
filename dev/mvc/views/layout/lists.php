@@ -31,7 +31,7 @@
             $items_check = $user_items->itemsChecked($user_list[$i]['id_list']);
             if($items_check == false){
                 $items_check['items'] = 0;
-           }
+            }
     
             echo
             '<li class="d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">

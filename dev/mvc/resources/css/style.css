@@ -178,3 +178,24 @@ border-color: rgb(166, 74, 238) !important;
     width: 100%;
     overflow-x:scroll;
 }
+
+/* CONFIGURACIÓN MENU LATERAL MOVIL*/
+
+.menu{
+    z-index: 2000;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+.menu>ul>li{
+    
+    min-height: 35px;
+    /* max-height: 35px; */
+}
+.menu>ul>li:hover{
+    cursor: pointer;
+}
+
+.menu>ul>li>img{
+    width: 80px;
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<!-- añadir validación de sesion. -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,9 +24,14 @@
 </head>
 
 <body class="d-flex flex-column justify-content-between p-3 ">
-    <?php
-        require "../layout/header.php";
-    ?>
+    <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <div class=" d-flex justify-content-between align-items-center header__cnt">
+            <div class="d-flex align-items-center">
+                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+            </div>
+            <h1 class="m-0 fs-2 fw-semibold">Perfil de usuario</h1>
+        </div>
+    </header>
     <main class="container-xxl d-flex flex-column align-items-center pt-4 main__user">
         <figure class=" figure">
             <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-user.png" class="border border-primary border-2 figure-img img-fluid rounded rounded-circle" alt="...">

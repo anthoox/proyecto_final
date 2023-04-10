@@ -44,7 +44,7 @@ if($_SESSION['user']){
         <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../users/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
                 </div>
                 <h1 class="m-0  fs-2 fw-semibold">' . $_GET['list_name'].'</h1>
             </div>

@@ -25,9 +25,14 @@
 
 <body class="d-flex flex-column justify-content-between p-3">
 <!-- body__grid--contact -->
-    <?php
-        require "../layout/header.php";
-    ?>
+    <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <div class=" d-flex justify-content-between align-items-center header__cnt">
+            <div class="d-flex align-items-center">
+                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+            </div>
+            <h1 class="m-0 fs-2 fw-semibold">Contacto</h1>
+        </div>
+    </header>
     <main class="mt-3 container-xxl d-flex flex-column  p-0 main__trash">
         <section class="d-flex justify-content-between flex-column align-items-center m-0 p-2 pt-0">
             <p class="p-1 fs-5 parraf__contact--justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce purus mauris, porttitor facilisis nisi sed, bibendum vestibulum lorem. Fusce non iaculis quam, quis laoreet dui. Donec sed sodales orci, sit amet accumsan ante. Fusce id purus sit amet dolor vestibulum pharetra. Donec id leo dapibus, rhoncus justo et, lacinia erat. In hac habitasse platea dictumst. Quisque eget risus neque. Maecenas sed lacus blandit, bibendum lectus non, fringilla magna.</p>

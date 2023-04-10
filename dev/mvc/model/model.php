@@ -174,18 +174,18 @@ class Lists {
 
 	/**Método para obtener las listas de la papelera */
 	public function trashLists($idUser){
-		$sql = "SELECT * FROM $this->table where id_user = ? and papelera = 1 order by list_name";
+		$sql = "SELECT * FROM $this->table where id_user = ? and trash = 1 order by list_name";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows > 0){
-				// echo "Si tiene listas";
 				return $result;
 			}else{
 				echo "La papelera esta vacia";
+				return false;
 			}
 		}catch(PDOException $e){
 			echo "Error al obtener la/s lista/s " . $e->getMessage();
@@ -216,6 +216,27 @@ class Lists {
 	/**Método para obtener la información de una lista que no este en la papelera y el nombre de los items que tiene esa lista */
 	public function checked($idList){
 		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? and trash = 0 and items.is_check = 1 order by lists.creation_date";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$rows = $query->rowCount();
+			if($rows > 0){
+				// echo "Si tiene listas";
+				$result['items'] = $rows;
+				return $result ;
+			}else{
+				return false;
+				// echo "No tiene listas";
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener la/s lista/s " . $e->getMessage();
+		}
+	}
+
+	public function checkedTrash($idList){
+		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? and trash = 1 and items.is_check = 1 order by lists.creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idList);
 		try{
@@ -365,10 +386,37 @@ class Users{
 		try{
 			$query->execute();
 			$rows = $query->rowCount();
-			if($rows>0){
+			if($rows>=0){
 				echo "modificación realizada con éxito";
+				return true;
 			}else{
 				echo "no se ha modificado ninguna fila";
+				return false;
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al realizar la modificación " . $e->getMessage();
+		}
+		$this->connection->closeConnection();
+	}
+
+	public function adminEditUser($idUser, $name, $email, $rol){
+			 // UPDATE users SET name = 'oo', email = 'oo@oo.com', rol = 2 WHERE id_user = 37
+		$sql = "UPDATE users SET name = ?, email = ?, rol = ? WHERE id_user = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $name);
+		$query->bindParam(2, $email);
+		$query->bindParam(3, $rol);
+		$query->bindParam(4, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			//El  >= 0 es porque si se dejan los valores iguales no se modifica nada.
+			if($rows>=0){
+				return true;
+			}else{
+				// return "Error al realizar la modificación";
+				return false;
 			}
 			
 		}catch(PDOException $e){
@@ -378,8 +426,8 @@ class Users{
 	}
 
 	/**Método para obtener los datos de un usuario */
-	public function getInfoUser($email){
-		$sql = "SELECT * FROM users  WHERE email = ?";
+	public function getInfoUser($atribute, $email){
+		$sql = "SELECT * FROM users  WHERE $atribute = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $email);
 		try{

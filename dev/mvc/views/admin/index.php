@@ -8,7 +8,7 @@ if($_SESSION['user']){
 $msg_register = '';
 $msg_search = '';
 $result = '';
-
+$_SESSION['user_data'] = 0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($_POST)){        
@@ -16,10 +16,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(($_POST['name'] != '') || ($_POST['email'] != '') || ($_POST['password'] != '')){
                 $new_user = new LoginController();
                 $result = $new_user->addUser($_POST['name'], $_POST['email'], $_POST['password']);
+                
                 if(!$result){
                     $msg_register = "La cuenta de correo ya esta registada en el sistema";
                 }else{
-                    $msg_register = "Usuario " . $_POST['name'] . "registrado con éxito";
+                    $msg_register = "Usuario " . $_POST['name'] . " registrado con éxito";
                 }
 
             }
@@ -33,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(isset($_POST['emailSearch'])) {
             if(($_POST['emailSearch'] != '')){
                 $new_user = new LoginController();
-                $result = $new_user->searchUser($_POST['emailSearch']);
+                $result = $new_user->searchUser('email',$_POST['emailSearch']);
                 if(!$result){
                     $msg_search = "El email no esta registrado en el sistema";
                 }else{
@@ -46,9 +47,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 }
-
-// AÑADIR UN CONTADOR DE LISTAS PAR MOSTRAR EN LA TABLA EL NÚMERO DE LISTAS DE CADA USUARIO. 
-// CREAR UNA FUNCION QUE CUENTE LAS LISTAS DE UN USUARIO Y DEVUELVA LA CANTIDAD DE ROWS
 
 echo
 
@@ -80,6 +78,7 @@ echo
 <body class="d-flex flex-column justify-content-between p-3 h-100">';
 
         require "../layout/header.php";
+        
 
     echo'<main class="container-xxl d-flex flex-column mb-5 position-relative main__trash">
         <h2 class="mt-3 text-success title title__h2 fw-bolder ">
@@ -93,7 +92,6 @@ echo
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
-                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
@@ -137,7 +135,8 @@ echo
             Usuarios:
             </h2>';
             echo
-            '<div class="div__table--scroll border border-2 rounded-4"><table class="table  table-striped ">
+            '<div class="div__table--scroll border border-2 rounded-4">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                     <th class="table__th--pointer" scope="col">ID</th>
@@ -155,32 +154,32 @@ echo
                     echo
                     '<tr>
                     <th scope="row">'.$table[$i]['id_user'].'</th>
-                    <td>'.$table[$i]['name'].'</td>
-                    <td>'.$table[$i]['email'].'</td>
-                    <td>'.$table[$i]['registration_date'].'</td>';
+                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['name'].'</a></td>
+                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['email'].'</a></td>
+                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['registration_date'].'</a></td>';
                     if($table[$i]['rol'] == 1){
                         $rol = "admin";
                         $lists = '--';
                     }else if($table[$i]['rol'] == 2){
                         $rol = "usuario";
-                        $lists = $lists_user->listsUser($table[$i]['id_user']);
+                        $lists = $lists_user->listsUser($table[$i]['name']);
                     }
                     echo
-                    '<td>' . $rol . '</td>
-                    <td>' . $lists. '</td>
+                    '<td><a href="edit_user.php?name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $rol . '</a></td>
+                    <td><a href="edit_user.php?name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $lists. '</a></td>
                     </tr>
                     ';
                 }
                 echo
                '</tbody>
-            </table></div>
-
-
-    </main>
-
+            </table></div>                    
+    </main>';
+    require "menu.php";
+    echo'
 </body>
 
 </html>';
+
     }else{
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');
