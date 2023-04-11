@@ -24,7 +24,7 @@
     <header class="container-xxl d-flex justify-content-around align-items-center">
         <h1 class="text-success title title__h1 align-self-start mt-1 fw-bold ">Bienvenido</h1>
     </header>
-    <main class="container-xxl d-flex  flex-column">
+    <main class="container-xxl d-flex mb-5 flex-column">
         <h2 class="text-success title title__h2 fw-bolder mb-4">
             Lista <br>
             Simple
@@ -32,10 +32,12 @@
         <a class="text-decoration-none"href="./views/login/login.php"><button class="fs-5 btn btn-primary text-white border p-2 button button__index">Entrar</button></a>
         <a class=" text-decoration-none"href="./views/login/record.php"><button class="fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
     </main>
-    <?php
-        //Carga del fichero footer.php
-        require "./views/layout/footer.php";
-    ?>
+    <footer class="d-flex align-items-end ms-3">
+        <ul class="list-unstyled ">
+            <li> <a class="fw-bold fs-5 text-success text-decoration-none " href="./views/users/guide.php">Guía de usuario</a></li>
+            <li> <a class="fw-bold fs-5  text-success text-decoration-none " href="./views/users/contact.php">Contacto</a></li>
+        </ul>
+</footer>
 </body>
 
 </html>

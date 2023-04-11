@@ -16,7 +16,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(($_POST['name'] != '') || ($_POST['email'] != '') || ($_POST['password'] != '')){
                 $new_user = new LoginController();
                 $result = $new_user->addUser($_POST['name'], $_POST['email'], $_POST['password']);
-                
                 if(!$result){
                     $msg_register = "La cuenta de correo ya esta registada en el sistema";
                 }else{
@@ -92,6 +91,7 @@ echo
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
+                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="correo@correo.com" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>

@@ -39,11 +39,12 @@
                 <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
             </div>
             <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
-                <p class="m-0 text-center fw-bold fs-5 text-secondary">Correo no regitrado/Correo enviado</p>
+                <p class="m-0  mb-3 text-center fw-bold fs-5 text-secondary">Correo no regitrado/Correo enviado</p>
             </div>
-            <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="./login.php">Volver atras</a></p>
+            
             <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="btn btn-primary text-white border  p-1 fs-5 button">Enviar</button>
+            <p class="text-center m-0 mt-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="./login.php">Volver</a></p>
         </form>
     </main>
     <?php

@@ -346,7 +346,7 @@ class Users{
 				echo "Error en la creación del usuario." . $e->getMessage();
 			}
 		}else{
-			echo "El email " . $email . " ya esta registrado en la base de datos";
+			return false;
 		}
 		// $this->connection->closeConnection();
 	}

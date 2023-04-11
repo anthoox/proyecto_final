@@ -1,5 +1,6 @@
 <?php    
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/model/model.php';
+    $msg_register='';
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(!empty($_POST)){        
             //Confirmación de definicion de las variables 
@@ -8,14 +9,17 @@
 
                 $result = $newUser->createUser($_POST["name"], $_POST["email"], $_POST["password"]);
                 if($result){
-                    header('location:../login/login.php');
+                    // header('location:../login/login.php');
+                    $msg_register = "La cuenta de correo <span class='fs-5 fw-semibold text-primary'>" . $_POST["email"] . "</span> correctamente en el sistema.";
+                }else{
+                    $msg_register = "Ese correo electrónico <span class='fs-5 fw-semibold text-primary'>" . $_POST["email"] . "</span> ya se encuentra registrado en el sistema.";
                 }
-                // echo $_POST["name"];
             }
         } 
-    }   
-?>
-<!DOCTYPE html>
+    }
+    
+    echo'
+    <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -62,19 +66,23 @@
             <div class="mb-3">
                 <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
                 <input type="password" name="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña">
-            </div>
-            <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
-                <p class="m-0 text-center"><a class="fw-bold fs-5 text-secondary text-decoration-none " href="#">El correo ya esta registrado/Registrado<a></p>
-            </div>
+            </div>';
+            if($msg_register){
+                echo'
+                <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
+                    <p class="m-0 text-center text-secondary fs-5">' . $msg_register . '</p>
+                </div>';
+            }
+            echo'
             <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="../../index.php">Volver atras</a></p>
             <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="btn btn-secondary text-white border  p-1 fs-5 button">Registrar</button>
         </form>
-    </main>
-    <?php
+    </main>';
         //Carga del fichero footer.php
         require "../layout/footer.php";
-    ?>
+echo'
 </body>
 
-</html>
+</html>';
+?>
