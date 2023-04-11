@@ -401,7 +401,6 @@ class Users{
 	}
 
 	public function adminEditUser($idUser, $name, $email, $rol){
-			 // UPDATE users SET name = 'oo', email = 'oo@oo.com', rol = 2 WHERE id_user = 37
 		$sql = "UPDATE users SET name = ?, email = ?, rol = ? WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $name);
@@ -422,7 +421,30 @@ class Users{
 		}catch(PDOException $e){
 			echo "Error al realizar la modificación " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
+	}
+
+	public function userEditUser($idUser, $name, $photo){
+
+		$sql = "UPDATE users SET name = ?, photo = ? WHERE id_user = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $name);
+		$query->bindParam(2, $photo);
+		$query->bindParam(3, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows>=0){
+				return "probando";
+			}else{
+				return "Error al realizar la modificación";
+				// return false;
+			}
+			
+		}catch(PDOException $e){
+			echo "Error al realizar la modificación " . $e->getMessage();
+		}
+		// $this->connection->closeConnection();
 	}
 
 	/**Método para obtener los datos de un usuario */
@@ -432,7 +454,7 @@ class Users{
 		$query->bindParam(1, $email);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			if(!$result){
 				return false;
 			}else{

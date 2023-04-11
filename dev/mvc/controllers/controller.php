@@ -33,8 +33,8 @@ class LoginController{
         return $this->user->createUser($name, $email, $password);
     }
 
-    public function searchUser($atribute, $email){
-        return $this->user->getInfoUser($atribute, $email);
+    public function searchUser($atribute, $data){
+        return $this->user->getInfoUser($atribute, $data);
     }
 
     public function getTable($table, $text = ''){
@@ -45,7 +45,9 @@ class LoginController{
         return $this->user->adminEditUser($idUser, $name, $email, $rol);
     }
 
-   
+    public function user_edit_user($idUser, $name,$photo = ''){
+        return $this->user->userEditUser($idUser, $name, $photo);
+    }
 }
 
 class UserList{//UserController

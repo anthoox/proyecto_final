@@ -35,6 +35,8 @@
                     $_SESSION['user']['password'] = $result['password'];
                     $_SESSION['user']['email'] = $result['email'];
                     $_SESSION['user']['rol'] = $result['rol'];
+                    $_SESSION['user']['registration_date'] = $result['registration_date'];
+                    $_SESSION['user']['photo'] = $result['photo'];
                 }
             }
         }
