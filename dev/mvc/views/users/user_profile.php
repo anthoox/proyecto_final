@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 
-
+//Cosas para subir la imagen
 // // Obtener información del archivo subido
 // $nombreArchivo = $_FILES['imagen']['name']; // Nombre original del archivo
 // $tipoArchivo = $_FILES['imagen']['type']; // Tipo de archivo
