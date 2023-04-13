@@ -26,11 +26,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $result = $user_data->searchUser('id_user', $_GET['id']);
 
                     if(!$_SESSION['user_data']){
-                        $_GET['name'] = $result['name'];
-                        $_GET['email'] = $result['email'];
+                        $_GET['name'] = $result[0]['name'];
+                        $_GET['email'] = $result[0]['email'];
                     }else{
-                        $_SESSION['user_data']['name'] = $result['name'];
-                        $_SESSION['user_data']['name'] = $result['name'];
+                        $_SESSION['user_data']['name'] = $result[0]['name'];
+                        $_SESSION['user_data']['name'] = $result[0]['name'];
                     }
                 }
             }
@@ -132,6 +132,7 @@ if($_SESSION['user_data']==0){
         </main>
     </body>
     </html>';
+
 }else{
     $rol;
     if($_SESSION['user_data']['rol'] == 1){
@@ -227,6 +228,7 @@ if($_SESSION['user_data']==0){
         </main>
     </body>
     </html>';
+
     }
 }else{
     header('Content-Type: text/html; charset=utf-8');

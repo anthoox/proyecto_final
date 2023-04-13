@@ -129,7 +129,7 @@ echo
             $new_user = new LoginController();           
             $lists_user = new UserList();
             
-            $table = $new_user->getTable('users');
+            $users = $new_user->getTable('users');
             echo
             '<h2 class="mt-3 text-success title title__h2 fs-2 fw-bolder ">
             Usuarios:
@@ -150,23 +150,23 @@ echo
                 <tbody class>';
                 $rol;
                 $lists;
-                for($i = 0; $i<(sizeof($table)); $i++){
+                for($i = 0; $i<(sizeof($users)); $i++){
                     echo
                     '<tr>
-                    <th scope="row">'.$table[$i]['id_user'].'</th>
-                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['name'].'</a></td>
-                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['email'].'</a></td>
-                    <td><a href="edit_user.php?id=' . $table[$i]['id_user'] . '&name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$table[$i]['registration_date'].'</a></td>';
-                    if($table[$i]['rol'] == 1){
+                    <th scope="row">'.$users[$i]['id_user'].'</th>
+                    <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['name'].'</a></td>
+                    <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['email'].'</a></td>
+                    <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['registration_date'].'</a></td>';
+                    if($users[$i]['rol'] == 1){
                         $rol = "admin";
                         $lists = '--';
-                    }else if($table[$i]['rol'] == 2){
+                    }else if($users[$i]['rol'] == 2){
                         $rol = "usuario";
-                        $lists = $lists_user->listsUser($table[$i]['name']);
+                        $lists = $lists_user->listsUser($users[$i]['name']);
                     }
                     echo
-                    '<td><a href="edit_user.php?name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $rol . '</a></td>
-                    <td><a href="edit_user.php?name=' . $table[$i]['name'] . '&email=' . $table[$i]['email'] . '&rol=' . $table[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $lists. '</a></td>
+                    '<td><a href="edit_user.php?name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $rol . '</a></td>
+                    <td><a href="edit_user.php?name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">' . $lists. '</a></td>
                     </tr>
                     ';
                 }
