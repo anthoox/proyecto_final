@@ -2,41 +2,88 @@
 session_start();
 
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
-
+$prueba = '';
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 1){
 
-$msg_edit = '';
-$error_edit = '';
-$result = '';
+    $msg_edit = '';
+    $error_edit = '';
+    $result = '';
+    $rola = '';
 
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(!empty($_POST)){        
-        if(isset($_POST['name']) && isset($_POST['email'])) {
-            if(($_POST['name'] != '') || ($_POST['email'] != '')){
-                $user_data = new LoginController();
-                $result = $user_data->admin_edit_user($_GET['id'], $_POST['name'], $_POST['email'], $_GET['rol']);
-                if(!$result){
-                    $error_edit = 1;
-                    $msg_edit = "No se ha podido realizar la edición";
-                }else{
-                    $error_edit = 0;
-                    $msg_edit = "Edición realizada con éxito";
-                    $result = $user_data->searchUser('id_user', $_GET['id']);
-
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(!empty($_POST)){        
+            if(isset($_POST['name']) && isset($_POST['email'])) {
+                if(($_POST['name'] != '') || ($_POST['email'] != '')){
+                    $user_data = new LoginController();
+                    $rol;
                     if(!$_SESSION['user_data']){
-                        $_GET['name'] = $result[0]['name'];
-                        $_GET['email'] = $result[0]['email'];
+                        $prueba = "No existe";
+                        if($_POST['role'] == "Seleccionar el rol"){
+                        
+                            $rol = $_GET['rol'];
+                        }else{
+                            $result = $user_data->searchUser('id_user', $_GET['id']);                    
+                            if($result[0]['rol'] == $_POST['role']){
+                                $rol = $result[0]['rol'];
+                            }else{
+                                $rol = $_POST['role'];
+                            }
+                        }
+                        $result = $user_data->admin_edit_user($_GET['id'], $_POST['name'], $_POST['email'], $rol);
+                        if(!$result){
+                            $error_edit = 1;
+                            $msg_edit = "No se ha podido realizar la edición";
+                        }else{
+                            $error_edit = 0;
+                            $msg_edit = "Edición realizada con éxito";
+                            $result = $user_data->searchUser('id_user', $_GET['id']);
+    
+                            if(!$_SESSION['user_data']){
+                                $_GET['name'] = $result[0]['name'];
+                                $_GET['email'] = $result[0]['email'];
+                                $_GET['rol'] = $result[0]['rol'];
+                            }else{
+                                $_SESSION['user_data']['name'] = $result[0]['name'];
+                                $_SESSION['user_data']['email'] = $result[0]['name'];
+                                
+                            }
+                        }
                     }else{
-                        $_SESSION['user_data']['name'] = $result[0]['name'];
-                        $_SESSION['user_data']['name'] = $result[0]['name'];
+                        $prueba= $_SESSION['user_data'];
+                        if($_POST['role'] == "Seleccionar el rol"){
+                        
+                            $rol = $_SESSION['user_data'][0]['rol'];
+                        }else{
+                            $result = $user_data->searchUser('id_user', $_SESSION['user_data'][0]['id_user']);                    
+                            if($result[0]['rol'] == $_POST['role']){
+                                $rol = $result[0]['rol'];
+                            }else{
+                                $rol = $_POST['role'];
+                            }
+                        }
+                        $result = $user_data->admin_edit_user($_SESSION['user_data'][0]['id_user'], $_POST['name'], $_POST['email'], $rol);
+                        if(!$result){
+                            $error_edit = 1;
+                            $msg_edit = "No se ha podido realizar la edición";
+                        }else{
+                            $error_edit = 0;
+                            $msg_edit = "Edición realizada con éxito";
+                            $result = $user_data->searchUser('id_user', $_SESSION['user_data'][0]['id_user']);
+    
+              
+                                $_SESSION['user_data'][0]['name'] = $result[0]['name'];
+                                $_SESSION['user_data'][0]['email'] = $result[0]['email'];
+                                $_SESSION['user_data'][0]['rol'] = $rol;
+                                
+                            
+                        }
                     }
+                    
                 }
             }
         }
     }
-}
 
 
 if($_SESSION['user_data']==0){
@@ -100,10 +147,10 @@ if($_SESSION['user_data']==0){
                     </div>
                     <div >
                     <label for="" class=" form-label text-muted text-decoration-none fs-5 fw-semibold">Rol</label>
-                    <select class="form-select fs-5 fw-semibold p-2" aria-label="Default select example">
+                    <select name="role" class="form-select fs-5 fw-semibold p-2" aria-label="Default select example">
                         <option class="fs-5 fw-semibold text-muted" selected>Seleccionar el rol</option>
-                        <option class="fs-5 fw-semibold" value="1">Usuario</option>
-                        <option class="fs-5 fw-semibold" value="2">Administrador</option>
+                        <option class="fs-5 fw-semibold" value="2">Usuario</option>
+                        <option class="fs-5 fw-semibold" value="1">Administrador</option>
                     </select>';
                     if($error_edit != ''){
                         if($error_edit == 1){
@@ -126,18 +173,19 @@ if($_SESSION['user_data']==0){
                         <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Vaciar papelera</button>
                         <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar usuario</button>
                     </div>
-                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>
-                    
+                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>                    
                 </form>
         </main>
     </body>
     </html>';
 
+
+    ;
 }else{
     $rol;
-    if($_SESSION['user_data']['rol'] == 1){
+    if($_SESSION['user_data'][0]['rol'] == 1){
         $rol = "administrador";
-    }else if($_SESSION['user_data']['rol'] == 2){
+    }else if($_SESSION['user_data'][0]['rol'] == 2){
         $rol = "usuario";
     }
 
@@ -184,21 +232,21 @@ if($_SESSION['user_data']==0){
                 </h2>
                 
             
-            <form class=" d-flex flex-column justify-content-center  form">
+            <form method="POST"class=" d-flex flex-column justify-content-center  form">
                 <div class="mb-3">
                     <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-                    <input type="text" class="form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$_SESSION['user_data']['name'].'" name="name">
+                    <input type="text" class="form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$_SESSION['user_data'][0]['name'].'" name="name">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
-                    <input type="email" class="form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$_SESSION['user_data']['email'].'" name="email">
+                    <input type="email" class="form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$_SESSION['user_data'][0]['email'].'" name="email">
                 </div>
                 <div >
-                <label for="" class=" form-label text-muted text-decoration-none fs-5 fw-semibold">Rol</label>
-                <select class="form-select fs-5 fw-semibold p-2" aria-label="Default select example">
+                <label for="role" class=" form-label text-muted text-decoration-none fs-5 fw-semibold">Rol</label>
+                <select id="role" name="role" class="form-select fs-5 fw-semibold p-2" aria-label="Default select example">
                     <option class="fs-5 fw-semibold text-muted" selected>Seleccionar el rol</option>
-                    <option class="fs-5 fw-semibold" value="1">Usuario</option>
-                    <option class="fs-5 fw-semibold" value="2">Administrador</option>
+                    <option class="fs-5 fw-semibold" value="2">Usuario</option>
+                    <option class="fs-5 fw-semibold" value="1">Administrador</option>
                 </select>
                 ';
                 if($error_edit != ''){
@@ -222,8 +270,7 @@ if($_SESSION['user_data']==0){
                     <button class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Vaciar papelera</button>
                     <button class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar usuario</button>
                 </div>
-                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>
-                
+                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>                
             </form>
         </main>
     </body>
