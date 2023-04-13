@@ -511,6 +511,42 @@ class Users{
 		}
 		
 	}
+
+	public function totalUser(){
+		$sql = "SELECT COUNT(*) as total FROM users";
+		$query = $this->connection->getConnection()->prepare($sql);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			if($result){
+				$rows = $result['total'];
+				return $rows;
+			}else{
+				return false;
+			}
+		}catch(PDOException $e){
+			echo "Error al obtener valores de la tabla  " . $e->getMessage();
+		}
+	}
+
+	public function limitListUsers($offset, $users_per_page){
+		$sql = "SELECT * FROM users LIMIT ?, ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $offset, PDO::PARAM_INT);
+		$query->bindParam(2, $users_per_page,PDO::PARAM_INT);
+		try{
+			$query->execute();
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
+			if($result){
+
+				return $result;
+			}else{
+				return false;
+			}
+		}catch(PDOException $e){
+			echo "Error " . $e->getMessage();
+		}
+	}
 }
 // $prueba2 = new Users();
 // $prueba2->deleteUser(5);

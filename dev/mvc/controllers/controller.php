@@ -48,6 +48,14 @@ class LoginController{
     public function user_edit_user($idUser, $name,$photo = ''){
         return $this->user->userEditUser($idUser, $name, $photo);
     }
+
+    public function usersList(){
+        return $this->user->totalUser();
+    }
+
+    public function limitUsers($offset, $users_per_page){
+        return $this->user->limitListUsers($offset, $users_per_page);
+    }
 }
 
 class UserList{//UserController

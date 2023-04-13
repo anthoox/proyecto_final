@@ -1,7 +1,7 @@
 <?php
 //posibilidad de añadir un hesk
 echo'
-<section class="border bg-white menu prueasbe">
+<section class="border bg-white menu">
     <ul class="list-group list-group-flush pt-1">
         <li class="list-group-item list-group-item-action"><a href="#" class="fs-5 text-decoration-none text-black">Hesk</a></li>
         <li class="list-group-item list-group-item-action"><a href="../../controllers/exit.php" class="fs-5 text-decoration-none text-black">Cerra sesión</a></li>
