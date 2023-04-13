@@ -16,54 +16,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($_POST)){        
         if(isset($_POST['name'])) {
             $validator = new LoginController();      
-
                 $result = $validator->user_edit_user($_SESSION['user']['id_user'], $_POST['name'], $_POST['photo']);
                 if(!$result){                    
-                    // $_SESSION['error_message']['editUserByUser'] = "No se han podido efectuar los cambios.";
                     $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0">No se ha podido modificar.</p>';
                 }else{
                     $name = $validator->searchUser('email', $_SESSION['user']['email']);
                     $name = $name[0]['name'];
+                    $_SESSION['user']['name'] = $name;
                     $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0 text-secondary">Modificación realizada.</p>';
                 }
         }
     }
 }
 
-//Cosas para subir la imagen
-// // Obtener información del archivo subido
-// $nombreArchivo = $_FILES['imagen']['name']; // Nombre original del archivo
-// $tipoArchivo = $_FILES['imagen']['type']; // Tipo de archivo
-// $tamanoArchivo = $_FILES['imagen']['size']; // Tamaño del archivo
-// $rutaArchivoTemp = $_FILES['imagen']['tmp_name']; // Ruta temporal del archivo
-
-// // Carpeta de destino para guardar la imagen
-// $carpetaDestino = '/ruta/de/la/carpeta/destino/';
-
-// // Generar un nombre único para el archivo
-// $nuevoNombreArchivo = uniqid() . '_' . $nombreArchivo;
-
-// // Mover el archivo a la carpeta de destino
-// if (move_uploaded_file($rutaArchivoTemp, $carpetaDestino . $nuevoNombreArchivo)) {
-//     // El archivo se ha movido con éxito, ahora puedes guardar la ruta en la base de datos
-//     // y realizar otras acciones necesarias
-//     $rutaImagen = $carpetaDestino . $nuevoNombreArchivo;
-
-//     // Aquí puedes guardar la ruta de la imagen en la base de datos
-//     // utilizando una consulta SQL con PDO u otro método adecuado
-
-//     // Ejemplo de consulta SQL con PDO
-//     $sql = "INSERT INTO tabla (nombre, ruta_imagen) VALUES (?, ?)";
-//     $stmt = $pdo->prepare($sql);
-//     $stmt->bindValue(1, $nombre, PDO::PARAM_STR);
-//     $stmt->bindValue(2, $rutaImagen, PDO::PARAM_STR);
-//     $stmt->execute();
-
-//     // Realizar otras acciones necesarias después de guardar la imagen
-// } else {
-//     // Ocurrió un error al mover el archivo
-//     // Manejar el error apropiadamente
-// }
 
 $registration_date = date('d-m-Y',strtotime($_SESSION['user']['registration_date']));
 if($_SESSION['user']['photo']){
