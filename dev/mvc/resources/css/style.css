@@ -184,8 +184,10 @@ border-color: rgb(166, 74, 238) !important;
 .menu{
     z-index: 2000;
     position: absolute;
-    top: 30px;
+    top: 0px;
     left: 0px;
+    transition: all 500ms;
+    transform: translate(-500px)
 }
 .menu>ul>li{
     
@@ -198,4 +200,8 @@ border-color: rgb(166, 74, 238) !important;
 
 .menu>ul>li>img{
     width: 80px;
+}
+/* estilo para desplazar el menu */
+.menu__position--0{
+    transform: translate(0px);
 }

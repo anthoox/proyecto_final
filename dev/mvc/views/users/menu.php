@@ -14,7 +14,7 @@ echo'
         <li class="list-group-item list-group-item-action"><a href="./../users/guide.php" class="fs-5 text-decoration-none text-black">Guía de usuario</a></li>
         <li class="list-group-item list-group-item-action"><a href="./../users/guide.php" class="fs-5 text-decoration-none text-black">FAQ</a></li>
         <li class="list-group-item list-group-item-action"><a href="../../controllers/exit.php" class="fs-5 text-decoration-none text-black">Cerrar sesión</a></li>
-        <li class="list-group-item list-group-item-action d-flex justify-content-center align-items-center"><i class=" fs-4 la-1x las la-times"></i></li>
+        <li class="list-group-item list-group-item-action d-flex justify-content-center align-items-center"><i class="fs-4 la-1x las la-times icon__menu--close"></i></li>
     </ul>
 </section>';
 ?>

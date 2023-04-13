@@ -177,6 +177,7 @@ echo
     require "menu.php";
     echo'
 </body>
+<script src="http://localhost/proyecto/dev/mvc/resources/js/menu.js"></script>
 
 </html>';
 
