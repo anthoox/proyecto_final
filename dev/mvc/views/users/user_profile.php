@@ -108,7 +108,7 @@ echo'
     </header>
     <main class="container-xxl d-flex flex-column align-items-center pt-4 main__user">
         <figure class=" figure">
-            <img src="http://localhost/Proyecto/dev/mvc/resources/img/'.$photo.'" class="border border-primary border-2 figure-img img-fluid rounded rounded-circle" alt="...">
+            <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="border border-primary border-2 figure-img img-fluid rounded rounded-circle" alt="...">
         </figure>
         <form method="POST" class=" d-flex flex-column justify-content-center fw-semibold" >
             <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de usuario</label>
