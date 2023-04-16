@@ -1,6 +1,6 @@
 <?php
 echo'
-<section class="border bg-white ps-2 pe-2 menu ">
+<section class="border bg-white ps-2 pe-2 shadow menu ">
 
     <ul class="list-group list-group-flush">
         <li class="d-flex flex-column justify-content-center align-items-center list-group-item list-group-item-action">

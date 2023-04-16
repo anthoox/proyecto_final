@@ -5,6 +5,21 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
+
+        // $prueba = '';
+
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            if(!empty($_POST)){        
+                if(isset($_POST['nameList'])) {
+                    $list = new UserList();
+                    $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
+                    // if(!$result){                    
+                    //     $prueba = '<p class="text-center fs-5 text-secondary desaparece">Lista no añadida</p>';
+                    // }
+                }
+            }
+        }
+        
         echo'
         <!DOCTYPE html>
         <html lang="es">
@@ -56,19 +71,16 @@ if($_SESSION['user']){
             <ul class="p-0 m-0">';
         
             require_once '../layout/lists.php';
-
+            // echo $prueba;
         echo'
             </ul>
         </section>
     
-        <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
-        <i class="la-2x las la-plus-circle"></i></button>
-        <form id="myform" method="post" action="tu-pagina.php">
-            <input type="hidden" name="variable1" value="valor1">
-            <input type="hidden" name="variable2" value="valor2">
-        </form>
+        <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
+        <i class="la-ms las la-plus"></i>Lista</button>
 </main>';
 require "menu.php";
+require "../layout/addList.php";
 echo'    
 </body>
 

@@ -21,8 +21,6 @@ class Lists {
 		try{
 			$query->execute();
 			$result = $query->fetch(PDO::FETCH_NUM);
-			echo "comprobanción de lista lanzada <br>";
-			// $this->connection->closeConnection();
 			return $result;
 		}catch(PDOException $e){
 			echo "Erro en la comprobación del email. " . $e->getMessage();
@@ -44,14 +42,19 @@ class Lists {
 			$query->bindParam(4, $modif_date);
 			try{
 				$query->execute();
-				echo "Lista añadida correctamente a la base de datos";
+				// $rows = $query->rowCount();
+				// if($rows > 0){
+					return true;
+				// }else{
+					// return false;
+				// }				
 			}catch(PDOException $e){
 				echo "Error al añadir la lista a la base de datos" . $e->getMessage();
+				return false;
 			}
 		}else{
-			echo "La lista " .  $list_name . " ya existe.";
+			return false;
 		}
-		$this->connection->closeConnection();
 	}
 
 	/**Método para borrar una lista o todas las listas de un usuario dependiendo del atributo*/
@@ -284,7 +287,8 @@ class Lists {
 
 // print_r($prueba2->getAllLists('id_user', 5));
 // print_r($prueba2->getInfoList(3));
-// $prueba2->emptyTrash(4);
+// $prueba2 = new Lists();
+// $prueba2->createList(4, "aab");
 // print_r($prueba2->getAllLists('id_user', 4));
 // $prueba2->modifList(3, 'list_name', 'lista de prueba');
 

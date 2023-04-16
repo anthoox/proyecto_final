@@ -70,6 +70,10 @@ class UserList{//UserController
         $this->user = new Users();
     }
 
+    public function addList($idUser, $list_name){
+        return $this->lists->createList($idUser, $list_name);
+    }
+
     public function toList($idUser){
         return $this->lists->getActiveLists($idUser);
     }
