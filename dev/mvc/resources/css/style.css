@@ -152,12 +152,7 @@ body{
 border-color: rgb(166, 74, 238) !important;
 /* background-color: rgb(255, 255, 255 ); */
     cursor: pointer;
-
-
-
 }
-
-
 
 .parraf__contact--justify{
     text-align: justify;
@@ -183,7 +178,7 @@ border-color: rgb(166, 74, 238) !important;
 
 .menu{
     z-index: 2000;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     transition: all 500ms;
@@ -205,3 +200,6 @@ border-color: rgb(166, 74, 238) !important;
 .menu__position--0{
     transform: translate(0px);
 }
+
+
+

@@ -13,7 +13,7 @@ function format_time($time) {
         }
 
         if ($minuts > 0) {
-            $final_time .= ' ' . $minuts . 'min';
+            $final_time .= ' ' . $minuts . 'm';
         }
 
         if ($final_time == '') {

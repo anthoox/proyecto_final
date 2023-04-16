@@ -1,4 +1,3 @@
-console.log("hola");
 //boton:
 btnMenu = document.querySelector('.icon__menu--user');
 btnMenu.addEventListener('click', showMenu, false);

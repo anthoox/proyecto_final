@@ -750,10 +750,10 @@ class Items{
 	}
 
 	//Obtiene la suma total de todos los tiempos total_time de cada item de la lista
-	public function totalItemsTime(){
-		$sql = "SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(total_time))) FROM items";
+	public function totalItemsTime($idList){
+		$sql = "SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(total_time))) FROM items where id_list= ?";
 		$query = $this->connection->getConnection()->prepare($sql);
-		// $query->bindParam(1, $idUser);
+		$query->bindParam(1, $idList);
 		try{
 			$query->execute();
 			$rows = $query->rowCount();

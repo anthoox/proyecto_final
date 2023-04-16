@@ -121,4 +121,8 @@ class UserItems{
         return $this->items->completedItems($idUser);
     }
 
+    public function timeItems($idList){
+        return $this->items->totalItemsTime($idList);
+    }
+
 }

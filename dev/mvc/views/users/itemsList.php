@@ -35,11 +35,11 @@ if($_SESSION['user']){
 
         require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
 
-        $items = new Items();     
+        $items = new Useritems();     
 
-        $itemsList = $items->getItems('id_list',$_GET['id_list']);
-        $items_total_price = $items->totalItemsTime();
-        $items_total_price = format_time($items_total_price[0]);
+        $itemsList = $items->itemsUser('id_list',$_GET['id_list']);
+        $items_total_time = $items->timeItems($_GET['id_list']);
+        $items_total_time = format_time($items_total_time[0]);
         echo'
         <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
@@ -53,7 +53,7 @@ if($_SESSION['user']){
         <section class="p-0 m-0"> ';
         if($itemsList){
         //Precio total para la cabecera
-        $totalP = $items->sumPriceItems(3);
+        $totalP = $items->itemsPrice($_GET['id_list']);
         if($totalP[0]>0){
             $totalP = $totalP[0];
             $totalP = round($totalP, 3) . "€";
@@ -69,7 +69,7 @@ if($_SESSION['user']){
               </div>
               
               <div class="carousel-item " >
-                <p class="p-0 m-0 fw-semibold fs-5 text-center">Tiempo empleado: '.$items_total_price .'</p>
+                <p class="p-0 m-0 fw-semibold fs-5 text-center">Tiempo empleado: '.$items_total_time .'</p>
                 
               </div>
             </div>
