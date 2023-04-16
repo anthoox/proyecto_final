@@ -34,30 +34,29 @@ if($_SESSION['user']){
         <body class="d-flex flex-column">';
 
         require "../layout/header.php";
+
         echo'
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
-        <section class="d-flex align-items-center justify-content-between">
-            <button class="btn fs-6 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+        <form class="d-flex align-items-center justify-content-between" id="miForm">
+            <button id="btn-1" class="btn fs-6 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Mis listas
             </button>
-            <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-2" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Próximas
             </button>
-            <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-3" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Pendientes
             </button>
-            <button class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
+            <button id="btn-4" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
                 Completas
             </button>
-        </section>   
+        </form>   
 
         <section class="p-0 m-0">
             <ul class="p-0 m-0">';
         
-                require_once '../layout/lists.php';
-                // require_once '../layout/upcoming.php';
-                // require_once '../layout/pending.php';
-                // require_once '../layout/completed.php';
+            require_once '../layout/lists.php';
+
         echo'
             </ul>
         </section>
@@ -76,6 +75,7 @@ echo'
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <script src="http://localhost/proyecto/dev/mvc/resources/js/menu.js"></script>
+<script src="http://localhost/proyecto/dev/mvc/resources/js/index.js"></script>
 </html>';
     }else{
         header('Content-Type: text/html; charset=utf-8');
