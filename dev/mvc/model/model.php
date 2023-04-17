@@ -42,12 +42,12 @@ class Lists {
 			$query->bindParam(4, $modif_date);
 			try{
 				$query->execute();
-				// $rows = $query->rowCount();
-				// if($rows > 0){
+				$rows = $query->rowCount();
+				if($rows > 0){
 					return true;
-				// }else{
-					// return false;
-				// }				
+				}else{
+					return false;
+				}				
 			}catch(PDOException $e){
 				echo "Error al añadir la lista a la base de datos" . $e->getMessage();
 				return false;
@@ -102,11 +102,17 @@ class Lists {
 		$query->bindParam(2, $idList);
 		try{
 			$query->execute();
-			echo "modificación realizada con éxito";
+			$rows = $query->rowCount();
+			if($rows > 0){
+				return true;
+			}else{
+				return false;
+			}				
 		}catch(PDOException $e){
-			echo "Error al realizar la modificación " . $e->getMessage();
+			echo "Error al añadir la lista a la base de datos" . $e->getMessage();
+			return false;
 		}
-		$this->connection->closeConnection();
+		
 	}
 		
 
@@ -695,7 +701,7 @@ class Items{
 				$result = $query->fetchAll(PDO::FETCH_ASSOC);
 				return $result;
 			}else{
-				echo "No tiene items completos";
+				return false;
 			}
 			
 		}catch(PDOException $e){

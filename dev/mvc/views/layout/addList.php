@@ -9,4 +9,4 @@
         </button>
         <i class="fs-4 la-1x las la-times icon__addList--close"></i>
     </form>
-<section> 
+</section> 

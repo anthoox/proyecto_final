@@ -59,7 +59,6 @@ class LoginController{
 }
 
 class UserList{//UserController
-    private $pageTitle;
     private $lists;
     private $user;
     private $items;
@@ -86,6 +85,9 @@ class UserList{//UserController
         return $this->lists->trashLists($idUser);
     }
 
+    public function editList($idList, $atribute, $data){
+        return $this->lists->modifList($idList, $atribute, $data);
+    }
 }
 
 class UserItems{

@@ -6,8 +6,7 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
 
-        // $prueba = '';
-
+        //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
@@ -19,6 +18,18 @@ if($_SESSION['user']){
                 }
             }
         }
+
+        // if($_SERVER["REQUEST_METHOD"] == "POST"){
+        //     if(!empty($_POST)){        
+        //         if(isset($_POST['newNameList'])) {
+        //             $list = new UserList();
+        //             $result = $list->editList($user_list[$i]['id_list'], 'list_name', $_POST["newNameList"]);
+        //             // if(!$result){                    
+        //             //     $prueba = '<p class="text-center fs-5 text-secondary desaparece">Lista no añadida</p>';
+        //             // }
+        //         }
+        //     }
+        // }
         
         echo'
         <!DOCTYPE html>
@@ -71,16 +82,16 @@ if($_SESSION['user']){
             <ul class="p-0 m-0">';
         
             require_once '../layout/lists.php';
-            // echo $prueba;
         echo'
             </ul>
         </section>
     
         <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
-        <i class="la-ms las la-plus"></i>Lista</button>
+        <i class="me-1 la-ms las la-plus"></i>Lista</button>
 </main>';
 require "menu.php";
 require "../layout/addList.php";
+require "../layout/editList.php";
 echo'    
 </body>
 
