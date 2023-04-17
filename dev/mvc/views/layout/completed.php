@@ -45,11 +45,11 @@
                 <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end">
                     <div>
                     
-            <span class="fw-semibold ms-1 mb-2 m-0 p-0 fs-6">' . $item_price . '</span>
-                    <span class="fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
+            <span class="text-muted fw-semibold ms-1 mb-2 m-0 p-0 fs-6">' . $item_price . '</span>
+                    <span class="text-muted  fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
                     </div>
                     <div class="w-100 ul__li__div--scroll">
-                        <p class="p-0 m-0 fs-4 fw-semibold text-muted" id="textToStrike">' . $lists_items[$i]['item_name'] . '</p>
+                        <p class="text-decoration-line-through p-0 m-0 fs-4 fw-semibold text-muted" id="textToStrike">' . $lists_items[$i]['item_name'] . '</p>
                     </div>
                     
                     <div class="d-flex align-items-center  li__div__icon">';

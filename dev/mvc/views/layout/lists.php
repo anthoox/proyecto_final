@@ -7,7 +7,38 @@
     $user_list = $user_list->toList($_SESSION['user']['id_user']);
   
     $user_items = new UserItems();
+  
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+      
+        // Realizar la validación de los datos recibidos
+        if (!empty($_POST['id_list']) && !empty($_POST['newNameList'])) {
+            $newName = new UserList();
+            $result = $newName->editList($_POST['id_list'], 'list_name',$_POST['newNameList'] );
+            if($result){
+                
+                echo'<script>
+          console.log("cambiado");
+          </script>';
+          header("Location: " . $_SERVER['REQUEST_URI']);
+                exit();
+            }else{
+                
+                echo'<script>
+          console.log("no cambiado");
+          </script>';
+          echo $_POST['newNameList'];
+          echo $_POST['id_list'];
+            }
+    
+        } else {
+
+          echo'<script>
+          console.log("no");
+          </script>';
+        }
+      }
     //Si tiene listas:
     if($user_list){        
         for($i = 0; $i<sizeof($user_list); $i++){
@@ -41,7 +72,7 @@
 
                         <form action="../users/itemsList.php" method="post">
                           <input type="hidden" name="id_list" value="' . $user_list[$i]["id_list"] . '">
-                          <input class="btn btn-link fs-4 fw-semibold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
+                          <input class=" btn btn-link fs-4 fw-semibold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
                         </form>
                         
 

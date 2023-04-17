@@ -37,8 +37,35 @@ function showAddList(){
 }
 
 
+
+var listname;
+
+// Obtención todos los elementos con la clase 'icon__editList'
+var editIcons = document.querySelectorAll('.icon__editList');
+
+// Agrega un evento de clic a cada icono de edición
+for (var i = 0; i < editIcons.length; i++) {
+  editIcons[i].addEventListener('click', function(event) {
+
+    var parentElement = event.target.parentElement;
+    parentElement = parentElement.parentElement;
+    parentElement = parentElement.parentElement;
+    var broElement = parentElement.previousElementSibling;
+    var sonElement = broElement.firstElementChild;
+    sonElement = sonElement.firstElementChild;
+    sonElement = sonElement.firstElementChild;
+    var secondChild = sonElement.children[0].value
+
+    
+    listname = secondChild
+    console.log(listname);
+
+  });
+}
+
+
 //Boton editar lista - llama una ventana para editarla
-iconEdit = document.querySelectorAll('.icon__editList');
+var iconEdit = document.querySelectorAll('.icon__editList');
 for(let i = 0; i<iconEdit.length; i++){
     iconEdit[i].addEventListener('click', showEditList, false);
 }
@@ -46,34 +73,14 @@ editList = document.querySelector('.section__editList');
 editList.style.transition='all 500ms';
 iconCloseEdit = document.querySelector('.icon__editList--close');
 iconCloseEdit.addEventListener('click', showEditList, false);
-
+//Funcion que muestra el formulario para cambio de nombre
 function showEditList(){
+    prueba = document.querySelector('#editNameInput');
+document.querySelector('#editNameInput').value=listname;
+console.log(prueba)
     if(editList.classList.contains('reset__position--0')){
         editList.classList.remove('reset__position--0');
     }else{
         editList.classList.add('reset__position--0');
     }
-
 }
-
-function borrarLista(list_name) {
-    // Realizar una solicitud AJAX al controlador PHP para borrar la lista sin recargar la página
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php', true); // Reemplaza 'controlador.php' con la ruta correcta a tu controlador PHP
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Actualizar la página o realizar cualquier otra acción después de borrar la lista
-                alert('Lista borrada exitosamente!');
-                location.reload(); // Recargar la página para actualizar la lista
-            } else {
-                // Manejar errores en la solicitud AJAX si es necesario
-                console.error('Error al borrar la lista:', xhr.statusText);
-            }
-        }
-        ///probar a obtener el texto con javascript para la funcioón.
-    };
-    xhr.send('list_name=' + list_name); // Enviar el id_list como datos en la solicitud
-}
-

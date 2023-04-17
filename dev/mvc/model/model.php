@@ -14,10 +14,11 @@ class Lists {
 	}
 
 	/**Método para comprobar si existe la cuenta de correo al darse de alta*/
-	public function existList($data){
-		$sql = "SELECT list_name FROM " . $this->table . " WHERE list_name = ?";
+	public function existList($data, $idUser){
+		$sql = "SELECT list_name FROM " . $this->table . " WHERE list_name = ? and id_user= ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $data);
+		$query->bindParam(2, $idUser);
 		try{
 			$query->execute();
 			$result = $query->fetch(PDO::FETCH_NUM);
@@ -30,7 +31,7 @@ class Lists {
 	
 	/**Método para añadir una lista nueva a la base de datos*/
 	public function createList($idUser, $list_name){
-		$result = $this->existList($list_name);
+		$result = $this->existList($list_name, $idUser,);
 		if(!$result){
 			$creation_date = date('Y-m-d H:i:s');
 			$modif_date = $creation_date;

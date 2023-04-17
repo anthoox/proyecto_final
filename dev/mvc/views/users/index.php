@@ -5,7 +5,7 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
-
+        $idList='';
         //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
@@ -18,18 +18,8 @@ if($_SESSION['user']){
                 }
             }
         }
-
-        // if($_SERVER["REQUEST_METHOD"] == "POST"){
-        //     if(!empty($_POST)){        
-        //         if(isset($_POST['newNameList'])) {
-        //             $list = new UserList();
-        //             $result = $list->editList($user_list[$i]['id_list'], 'list_name', $_POST["newNameList"]);
-        //             // if(!$result){                    
-        //             //     $prueba = '<p class="text-center fs-5 text-secondary desaparece">Lista no añadida</p>';
-        //             // }
-        //         }
-        //     }
-        // }
+        
+    
         
         echo'
         <!DOCTYPE html>
