@@ -251,7 +251,7 @@ class Lists {
 		$query->bindParam(1, $idList);
 		try{
 			$query->execute();
-			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			$rows = $query->rowCount();
 			if($rows > 0){
 				// echo "Si tiene listas";
