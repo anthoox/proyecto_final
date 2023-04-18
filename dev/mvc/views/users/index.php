@@ -82,6 +82,7 @@ if($_SESSION['user']){
 require "menu.php";
 require "../layout/addList.php";
 require "../layout/editList.php";
+require "../layout/trashList.php";
 echo'    
 </body>
 

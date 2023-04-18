@@ -9,7 +9,7 @@ if($_SESSION['user']){
         //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
-                if(isset($_POST['nameList'])) {
+                if(isset($_POST['nameList']) or ($_POST['nameList']!='')) {
                     $list = new UserList();
                     $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
                     // if(!$result){                    
@@ -18,7 +18,7 @@ if($_SESSION['user']){
                 }
             }
         }
-        
+
         echo'
         <!DOCTYPE html>
         <html lang="es">

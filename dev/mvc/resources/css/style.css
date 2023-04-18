@@ -246,6 +246,33 @@ border-color: rgb(166, 74, 238) !important;
 }
 /* ------------------------------------ */
 
+
+
+/* CONFIGURACIÓN SECTION DELLIST */
+.section__trashList{
+    z-index: 2000;
+    position: fixed;
+    bottom: 0px;
+    height: 250px;
+    width: 100%;
+    transform: translate(0, 500%)
+}
+.section__trashList>form{
+    height: 100%;
+    max-width: 400px;
+    /* cambiar anchos con bootstrap */
+}
+.section__trashList>form>div{
+    width: 90%;
+    /* transform: translate(-500px) */
+}
+.section__trashList>form>.btnSave{
+    height: 40px;
+    width: 80px;
+    /* transform: translate(-500px) */
+}
+/* ------------------------------------ */
+
 .reset__position--0{
     transform: translate(0,0);
     /*esto debe ir al final para que funcione*/

@@ -1,4 +1,3 @@
-
 <section class="bg-white section__editList">   
     <form method="POST" class="d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
         <div class="mb-3">
@@ -12,4 +11,4 @@
         </button>
         <i class="fs-4 la-1x las la-times icon__editList--close"></i>
     </form>
-<section> 
+</section> 

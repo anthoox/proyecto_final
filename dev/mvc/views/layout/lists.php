@@ -17,27 +17,21 @@
             $newName = new UserList();
             $result = $newName->editList($_POST['id_list'], 'list_name',$_POST['newNameList'] );
             if($result){
-                
-                echo'<script>
-          console.log("cambiado");
-          </script>';
-          header("Location: " . $_SERVER['REQUEST_URI']);
+                header("Location: " . $_SERVER['REQUEST_URI']);
                 exit();
-            }else{
-                
-                echo'<script>
-          console.log("no cambiado");
-          </script>';
-          echo $_POST['newNameList'];
-          echo $_POST['id_list'];
-            }
-    
-        } else {
+            }    
+        } 
 
-          echo'<script>
-          console.log("no");
-          </script>';
-        }
+
+        if(isset($_POST['accept'])) {
+            // Llamar a la función en el controlador para borrar el elemento
+            $newName = new UserList();
+            $result = $newName->editList($_POST['id_list'], 'trash',1 );
+            if($result){
+                header("Location: " . $_SERVER['REQUEST_URI']);
+                exit();
+            }   
+        } 
       }
     //Si tiene listas:
     if($user_list){        
@@ -86,8 +80,8 @@
     
                 <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
                     <div class="d-flex ">
-                        <div class="me-3"><i class="la-2x las la-pen icon__editList"></i></div> 
-                        <div><i class="la-2x las la-trash-alt"></i></div>
+                        <button class="me-3 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
+                        <button class="btn btn-link text-black"><i class="la-2x las la-trash-alt icon__trashList"></i></button>
                     </div>            
                 </div>
             </li>';
