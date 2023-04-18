@@ -1,16 +1,14 @@
 // Obtén una referencia al formulario
-var miFormulario = document.getElementById("miForm");
+var linksBotons = document.getElementById("miForm");
 
 // Agrega un evento submit al formulario
-miFormulario.addEventListener("click", function(event) {
+linksBotons.addEventListener("click", function(event) {
     // Previene la acción predeterminada del formulario (enviar datos al servidor)
     event.preventDefault();
 
-    // Obtén el botón que se hizo clic
-    var botonClicado = event.target;
-    console.log(botonClicado);
-    //Redireccionar a diferentes páginas en función del botón que se hizo clic
-    switch (botonClicado.id) {
+    // Obtencion el botón que se hizo clicado
+    var btnClicked = event.target;
+    switch (btnClicked.id) {
     case "btn-1":
         window.location.href = "./index.php";
         break;
@@ -30,5 +28,3 @@ miFormulario.addEventListener("click", function(event) {
         break;
     }
 });
-
-

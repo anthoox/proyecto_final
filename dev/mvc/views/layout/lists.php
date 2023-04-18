@@ -80,8 +80,8 @@
     
                 <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
                     <div class="d-flex ">
-                        <button class="me-3 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
-                        <button class="btn btn-link text-black"><i class="la-2x las la-trash-alt icon__trashList"></i></button>
+                        <button class="mt-0 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
+                        <button class="btn mt-0 btn-link text-black"><i class="la-2x las la-trash-alt icon__trashList"></i></button>
                     </div>            
                 </div>
             </li>';

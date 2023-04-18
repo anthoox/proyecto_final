@@ -58,30 +58,7 @@ for (var i = 0; i < editIcons.length; i++) {
     idList = secondChild
   });
 }
-//Boton editar lista - llama una ventana para editarla
-for(let i = 0; i<editIcons.length; i++){
-    editIcons[i].addEventListener('click', showEditList, false);
-}
-editList = document.querySelector('.section__editList');
-editList.style.transition='all 500ms';
-iconCloseEdit = document.querySelector('.icon__editList--close');
-iconCloseEdit.addEventListener('click', showEditList, false);
-//Funcion que muestra el formulario para cambio de nombre
-function showEditList(){
-    document.querySelector('#editNameInput').value=idList;
-        if(editList.classList.contains('reset__position--0')){
-            editList.classList.remove('reset__position--0');
-        }else{
-            editList.classList.add('reset__position--0');
-        }
-}
-//_------------------------------------------------------------
 
-
-
-
-
-//Boton borrar lista - llama una ventana para confirmar si queremos enviarla a la papelera
 var iconTrash = document.querySelectorAll('.icon__trashList');
 for (var i = 0; i < iconTrash.length; i++) {
     iconTrash[i].addEventListener('click', function(event) {
@@ -101,18 +78,49 @@ for (var i = 0; i < iconTrash.length; i++) {
 for(let i = 0; i<iconTrash.length; i++){
     iconTrash[i].addEventListener('click', showTrashList, false);
 }
+
+
+
+
+//Boton editar lista - llama una ventana para editarla
+for(let i = 0; i<editIcons.length; i++){
+    editIcons[i].addEventListener('click', showEditList, false);
+}
+
+editList = document.querySelector('.section__editList');
+editList.style.transition='all 500ms';
+iconCloseEdit = document.querySelector('.icon__editList--close');
+iconCloseEdit.addEventListener('click', showEditList, false);
+
 trashList = document.querySelector('.section__trashList');
 trashList.style.transition='all 500ms';
 iconCloseTrash = document.querySelector('.icon__trashList--close');
 iconCloseTrash.addEventListener('click', showTrashList, false);
 
+//Funcion que muestra el formulario para cambio de nombre
+function showEditList(){
+    document.querySelector('#editNameInput').value=idList;
+        if(editList.classList.contains('reset__position--0')){
+            editList.classList.remove('reset__position--0');
+
+        }else{
+            trashList.classList.remove('reset__position--0');
+            editList.classList.add('reset__position--0');
+
+        }
+}
+
+//Función para enviar una lista a la papelera
 function showTrashList(){
     //añadimos el valor de idList del elemento que ha generado el evento
     document.querySelector('#trashList').value=idList;
         if(trashList.classList.contains('reset__position--0')){
             trashList.classList.remove('reset__position--0');
+
         }else{
+            editList.classList.remove('reset__position--0');
             trashList.classList.add('reset__position--0');
+
         }
 }
 

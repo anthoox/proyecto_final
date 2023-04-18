@@ -12,14 +12,13 @@ if($_SESSION['user']){
                 if(isset($_POST['nameList'])) {
                     $list = new UserList();
                     $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
-                    // if(!$result){                    
-                    //     $prueba = '<p class="text-center fs-5 text-secondary desaparece">Lista no añadida</p>';
-                    // }
+                    if($result){
+                        header("Location: " . $_SERVER['REQUEST_URI']);
+                        exit();
+                    }  
                 }
             }
-        }
-        //ESTO SE TIENE QUE AÑADIR EN LAS VENTANAS
-    
+        }   
         
         echo'
         <!DOCTYPE html>
