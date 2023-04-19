@@ -89,7 +89,6 @@ echo'
                 <button class="btn btn-primary text-white border mt-1 p-1 fs-5 button m-0">Enviar</button>
             </section>';
             if($msg_edited){
-                // echo  $msg_edited;
                 echo'
                 <section class="d-flex justify-content-center">
                 <p class="mt-1 fs-5 m-0 text-secondary">Modificación realizada.</p>

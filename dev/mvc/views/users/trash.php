@@ -3,6 +3,24 @@
 
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
+    if($_SESSION['user']){
+        if($_SESSION['user']['rol'] === 2){
+            $user_items = new UserItems();
+            $lists = new UserList();
+            $user_list = $lists->trash($_SESSION['user']['id_user']);
+
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+                if(isset($_POST['accept'])) {
+                    // Llamar a la función en el controlador para restuarar el elemento
+                    $newName = new UserList();
+                    $result = $newName->editList($_POST['id_list'], 'trash',0 );
+                    if($result){
+                        header("Location: " . $_SERVER['REQUEST_URI']);
+                        exit();
+                    } 
+                }
+            }
     echo
     '<!DOCTYPE html>
     <html lang="es">
@@ -30,9 +48,7 @@
     </head>
 
     <body class="d-flex flex-column">';
-        $user_items = new UserItems();
-        $lists = new UserList();
-        $user_list = $lists->trash($_SESSION['user']['id_user']);
+        
 
 
 
@@ -69,9 +85,10 @@
                         <div class="position-relative w-75 h-100">
                             <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                                 <div class="w-100 ul__li__div--scroll">
-                                <form >
+                                <form>
                                     <p class="p-0 m-0 fs-4 fw-semibold " id="textToStrike">'.$user_list[$i]['list_name'].'</p>
-                                    </form>
+                                    <p class="d-none ">'.$user_list[$i]['id_list'].'</p>
+                                </form>
                                 </div>
                                 <div class="d-flex align-items-center  li__div__icon">
                                     <i class="mb-1 la-lg las la-check-circle"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">'. $items_check['items'] .  '/'. $items . '</span>
@@ -81,8 +98,8 @@
 
                         <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
                             <div class="d-flex ">
-                                <div class="me-3"><i class="la-2x las la-undo-alt"></i></div> 
-                                <div><i class="la-2x las la-trash-alt"></i></div>
+                                <button class="mt-0 btn btn-link text-black me-3"><i class="la-2x las la-undo-alt icon__restList"></i></button> 
+                                <button class="mt-0 btn btn-link text-black"><i class="la-2x las la-trash-alt icon__delList"></i></button>
                             </div>            
                         </div>
                     </li>
@@ -103,9 +120,20 @@
         
         echo'
         </section>
-        </main>
+        </main>';
+        require "../layout/restList.php";
+    echo'
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="http://localhost/proyecto/dev/mvc/resources/js/rest.js"></script>
 </html>';
+}else{
+    header('Content-Type: text/html; charset=utf-8');
+    header('location:../login/login.php');
+    }
+}else{
+    header('Content-Type: text/html; charset=utf-8');
+    header('location:../login/login.php');
+}
 ?>

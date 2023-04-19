@@ -1,3 +1,5 @@
+//variable que llevará el identificador de la lista
+var idList;
 //boton mostrar menu:
 btnMenu = document.querySelector('.icon__menu--user');
 btnMenu.addEventListener('click', showMenu, false);
@@ -35,10 +37,9 @@ function showAddList(){
     }
     
 }
+///////////////////////////////////////////================================================//////////////////////////////////
 
 
-
-var idList;
 
 // Obtención todos los elementos con la clase 'icon__editList'
 var editIcons = document.querySelectorAll('.icon__editList');
@@ -59,6 +60,7 @@ for (var i = 0; i < editIcons.length; i++) {
   });
 }
 
+// Obtención todos los elementos con la clase 'icon__trashList'
 var iconTrash = document.querySelectorAll('.icon__trashList');
 for (var i = 0; i < iconTrash.length; i++) {
     iconTrash[i].addEventListener('click', function(event) {
@@ -75,12 +77,6 @@ for (var i = 0; i < iconTrash.length; i++) {
       idList = secondChild
     });
   }
-for(let i = 0; i<iconTrash.length; i++){
-    iconTrash[i].addEventListener('click', showTrashList, false);
-}
-
-
-
 
 //Boton editar lista - llama una ventana para editarla
 for(let i = 0; i<editIcons.length; i++){
@@ -92,12 +88,22 @@ editList.style.transition='all 500ms';
 iconCloseEdit = document.querySelector('.icon__editList--close');
 iconCloseEdit.addEventListener('click', showEditList, false);
 
+
+//Asignación de evento a todos los iconTrash.
+for(let i = 0; i<iconTrash.length; i++){
+    iconTrash[i].addEventListener('click', showTrashList, false);
+}
+
 trashList = document.querySelector('.section__trashList');
 trashList.style.transition='all 500ms';
 iconCloseTrash = document.querySelector('.icon__trashList--close');
 iconCloseTrash.addEventListener('click', showTrashList, false);
 
-//Funcion que muestra el formulario para cambio de nombre
+
+
+
+  
+//Funcion que muestra el formulario para cambio de nombre. EStos se podria optimizar con una funcion.
 function showEditList(){
     document.querySelector('#editNameInput').value=idList;
         if(editList.classList.contains('reset__position--0')){

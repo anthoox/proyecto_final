@@ -63,14 +63,12 @@
                 <div class="position-relative w-75 h-100">
                     <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                         <div class="w-100 ul__li__div--scroll">
-
-                        <form action="../users/itemsList.php" method="post">
-                          <input type="hidden" name="id_list" value="' . $user_list[$i]["id_list"] . '">
-                          <input class=" btn btn-link fs-4 fw-semibold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
-                        </form>
-                        
-
+                            <form action="../users/itemsList.php" method="post">
+                            <input type="hidden" name="id_list" value="' . $user_list[$i]["id_list"] . '">
+                            <input class=" btn btn-link fs-4 fw-semibold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
+                            </form>
                         </div>
+                        
                         <div class="d-flex align-items-center  li__div__icon">
                             <i class="mb-1 la-lg las la-check-circle i"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
                             <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6">' . $item_price .'</span>
