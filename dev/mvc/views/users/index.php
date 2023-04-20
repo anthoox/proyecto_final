@@ -78,7 +78,7 @@ if($_SESSION['user']){
             <p class="fs-5 fw-semibold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
         </section>
     
-        <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
+        <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
 </main>';
 require "menu.php";

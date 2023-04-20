@@ -70,11 +70,18 @@ body{
 }
 
 .button__add_list{
-    
     position: fixed;
     bottom: 2em;
     right: 1em;
 }
+.button__add_item{
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+    height: 50px;
+    width: 50px;
+}
+
 .table__th--pointer{
     transition: all 250ms;
 }
