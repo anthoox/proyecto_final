@@ -1,6 +1,6 @@
-<section class="bg-white section__restList">   
-    <form method="POST" class="d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
-        <div class="">
+<section class="w-100 z-3 fixed-bottom modals  section__restList">   
+    <form method="POST" class="bg-white h-100 d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
+        <div class="w-75">
             <p class="fw-semibold fs-5 text-center">¿Quiere eliminar definitivamente la lista?<p>
         </div>
         <input id="restList" type="hidden" name="id_list" value="">

@@ -176,10 +176,10 @@ border-color: rgb(166, 74, 238) !important;
 
 /* CONFIGURACIÓN MENU LATERAL MOVIL*/
 .menu{
-    z-index: 2000;
+    max-width: 175px;
     position: fixed;
-    top: 0px;
-    
+    top: 0;
+    z-index: 3000;
     transform: translate(-500%)
 }
 .menu>ul>li{
@@ -194,112 +194,23 @@ border-color: rgb(166, 74, 238) !important;
 }
 /* estilo para desplazar el menu */
 
-/* ------------------------------------ */
 
 
-/* CONFIGURACIÓN SECTION ADDLIST */
-.section__addList{
-    z-index: 2000;
-    position: fixed;
-    bottom: 0px;
-    height: 250px;
-    width: 100%;
+/* CONFIGURACIÓN DE VENTANAS MODALES RESTLIST */
+.modals{
+    height: 225px;
     transform: translate(0, 500%)
 }
-.section__addList>form{
-    height: 100%;
-    max-width: 500px;
-}
-.section__addList>form>div{
-    width: 90%;
-    /* transform: translate(-500px) */
-}
-.section__addList>form>.btnSave{
-    height: 40px;
-    width: 80px;
-    /* transform: translate(-500px) */
-}
-/* ------------------------------------ */
-
-/* CONFIGURACIÓN SECTION EDITLIST */
-.section__editList{
-    z-index: 2000;
-    position: fixed;
-    bottom: 0px;
-    height: 250px;
-    width: 100%;
-    transform: translate(0, 500%)
-}
-.section__editList>form{
-    height: 100%;
-    max-width: 500px;
-    /* cambiar anchos con bootstrap */
-}
-.section__editList>form>div{
-    width: 90%;
-    /* transform: translate(-500px) */
-}
-.section__editList>form>.btnSave{
-    height: 40px;
-    width: 80px;
-    /* transform: translate(-500px) */
-}
-/* ------------------------------------ */
-
-
-
-/* CONFIGURACIÓN SECTION TRASHLIST */
-.section__trashList{
-    z-index: 2000;
-    position: fixed;
-    bottom: 0px;
-    height: 250px;
-    width: 100%;
-    transform: translate(0, 500%)
-}
-.section__trashList>form{
-    height: 100%;
+.modals>form{
     max-width: 400px;
-    /* cambiar anchos con bootstrap */
 }
-.section__trashList>form>div{
-    width: 90%;
-    /* transform: translate(-500px) */
-}
-.section__trashList>form>.btnSave{
-    height: 40px;
-    width: 80px;
-    /* transform: translate(-500px) */
-}
-/* ------------------------------------ */
 
-/* CONFIGURACIÓN SECTION RESTLIST */
-.section__restList{
-    z-index: 2000;
-    position: fixed;
-    bottom: 0px;
-    height: 250px;
-    width: 100%;
-    transform: translate(0, 500%)
-}
-.section__restList>form{
-    height: 100%;
-    max-width: 400px;
-    /* cambiar anchos con bootstrap */
-}
-.section__restList>form>div{
-    width: 90%;
-    /* transform: translate(-500px) */
-}
-.section__delList>form>.btnSave{
+.modals>form>.btnSave{
     height: 40px;
     width: 80px;
-    /* transform: translate(-500px) */
 }
-/* ------------------------------------ */
 
 .reset__position--0{
     transform: translate(0,0);
-    /*esto debe ir al final para que funcione*/
 }
-
+/* ------------------------------------ */
