@@ -9,6 +9,7 @@ if($_SESSION['user']){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtener los datos del formulario
             $id_list = $_POST['id_list'];
+            $list_name = $_POST['nameList'];
           
             // Realizar la validación de los datos recibidos
             if (!empty($id_list)) {
@@ -55,7 +56,7 @@ if($_SESSION['user']){
                       <div class="d-flex align-items-center">
                           <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
                       </div>
-                      <h1 class="m-0  fs-2 fw-semibold">' . $id_list.'</h1>
+                      <h2 class="m-0  fs-2 fw-semibold">' . $list_name.'</h2>
                   </div>
               </header>
               <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
@@ -164,6 +165,7 @@ if($_SESSION['user']){
                   </li>
       
               </ul>';
+
               }
           }else{        
               $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
@@ -181,6 +183,8 @@ if($_SESSION['user']){
           
           echo'
           </section>
+            <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button rounded-circle button__add_list">
+            <i class="la-lg las la-plus"></i></button>
           </main>
       </body>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
