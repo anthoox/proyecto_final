@@ -16,7 +16,7 @@ if($_SESSION['user']){
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
                     }else{
-                        $result = "La lista ya " . $_POST["nameList"] . "ya existe.";
+                        $result = "La lista ya " . $_POST["nameList"] . " ya existe.";
                     }  
                 }
             }
@@ -75,7 +75,7 @@ if($_SESSION['user']){
             require_once '../layout/lists.php';
         echo'
             </ul>
-            <p>' . $result . '</p>
+            <p class="fs-5 fw-semibold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
         </section>
     
         <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button border rounded-4 button__add_list">
