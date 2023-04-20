@@ -15,7 +15,7 @@ class Lists {
 
 	/**Método para comprobar si existe la cuenta de correo al darse de alta*/
 	public function existList($data, $idUser){
-		$sql = "SELECT list_name FROM " . $this->table . " WHERE list_name = ? and id_user= ?";
+		$sql = "SELECT list_name FROM " . $this->table . " WHERE list_name = ? and id_user= ? and trash = 0";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $data);
 		$query->bindParam(2, $idUser);

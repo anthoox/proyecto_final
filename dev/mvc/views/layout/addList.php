@@ -1,6 +1,6 @@
  <section class="w-100 z-3 fixed-bottom modals section__addList">   
     <form method="POST" class="h-100 bg-white d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
-        <div class="mb-3">
+        <div class="w-75 mb-3">
             <label for="nameList" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de lista</label>
             <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="nameList" placeholder="nombre lista" name="nameList">
         </div>
