@@ -2,19 +2,26 @@
 session_start();
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
+
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
-
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+
             // Obtener los datos del formulario
             $id_list = $_POST['id_list'];
-            $list_name = $_POST['nameList'];
-          
-            // Realizar la validación de los datos recibidos
+            $list_name = $_POST['nameList'];     
+            // if(!empty($_POST)){
+            //     if(isset($_POST['nameItem']) && $_POST['nameItem'] != ''){
+            //         $id = "pepe";
+            //     }
+
+            // }       
+            
             if (!empty($id_list)) {
-              // Los datos son válidos, puedes usarlos en tu lógica de negocio
-              // ...+
+
               echo'
               <!DOCTYPE html>
               <html lang="es">
@@ -91,7 +98,8 @@ if($_SESSION['user']){
                     <span class="carousel-control-next-icon  align-self-end me-1" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
-              </header>';
+              </header>
+              <ul class="p-0 m-0">';
               for($i = 0; $i<(sizeof($itemsList)-1); $i++){
                   
                   $item_price = $itemsList[$i]['price'];
@@ -111,7 +119,7 @@ if($_SESSION['user']){
                   $notif_date =  format_date_time($notif_date);
                   
                   echo
-                  '<ul class="p-0 m-0">
+                  '
                   <li class="d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
                       <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike"
@@ -162,11 +170,14 @@ if($_SESSION['user']){
                               <div><i class="la-2x las la-trash-alt"></i></div>
                           </div>
                       </div>
-                  </li>
+                  </li>';
       
-              </ul>';
+              
 
               }
+              echo'
+              </ul>';
+              echo $id_list . $id;
           }else{        
               $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
               echo'
@@ -178,10 +189,11 @@ if($_SESSION['user']){
                               </div>
                           </div>     
                       </li>
-                  </ul>';
+                  ';
           }   
           
           echo'
+          </ul>
           </section>
             
           </main>
