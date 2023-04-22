@@ -104,6 +104,11 @@ class UserItems{
         return $this->items->createItem($idList,$idUser, $itemName);
     }
 
+    public function deleteItem($idItem){
+
+        return $this->items->delItem($idItem);
+    }
+
     public function itemsUser($atribute, $idList){
         return $this->items->getItems($atribute, $idList);
     }
@@ -136,3 +141,5 @@ class UserItems{
     }
 
 }
+// $prueba = new UserItems;
+// echo $prueba->deleteItem(93);

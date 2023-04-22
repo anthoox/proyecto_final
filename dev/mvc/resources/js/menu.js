@@ -6,11 +6,12 @@ btnMenu.addEventListener('click', showMenu, false);
 
 //menu:
 menu = document.querySelector('.menu');
-menu.style.transition='all 500ms';
+
 menuBtnClose = document.querySelector('.icon__menu--close');
 menuBtnClose.addEventListener('click', showMenu, false)
 
 function showMenu(){
+    menu.style.transition='all 500ms';
     if(menu.classList.contains('reset__position--0')){
         menu.classList.remove('reset__position--0');
     }else{
@@ -25,11 +26,11 @@ btnList.addEventListener('click', showAddList, false);
 
 //menu:
 addList = document.querySelector('.section__addList');
-addList.style.transition='all 500ms';
 iconClose = document.querySelector('.icon__addList--close');
 iconClose.addEventListener('click', showAddList, false)
 
 function showAddList(){
+    addList.style.transition='all 500ms';
     if(addList.classList.contains('reset__position--0')){
         addList.classList.remove('reset__position--0');
     }else{
@@ -39,22 +40,7 @@ function showAddList(){
 }
 
 
-// //boton añadir item:)=========================================
-// btnItem = document.querySelector('.button__add_item');
-// btnItem.addEventListener('click', showAddItem, false);
 
-// addItem = document.querySelector('.section__addList');
-// addItem.style.transition='all 500ms';
-// iconClose = document.querySelector('.icon__addList--close');
-// iconClose.addEventListener('click', showAddItem, false)
-
-// function showAddItem(){
-//     if(addItem.classList.contains('reset__position--0')){
-//         addItem.classList.remove('reset__position--0');
-//     }else{
-//         addItem.classList.add('reset__position--0');
-//     }
-// }
 ///////////////////////////////////////////================================================//////////////////////////////////
 
 
@@ -102,7 +88,7 @@ for(let i = 0; i<editIcons.length; i++){
 }
 
 editList = document.querySelector('.section__editList');
-editList.style.transition='all 500ms';
+
 iconCloseEdit = document.querySelector('.icon__editList--close');
 iconCloseEdit.addEventListener('click', showEditList, false);
 
@@ -113,7 +99,7 @@ for(let i = 0; i<iconTrash.length; i++){
 }
 
 trashList = document.querySelector('.section__trashList');
-trashList.style.transition='all 500ms';
+
 iconCloseTrash = document.querySelector('.icon__trashList--close');
 iconCloseTrash.addEventListener('click', showTrashList, false);
 
@@ -123,6 +109,7 @@ iconCloseTrash.addEventListener('click', showTrashList, false);
   
 //Funcion que muestra el formulario para cambio de nombre. EStos se podria optimizar con una funcion.
 function showEditList(){
+    editList.style.transition='all 500ms';
     document.querySelector('#editNameInput').value=idList;
         if(editList.classList.contains('reset__position--0')){
             editList.classList.remove('reset__position--0');
@@ -136,6 +123,7 @@ function showEditList(){
 
 //Función para enviar una lista a la papelera
 function showTrashList(){
+    trashList.style.transition='all 500ms';
     //añadimos el valor de idList del elemento que ha generado el evento
     document.querySelector('#trashList').value=idList;
         if(trashList.classList.contains('reset__position--0')){

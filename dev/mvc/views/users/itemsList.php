@@ -1,14 +1,17 @@
 <?php
 session_start();
 //Guardamos el valor del id_list
-if (isset($_POST['id_list'])) {
-    $_SESSION['id_list'] = $_POST['id_list'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['id_list']) && $_POST['nameList'] != '') {
+        $_SESSION['id_list'] = $_POST['id_list'];
+        $_SESSION['list_name'] = $_POST['nameList'];
+}
+
     
 }
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
 
-$result = '';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
@@ -42,8 +45,7 @@ if($_SESSION['user']){
         </head>
 
         <body class="d-flex flex-column">';    
-        
-            // require_once 'C:/xampp/htdocs/proyecto/dev/mvc/views/users/itemsList2.php';
+
         $itemsList = '';
         $items = new Useritems();     
         
@@ -51,24 +53,29 @@ if($_SESSION['user']){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             
-            // Obtener los datos del formulario
-            if (!empty($_POST['nameList'])) {
-                
-                $list_name= $_POST['nameList'];
-                
 
-            } 
             
-                
+            //POST para añadir un item
             if(isset($_POST['nameItem'])) {
                 $newName = new UserItems();
                 $result = $newName->addItem( $_SESSION['id_list'], $_SESSION['user']['id_user'], $_POST['nameItem'] );
                 if($result){
-                    $result = "item creado";
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 }else{
-                    $result = "NOOOOOOOO";
+                    header("Location: " . $_SERVER['REQUEST_URI']);
+                    exit();
+                }  
+            }
+
+            //POST para eliminar item
+            if(isset($_POST['id_item'])) {
+                $item = new UserItems();
+                $result = $item->deleteItem($_POST['id_item']);
+                if($result){
+                    header("Location: " . $_SERVER['REQUEST_URI']);
+                    exit();
+                }else{
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 }  
@@ -84,7 +91,7 @@ if($_SESSION['user']){
                 <div class="d-flex align-items-center">
                     <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
                 </div>
-                <h2 class="m-0  fs-2 fw-semibold">' . $list_name .'</h2>
+                <h2 class="m-0  fs-2 fw-semibold">' . $_SESSION['list_name'] .'</h2>
             </div>
         </header>
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
@@ -191,10 +198,11 @@ if($_SESSION['user']){
                 </div>
                 
                 <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between">
-                    <div class="d-flex ">
-                        <div class="me-3"><i class="la-2x las la-pen"></i></div> 
-                        <div><i class="la-2x las la-trash-alt"></i></div>
-                    </div>
+                    <form method="POST" class="d-flex ">
+                        <input type="hidden" name="id_item" value="' . $itemsList[$i]['id_item']  . '">
+                        <button type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
+                        <button type="submit" class="mt-0 btn btn-link text-black btn__delItem"><i class="la-2x las la-trash-alt"></i></button>
+                    </form>
                 </div>
             </li>';
             }
@@ -214,18 +222,13 @@ if($_SESSION['user']){
                         </div>     
                     </li>
                 </ul>';
-        }  
-     
+        }    
             echo'
             </section>
             <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button rounded-circle shadow button__add_item">
             <i class="la-lg las la-plus"></i></button>
             </main>';
             require "../layout/addItem.php";
-
-            
-
-          
         echo'
         </body>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

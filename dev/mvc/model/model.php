@@ -367,7 +367,7 @@ class Users{
 	*/
 	public function deleteUser($id){
 		$this->items = new Items();
-		$this->items->delItem('id_user', $id);
+		$this->items->delItem( $id);
 		$this->lists = new Lists();
 		$this->lists->delList('id_user', $id);
 		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ?";
@@ -597,13 +597,20 @@ class Items{
 	}
 
 	/**Método para eliminar un item de la lista o todos los items de una lista */
-	public function delItem($atribute, $data){
-		$sql = "DELETE FROM $this->table  WHERE $atribute  = ?";
+	public function delItem($data){
+		$sql = "DELETE FROM $this->table  WHERE id_item  = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $data);
 		try{
 			$query->execute();
-			echo "item/s eliminado/S";
+			$rows = $query->rowCount();
+			if($rows>0){
+				
+				return true;
+			}else{
+
+				return false;
+			}
 		}catch(PDOException $e){
 			echo "Error en al borrar item/s." . $e->getMessage();
 		}
@@ -789,6 +796,6 @@ class Items{
 	}
 }
 // $prueba2 = new Items();
-// $prueba2->createItem(17, 'prueba2');
+// echo $prueba2->delItem(92);
 // print_r($prueba2->getItems('id_list', 3 ));
 

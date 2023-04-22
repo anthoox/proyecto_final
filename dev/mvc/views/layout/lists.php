@@ -22,7 +22,7 @@
             }    
         } 
 
-        // Post para borrar lista
+        // Post para enviar la lista a la papelera
         if(isset($_POST['accept'])) {
             // Llamar a la función en el controlador para borrar el elemento
             $newName = new UserList();

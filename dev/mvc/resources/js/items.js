@@ -1,16 +1,31 @@
 //boton añadir item:
-btnItem = document.querySelector('.button__add_item');
-btnItem.addEventListener('click', showAddItem, false);
-
-addItem = document.querySelector('.section__addItem');
-addItem.style.transition='all 500ms';
-iconClose = document.querySelector('.icon__addList--close');
+//Selección del boton y se le asigna el envento shoAddItem
+var btnDelItem = document.querySelector('.button__add_item');
+btnDelItem.addEventListener('click', showAddItem, false);
+//Selección de la ventana con el formulario para añadir el item
+var addItem = document.querySelector('.section__addItem');
+//Selección del botón para cerrar la venta del formulario
+var iconClose = document.querySelector('.icon__addList--close');
+//Asignación de la clase para cerrar la ventana
 iconClose.addEventListener('click', showAddItem, false)
 
+//Selección de todos los botones btn__editItem
+var btnsEditItem = document.querySelectorAll('.btn__editItem')
+btnsEditItem.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+    });
+  });
+  
+
+//funcion para mostrar ventana para añadir item addItem.php
 function showAddItem(){
+    addItem.style.transition='all 500ms';
     if(addItem.classList.contains('reset__position--0')){
         addItem.classList.remove('reset__position--0');
     }else{
         addItem.classList.add('reset__position--0');
     }
 }
+
+
