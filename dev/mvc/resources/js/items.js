@@ -14,8 +14,12 @@ var btnsEditItem = document.querySelectorAll('.btn__editItem')
 btnsEditItem.forEach((btn) => {
     btn.addEventListener('click', (event) => {
       event.preventDefault();
+      window.location.href = "./editItems.php";
     });
   });
+
+
+
   
 
 //funcion para mostrar ventana para añadir item addItem.php

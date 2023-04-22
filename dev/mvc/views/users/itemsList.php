@@ -113,14 +113,14 @@ if($_SESSION['user']){
             <div class="carousel-item active " >
                 <p class="p-0 m-0  fw-semibold fs-5 text-center">Precio total: '. $totalP .' </p>      
             </div>
-            
+            <i class="ms-2 la-2x las la-info-circle"></i>
             <div class="carousel-item " >
                 <p class="p-0 m-0 fw-semibold fs-5 text-center">Tiempo empleado: '.$items_total_time .'</p>
                 
             </div>
             </div>
             <button class="carousel-control-prev d-flex flex-column" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon align-self-start ms-1" aria-hidden="true"></span>
+            
             <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next d-flex flex-column" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
@@ -198,7 +198,7 @@ if($_SESSION['user']){
                 </div>
                 
                 <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between">
-                    <form method="POST" class="d-flex ">
+                    <form method="POST"   class="d-flex ">
                         <input type="hidden" name="id_item" value="' . $itemsList[$i]['id_item']  . '">
                         <button type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
                         <button type="submit" class="mt-0 btn btn-link text-black btn__delItem"><i class="la-2x las la-trash-alt"></i></button>
