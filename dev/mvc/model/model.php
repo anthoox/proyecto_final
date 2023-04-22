@@ -582,7 +582,14 @@ class Items{
 		$query->bindParam(4, $creationDate);
 		try{
 			$query->execute();
-			echo "item creado";
+			$rows = $query->rowCount();
+			//El  >= 0 es porque si se dejan los valores iguales no se modifica nada.
+			if($rows>0){
+				return true;
+			}else{
+				// return "Error al realizar la modificación";
+				return false;
+			}
 		}catch(PDOException $e){
 			echo "Error en la creación del item." . $e->getMessage();
 		}

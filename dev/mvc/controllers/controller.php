@@ -100,6 +100,10 @@ class UserItems{
         $this->items = new Items();
     }
 
+    public function addItem($idList,$idUser, $itemName){
+        return $this->items->createItem($idList,$idUser, $itemName);
+    }
+
     public function itemsUser($atribute, $idList){
         return $this->items->getItems($atribute, $idList);
     }

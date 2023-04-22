@@ -32,7 +32,8 @@
                 exit();
             }   
         } 
-      }
+    }
+
     //Si tiene listas:
     if($user_list){        
         for($i = 0; $i<sizeof($user_list); $i++){
@@ -57,7 +58,7 @@
             if($items_check == false){
                 $items_check['items'] = 0;
             }
-    
+
             echo
             '<li class="d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
                 <div class="position-relative w-75 h-100">
