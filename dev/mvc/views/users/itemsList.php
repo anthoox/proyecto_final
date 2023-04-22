@@ -1,7 +1,8 @@
 <?php
 session_start();
+//Guardamos el valor del id_list
 if (isset($_POST['id_list'])) {
-    $_SESSION['id_lista'] = $_POST['id_list'];
+    $_SESSION['id_list'] = $_POST['id_list'];
     
 }
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
@@ -43,10 +44,10 @@ if($_SESSION['user']){
         <body class="d-flex flex-column">';    
         
             // require_once 'C:/xampp/htdocs/proyecto/dev/mvc/views/users/itemsList2.php';
-            $itemsList = '';
+        $itemsList = '';
         $items = new Useritems();     
         
-        $itemsList = $items->itemsUser('id_list', $_SESSION['id_lista']);
+        $itemsList = $items->itemsUser('id_list', $_SESSION['id_list']);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             
@@ -61,7 +62,7 @@ if($_SESSION['user']){
                 
             if(isset($_POST['nameItem'])) {
                 $newName = new UserItems();
-                $result = $newName->addItem( $_SESSION['id_lista'], $_SESSION['user']['id_user'], $_POST['nameItem'] );
+                $result = $newName->addItem( $_SESSION['id_list'], $_SESSION['user']['id_user'], $_POST['nameItem'] );
                 if($result){
                     $result = "item creado";
                     header("Location: " . $_SERVER['REQUEST_URI']);
@@ -75,7 +76,7 @@ if($_SESSION['user']){
             
         }
 
-        $items_total_time = $items->timeItems($_SESSION['id_lista']);
+        $items_total_time = $items->timeItems($_SESSION['id_list']);
         $items_total_time = format_time($items_total_time[0]); 
         echo'
         <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
@@ -90,7 +91,7 @@ if($_SESSION['user']){
         <section class="p-0 m-0"> ';
         if($itemsList){
         //Precio total para la cabecera
-        $totalP = $items->itemsPrice($_SESSION['id_lista']);
+        $totalP = $items->itemsPrice($_SESSION['id_list']);
         if($totalP[0]>0){
             $totalP = $totalP[0];
             $totalP = round($totalP, 3) . "€";
@@ -121,6 +122,7 @@ if($_SESSION['user']){
             </button>
         </header>
         </section>
+
         <section>
         <ul class="p-0 m-0">';
 
@@ -194,10 +196,9 @@ if($_SESSION['user']){
                         <div><i class="la-2x las la-trash-alt"></i></div>
                     </div>
                 </div>
-            </li>
-            </ul>';
-            echo $result;
-                }
+            </li>';
+            }
+            echo'</ul>';
         }else {
             
             echo'
@@ -213,19 +214,16 @@ if($_SESSION['user']){
                         </div>     
                     </li>
                 </ul>';
-                echo $result;
         }  
-
-            // echo $id_list;        
+     
             echo'
-            </section>';
-            require "../layout/addItem.php";
-            
-            echo'
-            </main>
+            </section>
             <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 button rounded-circle shadow button__add_item">
-            <i class="la-lg las la-plus"></i></button>';
-            // echo $_SESSION['id_list'];
+            <i class="la-lg las la-plus"></i></button>
+            </main>';
+            require "../layout/addItem.php";
+
+            
 
           
         echo'
