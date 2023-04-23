@@ -79,7 +79,7 @@ if($_SESSION['user']){
                 }  
             }
 
-            if(isset($_POST['id_item']) && isset($_POST['edi_Item'])) {
+            if(isset($_POST['id_item']) && isset($_POST['edit_Item'])) {
                     $_SESSION['id_item'] = $_POST['id_item'];
                     header("location:./editItems.php" );
                     exit();
@@ -116,7 +116,7 @@ if($_SESSION['user']){
         <header id="carouselExampleDark" class="carousel carousel-dark slide border rounded-4 mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
             <div class="carousel-inner ">
             <div class="carousel-item active " >
-                <p class="p-0 m-0  fw-semibold fs-5 text-center">Precio total: '. $totalP .' </p>      
+                <p class="p-0 m-0  fw-semibold fs-5 text-center">Importe acumulado: '. $totalP .' </p>      
             </div>
             <i class="ms-2 la-2x las la-info-circle"></i>
             <div class="carousel-item " >
@@ -211,7 +211,7 @@ if($_SESSION['user']){
                     <form method="POST" class="d-flex ">
                         <input type="hidden" name="id_item" value="' . $itemsList[$i]['id_item']  . '">';
                         echo'
-                        <button name="edi_Item" type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
+                        <button name="edit_Item" type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
                         <!-- name="del_Item" para identificar el button que sirve para eliminar el item -->
                         <button name="del_Item" type="submit" class="mt-0 btn btn-link text-black btn__delItem"><i class="la-2x las la-trash-alt"></i></button>
                     </form>

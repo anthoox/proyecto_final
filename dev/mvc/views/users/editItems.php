@@ -29,7 +29,7 @@
                             $new_data_item->editItem('price', $_POST['itemPrice'], $data_item[0]['id_item']);
                             $new_data_item->editItem('alarm_date', $_POST['notification'], $data_item[0]['id_item']);
                             $new_data_item->editItem('notes', $_POST['notes'], $data_item[0]['id_item']);
-                            header("Location: " . $_SERVER['REQUEST_URI']);
+                            header("Location: ./itemsList.php");
                             exit();
                         }
                     }
