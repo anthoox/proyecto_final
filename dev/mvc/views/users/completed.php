@@ -107,7 +107,7 @@ if($_SESSION['user']){
                         echo'
                         >
                     </div>
-                    <div class="position-relative w-75 h-100">
+                    <div class="position-relative w-100 h-100">
                         
                         <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end">
                             <div>
@@ -142,7 +142,7 @@ if($_SESSION['user']){
                             '</div>
                         </div>
                     </div>
-                    
+                    <!--
                     <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between">
                         <div class="d-flex ">
                             <div class="me-3"><i class="la-2x las la-pen"></i></div> 
@@ -150,6 +150,7 @@ if($_SESSION['user']){
                         </div>
                         
                     </div>
+                    -->
                 </li>';
                 }
             }else{        
