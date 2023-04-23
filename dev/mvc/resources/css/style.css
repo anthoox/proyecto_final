@@ -1,9 +1,6 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 *{
-    font-family: 'Roboto','nunito', 'Comfortaa', 'Open sans',   Arial, Helvetica, sans-serif, 'Open sans';
-    font-size: 14px;    
+    font-family: 'Roboto','nunito', 'Comfortaa', Arial, Helvetica, sans-serif, 'Open sans';
+    font-size: 12px;    
 }
 
 body{
@@ -52,15 +49,13 @@ body{
 .ul__li___div--size{
     width: 40px;
 }
-/* .form__input::placeholder{
-    font-size: 1em;
-} */
+
 .li__div__icon{
     height: 20px;
 }
 
 .button{
-    width: 100px;
+    width: 80px;
     margin: auto;
 }
 
@@ -71,6 +66,7 @@ body{
 
 .button__add_list{
     position: fixed;
+    width: 80px;
     bottom: 2em;
     right: 1em;
 }
@@ -180,6 +176,14 @@ border-color: rgb(166, 74, 238) !important;
     width: 100%;
     overflow-x:scroll;
 }
+/* Configuración estilos adicionales form editar */
+
+.textarea-size{
+    height: 100px;
+    resize: none;
+}
+/* ============================================= */
+
 
 /* CONFIGURACIÓN MENU LATERAL MOVIL*/
 .menu{
@@ -199,7 +203,7 @@ border-color: rgb(166, 74, 238) !important;
 .menu>ul>li>img{
     width: 80px;
 }
-/* estilo para desplazar el menu */
+/* ============================================= */
 
 
 

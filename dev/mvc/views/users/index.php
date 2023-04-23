@@ -55,16 +55,16 @@ if($_SESSION['user']){
         echo'
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <form class="d-flex align-items-center justify-content-between" id="miForm">
-            <button id="btn-1" class="btn fs-6 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-1" class="btn fs-5 d-flex bg-primary text-white justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Mis listas
             </button>
-            <button id="btn-2" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-2" class="btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Próximas
             </button>
-            <button id="btn-3" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-3" class="btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Pendientes
             </button>
-            <button id="btn-4" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
+            <button id="btn-4" class="btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
                 Completas
             </button>
         </form>   
@@ -78,8 +78,8 @@ if($_SESSION['user']){
             <p class="fs-5 fw-semibold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
         </section>
     
-        <button class="btn btn-primary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
-        <i class="me-1 la-ms las la-plus"></i>Lista</button>
+        <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
+        <i class="m-0 me-1 la-sm las la-plus"></i>Lista</button>
 </main>';
 require "menu.php";
 require "../layout/addList.php";
