@@ -79,7 +79,25 @@ class Lists {
 		}
 		// $this->connection->closeConnection();
 	}
+	/**Método para obtener una lista a partir del id_list */
+	public function getOneList($idList){
+		$sql = "SELECT list_name FROM $this->table WHERE id_list = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			if($result ){
+				return $result;
+			}else{
+				return false;
+			}				
+		}catch(PDOException $e){
+			echo "Error al añadir la lista a la base de datos" . $e->getMessage();
+			return false;
+		}
 
+	}
 	/**Método para mostrar información una o todas las listas que cumplan una condición*/
 	public function getAllLists($atribute, $data){
 		$sql = "SELECT * FROM $this->table WHERE $atribute = ?";
@@ -297,7 +315,7 @@ class Lists {
 // print_r($prueba2->getAllLists('id_user', 5));
 // print_r($prueba2->getInfoList(3));
 // $prueba2 = new Lists();
-// $prueba2->createList(4, "aab");
+// print_r($prueba2->getOneList(14));
 // print_r($prueba2->getAllLists('id_user', 4));
 // $prueba2->modifList(3, 'list_name', 'lista de prueba');
 

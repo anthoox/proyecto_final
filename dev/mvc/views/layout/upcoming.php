@@ -1,9 +1,6 @@
 <?php 
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
-    // session_start();
-
-    // $items = new Items();
     
     $lists_items = new UserItems();
 
@@ -32,6 +29,11 @@
                 }else{
                     $notif_date = '';
                 }
+
+                $name_list = new UserList();
+                $name_list = $name_list->getNameList($lists_items[$i]['id_list']);
+                
+
     
             echo 
             '<li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
@@ -53,7 +55,7 @@
                     <span class="fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
                     </div>
                     <div class="w-100 ul__li__div--scroll">
-                        <p class="p-0 m-0 fs-4 fw-semibold " id="textToStrike">' . $lists_items[$i]['item_name'] . '</p>
+                        <p class="p-0 m-0 fs-4 fw-semibold" id="textToStrike"><span class="fs-4 fw-bold ">' .$name_list['list_name']."</span><span class='fs-4 fw-bold text-secondary'>/</span>". $lists_items[$i]['item_name'] . '</p>
                     </div>
                     
                     <div class="d-flex align-items-center  li__div__icon">';

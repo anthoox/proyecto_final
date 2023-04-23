@@ -28,6 +28,9 @@
     
                 $notif_date  = $lists_items[$i]['alarm_date'];
                 $notif_date =  format_date_time($notif_date);
+
+                $name_list = new UserList();
+                $name_list = $name_list->getNameList($lists_items[$i]['id_list']);
     
             echo' 
             <li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
@@ -49,7 +52,7 @@
                     <span class="text-muted  fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
                     </div>
                     <div class="w-100 ul__li__div--scroll">
-                        <p class="text-decoration-line-through p-0 m-0 fs-4 fw-semibold text-muted" id="textToStrike">' . $lists_items[$i]['item_name'] . '</p>
+                        <p class="p-0 m-0 fs-4 fw-semibold text-muted text-decoration-line-through" id="textToStrike"><span class="fs-4 fw-semibold text-muted">' .$name_list['list_name']."</span><span class='fs-4 fw-bold text-secondary'> / </span>". $lists_items[$i]['item_name'] . '</p>
                     </div>
                     
                     <div class="d-flex align-items-center  li__div__icon">';
@@ -67,7 +70,7 @@
                         if($notif_date){
                             echo
                             '<i class="w-semibold mb-1 la-lg las la-bell text-muted"></i>
-                            <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 text-muted">'.$notif_date.'</span>';
+                            <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 text-decoration-line-through text-muted">'.$notif_date.'</span>';
                         }
                     };
 

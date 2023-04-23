@@ -73,6 +73,9 @@ class UserList{//UserController
         return $this->lists->createList($idUser, $list_name);
     }
 
+    public function getNameList($idList){
+        return $this->lists->getOneList($idList);
+    }
     public function toList($idUser){
         return $this->lists->getActiveLists($idUser);
     }
