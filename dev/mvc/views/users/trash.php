@@ -20,6 +20,17 @@
                         exit();
                     } 
                 }
+
+
+                if(isset($_POST['acceptDel'])) {
+                    // Llamar a la función en el controlador para restuarar el elemento
+                    $deleteList = new UserList();
+                    $result = $deleteList->deleteList($_POST['id_list'], $_SESSION['user']['id_user'] );
+                    if($result){
+                        header("Location: " . $_SERVER['REQUEST_URI']);
+                        exit();
+                    } 
+                }
             }
     echo
     '<!DOCTYPE html>
@@ -119,14 +130,15 @@
         }   
         
         echo'
-        </section>
-        </main>';
+        </section>';
         require "../layout/restList.php";
+        require "../layout/deleteList.php";        
     echo'
+    </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="http://localhost/proyecto/dev/mvc/resources/js/rest.js"></script>
+<script src="http://localhost/proyecto/dev/mvc/resources/js/rest-del.js"></script>
 </html>';
 }else{
     header('Content-Type: text/html; charset=utf-8');

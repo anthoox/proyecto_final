@@ -77,6 +77,10 @@ class UserList{//UserController
         return $this->lists->getActiveLists($idUser);
     }
 
+    public function deleteList($idList, $idUser){
+        return $this->lists->delList($idList, $idUser);
+    }
+
     public function listsUser($idUser){
         return $this->lists->getAmountList($idUser);
     }

@@ -58,18 +58,21 @@ class Lists {
 		}
 	}
 
-	/**Método para borrar una lista o todas las listas de un usuario dependiendo del atributo*/
-	public function delList($atribute, $data){		
-		$sql = "DELETE FROM $this->table WHERE $atribute = ?";
+	/**Método para borrar una lista que esta en la papelera*/
+	public function delList($idList, $idUser){				
+		$sql = "DELETE FROM $this->table WHERE id_list = ? AND id_user = ? AND trash = 1";
 		$query = $this->connection->getConnection()->prepare($sql);
-		$query->bindParam(1, $data);
+		$query->bindParam(1, $idList);
+		$query->bindParam(2, $idUser);
 		try{
 			$query->execute();
 			$rows = $query->rowCount();
-			if($rows == 0){
-				echo "La lista no existe";
+			if($rows > 0){
+				echo "La lista borrada";
+				return true;
 			}else{
-				echo "Lista/s Borrado/as con exito de la base de datos";
+				echo "NO SE HA BORRADO NADA";
+				return false;
 			}
 		}catch(PDOException $e){
 			echo "Erro al borrar" . $e->getMessage();
@@ -161,8 +164,7 @@ class Lists {
 
 	//Selecciones especiales de listas
 	/**Método para seleccionar todas las litas de un usuario que no esten en la papelera */
-	public function getActiveLists($idUser){
-		
+	public function getActiveLists($idUser){		
 		$sql = "SELECT * FROM $this->table where id_user = ? and trash = 0 order by creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);

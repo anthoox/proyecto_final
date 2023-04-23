@@ -223,13 +223,13 @@ if($_SESSION['user']){
             
             echo'
             <section>';
-            $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
+            $_SESSION['error_message']['loadItems'] = "La lista aún esta vacía";
             echo'
                 <ul class="p-0 m-0"> 
                     <li class="d-flex  align-items-center justify-content-between mt-5">
                         <div class="position-relative w-100 h-100">
                             <div class="p-0 ps-3 d-flex  m-0 form-check h-100 justify-content-center align-items-center w-100">        
-                                <p class="p-0 m-0 fs-5 fw-semibold text-muted" id="textToStrike">' . $_SESSION['error_message']['loadLists'] .'</p>
+                                <p class="p-0 m-0 fs-5 fw-semibold text-muted" id="textToStrike">' . $_SESSION['error_message']['loadItems'] .'</p>
                             </div>
                         </div>     
                     </li>
