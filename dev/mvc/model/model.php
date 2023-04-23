@@ -650,11 +650,19 @@ class Items{
 		$query->bindParam(2, $idItem);
 		try{
 			$query->execute();
-			echo "Modificación realizada con éxito";
+			$rows = $query->rowCount();
+			if($rows>0){
+				// echo "funciona";
+				return true;
+			}else{
+				// echo "NOOOOO";
+				return false;
+			}
+			
 		}catch(PDOException $e){
 			echo "Error al realizar la modificación " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
+		// $this->connection->closeConnection();
 	}
 
 
@@ -796,6 +804,6 @@ class Items{
 	}
 }
 // $prueba2 = new Items();
-// echo $prueba2->delItem(92);
+// echo $prueba2->modifItem('item_name', 'barra de pan', 114);
 // print_r($prueba2->getItems('id_list', 3 ));
 

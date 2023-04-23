@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['id_list']) && $_POST['nameList'] != '') {
         $_SESSION['id_list'] = $_POST['id_list'];
         $_SESSION['list_name'] = $_POST['nameList'];
-}
+    }
 
     
 }
@@ -52,9 +52,7 @@ if($_SESSION['user']){
         $itemsList = $items->itemsUser('id_list', $_SESSION['id_list']);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                            
-
-            
+                                    
             //POST para añadir un item
             if(isset($_POST['nameItem'])) {
                 $newName = new UserItems();
@@ -69,7 +67,7 @@ if($_SESSION['user']){
             }
 
             //POST para eliminar item
-            if(isset($_POST['id_item'])) {
+            if(isset($_POST['id_item']) && isset($_POST['del_Item'])) {
                 $item = new UserItems();
                 $result = $item->deleteItem($_POST['id_item']);
                 if($result){
@@ -79,6 +77,13 @@ if($_SESSION['user']){
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 }  
+            }
+
+            if(isset($_POST['id_item']) && isset($_POST['edi_Item'])) {
+                    $_SESSION['id_item'] = $_POST['id_item'];
+                    header("location:./editItems.php" );
+                    exit();
+              
             }
             
         }
@@ -149,7 +154,12 @@ if($_SESSION['user']){
             
 
             $notif_date  = $itemsList[$i]['alarm_date'];
-            $notif_date =  format_date_time($notif_date);
+            if($notif_date != "0000-00-00 00:00:00"){
+                $notif_date =  format_date_time($notif_date);
+            }else{
+                $notif_date = '';
+            }
+            
             
             echo
             '
@@ -198,10 +208,12 @@ if($_SESSION['user']){
                 </div>
                 
                 <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between">
-                    <form method="POST"   class="d-flex ">
-                        <input type="hidden" name="id_item" value="' . $itemsList[$i]['id_item']  . '">
-                        <button type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
-                        <button type="submit" class="mt-0 btn btn-link text-black btn__delItem"><i class="la-2x las la-trash-alt"></i></button>
+                    <form method="POST" class="d-flex ">
+                        <input type="hidden" name="id_item" value="' . $itemsList[$i]['id_item']  . '">';
+                        echo'
+                        <button name="edi_Item" type="submit" class="mt-0 btn btn-link text-black btn__editItem"><i class="la-2x las la-pen"></i></button> 
+                        <!-- name="del_Item" para identificar el button que sirve para eliminar el item -->
+                        <button name="del_Item" type="submit" class="mt-0 btn btn-link text-black btn__delItem"><i class="la-2x las la-trash-alt"></i></button>
                     </form>
                 </div>
             </li>';

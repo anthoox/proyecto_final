@@ -104,6 +104,10 @@ class UserItems{
         return $this->items->createItem($idList,$idUser, $itemName);
     }
 
+    public function editItem($atribute, $data, $idItem){
+        return $this->items->modifItem($atribute, $data, $idItem);
+    }
+
     public function deleteItem($idItem){
 
         return $this->items->delItem($idItem);

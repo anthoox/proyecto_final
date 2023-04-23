@@ -10,13 +10,12 @@ var iconClose = document.querySelector('.icon__addList--close');
 iconClose.addEventListener('click', showAddItem, false)
 
 //Selección de todos los botones btn__editItem
-var btnsEditItem = document.querySelectorAll('.btn__editItem')
-btnsEditItem.forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.location.href = "./editItems.php";
-    });
-  });
+// var btnsEditItem = document.querySelectorAll('.btn__editItem')
+// btnsEditItem.forEach((btn) => {
+//     btn.addEventListener('click', (event) => {
+//       window.location.href = "./editItems.php";
+//     });
+//   });
 
 
 
