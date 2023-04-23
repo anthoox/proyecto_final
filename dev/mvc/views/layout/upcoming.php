@@ -34,7 +34,7 @@
                 }
     
             echo 
-            '<li class="d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
+            '<li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
             <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike"
                 ';

@@ -30,22 +30,18 @@ body{
 }
 
 .ul__li--size{
-    
     height: 70px;
     transition: all 300ms;
 }
 
 .ul__li--size:hover{
-    
     transform: scale(1.015);
-
 }
 
-.ul__li--size:active{
-    
+.ul__li--size:active{    
     transform: scale(1);
-
 }
+
 .ul__li___div--size{
     width: 40px;
 }
@@ -153,9 +149,7 @@ body{
     
 }
 .li__hover:hover{
-    
-border-color: rgb(166, 74, 238) !important;
-/* background-color: rgb(255, 255, 255 ); */
+    border-color: rgb(166, 74, 238) !important;
     cursor: pointer;
 }
 
