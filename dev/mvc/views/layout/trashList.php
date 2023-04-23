@@ -6,10 +6,10 @@
         <input id="trashList" type="hidden" name="id_list" value="">
         <div class="d-flex justify-content-evenly w-100">
             <!-- a cada boton le añádimos un name para el envio por POST -->
-            <button class="btn bg-secondary text-white fs-6 d-flex justify-content-center align-items-center p-2 border rounded-4 fw-semibold btnSave" type="submit" name="accept">
+            <button class="btn bg-secondary text-white fs-5 d-flex justify-content-center align-items-center p-2 border rounded-4 fw-semibold btnSave" type="submit" name="accept">
                 Aceptar
             </button>
-            <button class="btn bg-primary text-white fs-6 d-flex justify-content-center align-items-center p-2 border rounded-4 fw-semibold btnSave" type="submit" name="cancel">
+            <button class="btn bg-primary text-white fs-5 d-flex justify-content-center align-items-center p-2 border rounded-4 fw-semibold btnSave" type="submit" name="cancel">
                 Cancelar
             </button>
         </div>
