@@ -69,6 +69,8 @@ body{
     width: 80px;
     bottom: 2em;
     right: 1em;
+    height: 40px;
+
 }
 .button__add_item{
     position: fixed;

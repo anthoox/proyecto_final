@@ -668,7 +668,7 @@ class Items{
 
 	/**Método para obtener las próximas listas */
 	public function next_items($idUser){
-		$sql = "SELECT * FROM " . $this->table . " WHERE id_user = ? and is_check = 0 and (alarm_date IS not NULL OR alarm_date > NOW())";
+		$sql = "SELECT * FROM " . $this->table . " WHERE id_user = ? and is_check = 0 and (alarm_date IS not NULL OR alarm_date > NOW()) and alarm_date <> '0000-00-00 00:00:00'";
 		// $sql = "SELECT * from " . $this->table . " WHERE id_user = ? and is_check = 0 and alarm_date != null order by alarm_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);

@@ -1,14 +1,9 @@
 <?php 
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
     require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
-    // session_start();
 
-    // $items = new Items();
-    
     $lists_items = new UserItems();
 
-    // echo $_SESSION['user']['id_user'];
-    // $prueba = $lists_items->upcoming($_SESSION['user']['id_user']);
     $lists_items = $lists_items->pending($_SESSION['user']['id_user']);
 
     if($lists_items){
@@ -25,9 +20,12 @@
                 $item_time = $lists_items[$i]['total_time'];
                 $item_time = format_time($item_time);
                 
-    
                 $notif_date  = $lists_items[$i]['alarm_date'];
-                $notif_date =  format_date_time($notif_date);
+                if($notif_date != "0000-00-00 00:00:00"){
+                    $notif_date =  format_date_time($notif_date);
+                }else{
+                    $notif_date = '';
+                }
     
             echo 
             '<li class="d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
