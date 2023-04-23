@@ -73,12 +73,10 @@ if($_SESSION['user']){
                 if($result){
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
-                }else{
-                    header("Location: " . $_SERVER['REQUEST_URI']);
-                    exit();
                 }  
             }
 
+            //Para editar el item
             if(isset($_POST['id_item']) && isset($_POST['edit_Item'])) {
                     $_SESSION['id_item'] = $_POST['id_item'];
                     header("location:./editItems.php" );

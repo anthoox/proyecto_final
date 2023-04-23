@@ -8,17 +8,6 @@ var addItem = document.querySelector('.section__addItem');
 var iconClose = document.querySelector('.icon__addList--close');
 //Asignación de la clase para cerrar la ventana
 iconClose.addEventListener('click', showAddItem, false)
-
-//Selección de todos los botones btn__editItem
-// var btnsEditItem = document.querySelectorAll('.btn__editItem')
-// btnsEditItem.forEach((btn) => {
-//     btn.addEventListener('click', (event) => {
-//       window.location.href = "./editItems.php";
-//     });
-//   });
-
-
-
   
 
 //funcion para mostrar ventana para añadir item addItem.php
