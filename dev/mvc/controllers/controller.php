@@ -76,6 +76,11 @@ class UserList{//UserController
     public function getNameList($idList){
         return $this->lists->getOneList($idList);
     }
+
+    public function infoList($idList){
+        return $this->lists->getInfolist($idList);
+    }
+
     public function toList($idUser){
         return $this->lists->getActiveLists($idUser);
     }

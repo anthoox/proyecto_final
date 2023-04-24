@@ -88,13 +88,17 @@ if($_SESSION['user']){
 
         $items_total_time = $items->timeItems($_SESSION['id_list']);
         $items_total_time = format_time($items_total_time[0]); 
+    
+        
         echo'
         <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-1 fs-4">Atras</span>
                 </div>
-                <h2 class="m-0  fs-2 fw-semibold">' . $_SESSION['list_name'] .'</h2>
+                <div class="d-flex align-items-center">
+                    <h2 class="m-0 fs-2 fw-semibold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a>
+                </div>
             </div>
         </header>
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
@@ -105,18 +109,19 @@ if($_SESSION['user']){
         if($totalP[0]>0){
             $totalP = $totalP[0];
             $totalP = round($totalP, 3) . "€";
-            
         }else{
             $totalP = '0';
+
         }
         echo'
 
-        <header id="carouselExampleDark" class="carousel carousel-dark slide border rounded-4 mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
+        <header id="carouselExampleDark" class="shadow-sm carousel carousel-dark slide border rounded-4 mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
+        
             <div class="carousel-inner ">
             <div class="carousel-item active " >
                 <p class="p-0 m-0  fw-semibold fs-5 text-center">Importe acumulado: '. $totalP .' </p>      
             </div>
-            <i class="ms-2 la-2x las la-info-circle"></i>
+            
             <div class="carousel-item " >
                 <p class="p-0 m-0 fw-semibold fs-5 text-center">Tiempo empleado: '.$items_total_time .'</p>
                 
@@ -161,7 +166,7 @@ if($_SESSION['user']){
             
             echo
             '
-            <li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
+            <li class="shadow-sm  d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size li__hover">
                 <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike"
                     ';

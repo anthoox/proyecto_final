@@ -103,8 +103,8 @@ echo'
         </div>
     </header>
     <main class="container-xxl d-flex flex-column align-items-center pt-4 main__user">
-        <figure class="figure rounded-circle">
-            <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="border border-4 border-primary figure-img rounded-circle img-fluid rounded" alt="Imagen de usuario">
+        <figure class="figure mb-4 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden m-0">
+            <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="w-100 h-100 object-fit-cover m-0" alt="Descripción de la imagen">
         </figure>
    
         <form  method="POST" class=" d-flex flex-column justify-content-center fw-semibold" enctype="multipart/form-data" >
@@ -122,7 +122,7 @@ echo'
             </section>
             <section class="p-2 d-flex justify-content-between align-items-center">
                 <p class="fs-5 m-0">Descargar datos</p>
-                <button class="btn border rounded-4 btn-primary text-white border p-1 fs-5 button m-0">Descargar</button>
+                <button class="shadow btn border rounded-4 btn-primary text-white border p-1 fs-5 button m-0">Descargar</button>
             </section>';
             if($msg_edited){
                 
@@ -133,7 +133,7 @@ echo'
             
             }
             echo'         
-            <button type="submit" class="border rounded-4 btn mt-4 btn-secondary fs-5 text-light p-1 button" name="saveData" >Guardar</button>
+            <button type="submit" class="shadow border rounded-4 btn mt-4 btn-secondary fs-5 text-light p-1 button" name="saveData" >Guardar</button>
         </form>
     </main>
 </body>

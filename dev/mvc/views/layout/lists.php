@@ -60,7 +60,7 @@
             }
 
             echo
-            '<li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
+            '<li class="shadow-sm align-items-center justify-content-between border rounded-4 mt-3 ul__li--size li__hover d-flex ">
                 <div class="position-relative w-75 h-100">
                     <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                         <div class="w-100 ul__li__div--scroll">

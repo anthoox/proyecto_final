@@ -79,6 +79,25 @@ class Lists {
 		}
 		// $this->connection->closeConnection();
 	}
+
+	/**Método para obtener información de una lista */
+	public function getInfolist($idList){
+		$sql = "SELECT * FROM " . $this->table . " WHERE id_list = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idList);
+		try{
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			if($result ){
+				return $result;
+			}else{
+				return false;
+			}				
+		}catch(PDOException $e){
+			echo "Error al añadir la lista a la base de datos" . $e->getMessage();
+			return false;
+		}
+	}
 	/**Método para obtener una lista a partir del id_list */
 	public function getOneList($idList){
 		$sql = "SELECT list_name FROM $this->table WHERE id_list = ?";
@@ -134,7 +153,6 @@ class Lists {
 			echo "Error al añadir la lista a la base de datos" . $e->getMessage();
 			return false;
 		}
-		
 	}
 		
 
@@ -223,7 +241,7 @@ class Lists {
 	}
 
 	/**Método para obtener el nombre de los items que tiene una lista */
-	public function infoList($idList){
+	public function infoItemsList($idList){
 		$sql = "SELECT items.* , lists.* FROM items INNER JOIN lists ON items.id_list = lists.id_list WHERE lists.id_list = ? order by lists.creation_date";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idList);
@@ -802,6 +820,7 @@ class Items{
 	}
 
 	//Obtiene la suma total de todos los tiempos total_time de cada item de la lista
+	//ESTO PROBABLEMENTE HAY QUE MODIFICARLO PARA LA TEMPORIZACIÓN
 	public function totalItemsTime($idList){
 		$sql = "SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(total_time))) FROM items where id_list= ?";
 		$query = $this->connection->getConnection()->prepare($sql);

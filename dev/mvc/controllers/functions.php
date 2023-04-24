@@ -1,4 +1,6 @@
 <?php
+
+//funcion para cambiar formato hora
 function format_time($time) {
     //Separamos por los dos puntos y creamos un array
     if($time){
@@ -26,7 +28,7 @@ function format_time($time) {
     }
     
 }
-
+//Funcnion para mostrar hora y fecha
 function format_date_time($date_hour) {
     if($date_hour){    
         $date_hour_array = explode(' ', $date_hour);
