@@ -1,0 +1,223 @@
+*{
+    font-family: 'Roboto','nunito', 'Comfortaa', Arial, Helvetica, sans-serif, 'Open sans';
+    font-size: 12px;    
+}
+
+body{
+    height: 100vh;
+}
+
+.p{
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.header__cnt{
+    height: 50px;
+    max-height: 50px;
+}
+
+.title__h1{
+    font-size: 2em;
+}
+.title__h2{
+    font-size: 3em;
+}
+
+.main__position--top{
+    position: relative;
+    top:  50px; 
+}
+
+.ul__li--size{
+    height: 70px;
+    transition: all 300ms;
+}
+
+.ul__li--size:hover{
+    transform: scale(1.015);
+}
+
+.ul__li--size:active{    
+    transform: scale(1);
+}
+
+.ul__li___div--size{
+    width: 40px;
+}
+
+.li__div__icon{
+    height: 20px;
+}
+
+.button{
+    width: 80px;
+    margin: auto;
+}
+
+.button__index{
+    width: 100%;
+    margin: 1em auto;
+}
+
+.button__add_list{
+    position: fixed;
+    width: 80px;
+    bottom: 2em;
+    right: 1em;
+    height: 40px;
+
+}
+.button__add_item{
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+    height: 50px;
+    width: 50px;
+}
+
+.table__th--pointer{
+    transition: all 250ms;
+}
+.table__th--pointer:hover,.table__th--pointer:active{
+    cursor: pointer ;
+    transform: scale(1.02);
+}
+.las:hover, .la:active{
+    cursor: pointer ;
+    transform: scale(1.09);
+}
+.ul__li__div--scroll{
+    overflow-x:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ul__li__div--scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Para otros navegadores */
+.ul__li__div--scroll {
+    scrollbar-width: none;
+}
+
+.section__btn--size{
+    width: 80px;
+}
+
+.figure>img{
+    max-width: 200px;
+}
+
+.main__trash{
+    position: relative;
+    top: 40px;
+}
+
+.main__trash2{
+    position: relative;
+    top: 35px;
+}
+.main__trash3{
+    position: relative;
+    top: 45px;
+}
+.main__user{
+    position: relative;
+    top: 50px;
+}
+.section__position--top{
+    max-height: 40px;
+    top: 50px;
+}
+.section__position--top2{
+    height: 40px;
+    max-height: 40px;
+    top: 50px;
+}
+.ul__position--top{
+    position: relative;
+    top: 75px;
+}
+.main__items__section{
+    overflow-x: scroll;
+    overflow-wrap: normal;
+    width: 1500px;
+}
+.li__hover{
+    transition: all 250ms;
+    
+}
+.li__hover:hover{
+    border-color: rgb(166, 74, 238) !important;
+    cursor: pointer;
+}
+
+.parraf__contact--justify{
+    text-align: justify;
+}
+
+.section__contact--social{
+    max-width: 200px;
+}
+
+.ul__li{
+    position: relative;
+    height: 60px;
+    max-height: 60px;
+}
+
+
+.div__table--scroll{
+    width: 100%;
+    overflow-x:scroll;
+}
+/* Configuración estilos adicionales form editar */
+
+.textarea-size{
+    height: 100px;
+    resize: none;
+}
+/* ============================================= */
+
+
+/* CONFIGURACIÓN MENU LATERAL MOVIL*/
+.menu{
+    max-width: 175px;
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+    transform: translate(-500%)
+}
+.menu>ul>li{
+    min-height: 35px;
+}
+.menu>ul>li:hover{
+    cursor: pointer;
+}
+
+.menu>ul>li>img{
+    width: 80px;
+}
+/* ============================================= */
+
+
+
+/* CONFIGURACIÓN DE VENTANAS MODALES RESTLIST */
+.modals{
+    height: 225px;
+    transform: translate(0, 500%)
+}
+.modals>form{
+    max-width: 400px;
+}
+
+.modals>form>.btnSave{
+    height: 40px;
+    width: 80px;
+}
+
+.reset__position--0{
+    transform: translate(0,0);
+}
+/* ------------------------------------ */
