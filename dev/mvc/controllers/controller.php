@@ -45,8 +45,8 @@ class LoginController{
         return $this->user->adminEditUser($idUser, $name, $email, $rol);
     }
 
-    public function user_edit_user($idUser, $name,$photo = ''){
-        return $this->user->userEditUser($idUser, $name, $photo);
+    public function edit_user($atribute, $idUser, $name){
+        return $this->user->editUser($atribute,$idUser, $name);
     }
 
     public function usersList(){

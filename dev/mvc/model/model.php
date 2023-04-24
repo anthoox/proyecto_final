@@ -455,13 +455,12 @@ class Users{
 		// $this->connection->closeConnection();
 	}
 
-	public function userEditUser($idUser, $name, $photo){
+	public function editUser($atribute, $idUser, $name){
 
-		$sql = "UPDATE users SET name = ?, photo = ? WHERE id_user = ?";
+		$sql = "UPDATE users SET ".$atribute." = ? WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $name);
-		$query->bindParam(2, $photo);
-		$query->bindParam(3, $idUser);
+		$query->bindParam(2, $idUser);
 		try{
 			$query->execute();
 			$rows = $query->rowCount();

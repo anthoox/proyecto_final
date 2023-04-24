@@ -1,9 +1,14 @@
 <?php
+if($_SESSION['user']['photo'] == ""){
+    $photo = "img-user.png";
+}else{
+    $photo = $_SESSION['user']['photo'];
+}
 echo'
 <nav class="w-50 border bg-white ps-2 pe-2 shadow menu">
     <ul class="list-group list-group-flush">
         <li class="d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
-            <img class="rounded-circle" src="/proyecto/dev/mvc/resources/img/img-users/img-user.png" alt="imagen de usuario">
+            <img class="img-user border border-3 border-primary rounded-circle" src="/proyecto/dev/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
             <a href="./../users/user_profile.php" class="align-self-start mt-1 fs-5 text-decoration-none text-black">Perfil de '.$_SESSION['user']['name'] .'</a>
         </li>
         <li class="list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>

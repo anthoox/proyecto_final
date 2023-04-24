@@ -2,9 +2,8 @@
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 session_start();
 $msg_edited = '';
-$photo;
+$photo = $_SESSION['user']['photo'];
 $name = $_SESSION['user']['name'];
-$prueba ='';
 if(isset($_SESSION['user'])){
     if($_SESSION['user']['rol'] == 1){
         header('Content-Type: text/html; charset=utf-8');
@@ -14,28 +13,60 @@ if(isset($_SESSION['user'])){
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($_POST)){        
+        //Código para modificar el nombre de usuario.
         if(isset($_POST['name'])) {
             $validator = new LoginController();      
-                $result = $validator->user_edit_user($_SESSION['user']['id_user'], $_POST['name'], $_POST['photo']);
-                if(!$result){                    
-                    $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0">No se ha podido modificar.</p>';
+            $result = $validator->edit_user('name',$_SESSION['user']['id_user'], $_POST['name']);
+            if(!$result){                    
+                $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0">No se ha podido modificar.</p>';
+            }else{
+                $name = $validator->searchUser('email', $_SESSION['user']['email']);
+                $name = $name[0]['name'];
+                $_SESSION['user']['name'] = $name;
+                $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0 text-secondary">Modificación realizada.</p>';
+            }
+        }
+
+        if(isset($_POST['saveData'])){
+            $img = $_FILES['photo']['name'];
+            if(isset($img) && $img != ''){
+                $type = $_FILES['photo']['type'];
+                $temp = $_FILES['photo']['tmp_name'];
+                //Si no es una imagen gif, o
+                if(!(strpos($type, 'gif') || strpos($type, 'jpeg') || strpos($type, 'png') || strpos($type, 'webp') || strpos($type, 'jpg'))){
+                    $msg_edited = "Solo se permiten archivos tipo: jpeg, pnp, webp, jpg";
                 }else{
-                    $name = $validator->searchUser('email', $_SESSION['user']['email']);
-                    $name = $name[0]['name'];
-                    $_SESSION['user']['name'] = $name;
-                    $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0 text-secondary">Modificación realizada.</p>';
+                    $validator = new LoginController();      
+                    $result = $validator->edit_user('photo',$_SESSION['user']['id_user'], $img);
+                    if(!$result){                    
+                        $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0">No se ha podido guardar la foto.</p>';
+                    }else{
+                        $name = $validator->searchUser('email', $_SESSION['user']['email']);
+                        $_SESSION['user']['photo'] = $name[0]['photo'];
+                        $name = $name[0]['name'];
+                        move_uploaded_file($temp, 'C:/xampp/htdocs/proyecto/dev/mvc/resources/img/img-users/' . $img);
+                        $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0 text-secondary">Modificación de foto realizada.</p>';
+                    }
                 }
+            }else{
+                $msg_edited = "error FILES";
+            }
+            
+        }else{
+            $msg_edited = "error isset POST";
         }
     }
 }
 
 
 $registration_date = date('d-m-Y',strtotime($_SESSION['user']['registration_date']));
-if($_SESSION['user']['photo']){
-    $photo = $_SESSION['user']['photo'];
-}else{
+
+if($_SESSION['user']['photo'] == ""){
     $photo = "img-user.png";
+}else{
+    $photo = $_SESSION['user']['photo'];
 }
+
 echo'
 <!DOCTYPE html>
 <html lang="es">
@@ -72,31 +103,37 @@ echo'
         </div>
     </header>
     <main class="container-xxl d-flex flex-column align-items-center pt-4 main__user">
-        <figure class=" figure">
-            <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="border border-primary border-2 figure-img img-fluid rounded rounded-circle" alt="...">
+        <figure class="figure rounded-circle">
+            <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="border border-4 border-primary figure-img rounded-circle img-fluid rounded" alt="Imagen de usuario">
         </figure>
-        <form method="POST" class=" d-flex flex-column justify-content-center fw-semibold" >
-            <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de usuario</label>
-            <input type="text" class="mb-3 form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1"  value="' . $name . '" name="name">
-            <label for="photo" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Cambiar de foto</label>
-            <input name="photo" class="mb-3 form-control form-control-lg fs-5  p-2 form__input" id="formFileLg" type="file">
+   
+        <form  method="POST" class=" d-flex flex-column justify-content-center fw-semibold" enctype="multipart/form-data" >
+            <div class="form-group">
+                <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de usuario</label>
+                <input type="text" class="mb-3 form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1"  value="' . $name . '" name="name">
+            </div>
+            <div class="form-group">
+                <label for="photo" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Cambiar de foto</label>
+                <input name="photo" class="mb-3 form-control form-control-lg fs-5  p-2 form__input" id="formFileLg" type="file">
+            </div>
             <section class="p-2 d-flex justify-content-between">
                 <p class="fs-5">Fecha de alta</p>
                 <p class=" fs-5">' . $registration_date . '</p>
             </section>
             <section class="p-2 d-flex justify-content-between align-items-center">
                 <p class="fs-5 m-0">Descargar datos</p>
-                <button class="btn btn-primary text-white border mt-1 p-1 fs-5 button m-0">Enviar</button>
+                <button class="btn border rounded-4 btn-primary text-white border p-1 fs-5 button m-0">Descargar</button>
             </section>';
             if($msg_edited){
+                
                 echo'
                 <section class="d-flex justify-content-center">
-                <p class="mt-1 fs-5 m-0 text-secondary">Modificación realizada.</p>
+                <p class="mt-1 fs-5 m-0 text-secondary">'.$msg_edited.'</p>
                 </section>';
             
             }
             echo'         
-            <button type="submit" class="btn mt-4 btn-secondary fs-5 text-light p-1 button">Guardar</button>
+            <button type="submit" class="border rounded-4 btn mt-4 btn-secondary fs-5 text-light p-1 button" name="saveData" >Guardar</button>
         </form>
     </main>
 </body>
