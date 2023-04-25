@@ -11,8 +11,9 @@ if($_SESSION['user']){
         $infoList = $data->infoList($_SESSION['id_list']);
         $dataItems = new UserItems();
         $itemsList = $dataItems->itemsUser('id_list', $_SESSION['id_list']);
+        $totalPrice = $_SESSION['total_price'];
 
-        if($infoList['total_price'] == ''){
+        if($totalPrice == ''){
             $infoList['total_price'] = 0;
         }
         if($infoList['total_time'] == ''){
@@ -77,7 +78,7 @@ if($_SESSION['user']){
                 </div>
                 <hr>
                 <div class="p-0 ps-2 pe-2 d-flex align-items-center justify-content-between">
-                <p class="fs-4 m-0 p-0">Precio total:</p> <p class="fs-4 m-0 p-0">'.$infoList['total_price'].'</p>
+                <p class="fs-4 m-0 p-0">Importe acumulado:</p> <p class="fs-4 m-0 p-0">'.$totalPrice.'</p>
                 </div>
                 <hr>
                 <div class="p-0 ps-2 pe-2 d-flex align-items-center justify-content-between">
@@ -114,7 +115,7 @@ if($_SESSION['user']){
                                     echo'<li class="fs-4 list-group-item list-group-item-action">'.$itemsList[$i]['item_name'].'</li>
                                     <hr class="info__ul__li--hr">';
                                 }
-                                    
+                                    //Hay que corregir el precio
                                 echo'
                                 </ul>
                             </div>

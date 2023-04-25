@@ -105,21 +105,24 @@ if($_SESSION['user']){
         <section class="p-0 m-0"> ';
         if($itemsList){
         //Precio total para la cabecera
-        $totalP = $items->itemsPrice($_SESSION['id_list']);
-        if($totalP[0]>0){
-            $totalP = $totalP[0];
-            $totalP = round($totalP, 3) . "€";
+        $totalPrice = $items->itemsPrice($_SESSION['id_list']);
+        if($totalPrice[0]>0){
+            $totalPrice = $totalPrice[0];
+            $totalPrice = round($totalPrice, 3) . "€";
+            $_SESSION['total_price']  = $totalPrice;
         }else{
-            $totalP = '0';
+            $totalPrice = '0';
+            $_SESSION['total_price']  = $totalPrice;
 
         }
+        
         echo'
 
         <header id="carouselExampleDark" class="shadow-sm carousel carousel-dark slide border rounded-4 mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
         
             <div class="carousel-inner ">
             <div class="carousel-item active " >
-                <p class="p-0 m-0  fw-semibold fs-5 text-center">Importe acumulado: '. $totalP .' </p>      
+                <p class="p-0 m-0  fw-semibold fs-5 text-center">Importe acumulado: '. $totalPrice .' </p>      
             </div>
             
             <div class="carousel-item " >
