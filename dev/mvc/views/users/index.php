@@ -143,7 +143,7 @@ if($_SESSION['user']){
                         </div>
                         
                         <div class="d-flex align-items-center  li__div__icon">
-                            <i class="mb-1 la-lg las la-check-circle i"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
+                            <i class="mb-1 la-lg las la-check-circle"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
                             <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6">' . $item_price .'</span>
                         </div>
                     </div>

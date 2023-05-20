@@ -28,3 +28,14 @@ linksBotons.addEventListener("click", function(event) {
         break;
     }
 });
+
+
+//Configuración para que el checkBox deje como completado el item.
+//Seleccionamos el check
+var checkButtons = document.querySelectorAll('form-check-input');
+for(i = 0; i<= checkButtons; i++){
+    // if(checkButtons[$i].checked ==true)
+    checkButtons.addEventListener("click", function (event){
+        
+    })
+}
