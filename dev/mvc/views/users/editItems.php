@@ -109,6 +109,9 @@
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
                         <script src="http://localhost/proyecto/dev/mvc/resources/js/items.js"></script>
                     </html>';
+                    require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+                    $close = new Db_connection();
+                    $close->closeConnection();
                 }else{
                     echo'
                     <!DOCTYPE html>
@@ -155,10 +158,5 @@
                 }
             }
         }
-        // header('Content-Type: text/html; charset=utf-8');
-        // header('location:../login/login.php');
     }
-    // header('Content-Type: text/html; charset=utf-8');
-    // header('location:../login/login.php');
-
 ?>

@@ -109,6 +109,7 @@
     <?php
         //Carga del fichero footer.php
         require "../layout/footer.php";
+        
     ?>
 </body>
 

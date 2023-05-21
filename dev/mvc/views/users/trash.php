@@ -128,7 +128,9 @@
                 </li>
             </ul>';
         }   
-        
+        require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+        $close = new Db_connection();
+        $close->closeConnection();
         echo'
         </section>';
         require "../layout/restList.php";

@@ -178,7 +178,9 @@ if($_SESSION['user_data']==0){
         </main>
     </body>
     </html>';
-
+    require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+    $close = new Db_connection();
+    $close->closeConnection();
 
     ;
 }else{

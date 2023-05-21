@@ -190,6 +190,9 @@ echo'
 <script src="http://localhost/proyecto/dev/mvc/resources/js/menu.js"></script>
 <script src="http://localhost/proyecto/dev/mvc/resources/js/index.js"></script>
 </html>';
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+$close = new Db_connection();
+$close->closeConnection();
     }else{
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');
