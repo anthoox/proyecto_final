@@ -25,6 +25,10 @@ if($_SESSION['user']){
         if($infoList['break_time'] == ''){
             $infoList['break_time'] = '--';
         }
+
+        if(!$itemsList){
+            $itemsList['rows'] = 0;
+        }
         
         $infoList['creation_date'] = date('d/m/Y', strtotime($infoList['creation_date']));
         $infoList['modif_date'] = date('d/m/Y', strtotime($infoList['modif_date']));
