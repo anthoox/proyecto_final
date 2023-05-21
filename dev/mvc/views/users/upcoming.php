@@ -49,16 +49,16 @@ if($_SESSION['user']){
         echo'
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section id="miForm" class="d-flex align-items-center justify-content-between">
-            <button id="btn-1" class="btn fs-5 d-flex  justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-1" class="btn fs-6 d-flex  justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Mis listas
             </button>
-            <button id="btn-2" class="btn  bg-primary text-white fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-2" class="btn  bg-primary text-white fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Próximas
             </button>
-            <button id="btn-3" class="btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-3" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Pendientes
             </button>
-            <button id="btn-4" class="btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
+            <button id="btn-4" class="btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
                 Completas
             </button>
         </section>   
@@ -66,14 +66,13 @@ if($_SESSION['user']){
         <section class="p-0 m-0">
             <ul class="p-0 m-0">';
 
-            // require_once '../layout/upcoming.php';
             $lists_items = new UserItems();
 
 
     $lists_items = $lists_items->upcoming($_SESSION['user']['id_user']);
 
 
-//    $lists_items[$i]['id_item']
+
     if($lists_items){
         for($i = 0; $i < sizeof($lists_items); $i++){
             $item_price = $lists_items[$i]['price'];
@@ -121,7 +120,7 @@ if($_SESSION['user']){
                     <span class="fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
                     </div>
                     <div class="w-100 ul__li__div--scroll">
-                        <p class="p-0 m-0 fs-4 fw-semibold" id="textToStrike"><span class="fs-4 fw-bold ">' .$name_list['list_name']."</span><span class='fs-4 fw-bold text-secondary'> / </span>". $lists_items[$i]['item_name'] . '</p>
+                        <p class="p-0 m-0 fs-5 fw-semibold" id="textToStrike"><span class="fs-4 fw-bold ">' .$name_list['list_name']."</span><span class='fs-6 fw-bold text-secondary'> > </span>". $lists_items[$i]['item_name'] . '</p>
                     </div>
                     
                     <div class="d-flex align-items-center  li__div__icon">';
@@ -183,6 +182,9 @@ if($_SESSION['user']){
 </main>';
 require "menu.php";
 require "../layout/addList.php";
+require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
+$close = new Db_connection();
+$close->closeConnection();
 echo'    
 </body>
 
