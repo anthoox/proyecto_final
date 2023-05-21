@@ -78,6 +78,10 @@ if($_SESSION['user']){
                 </div>
                 <hr>
                 <div class="p-0 ps-2 pe-2 d-flex align-items-center justify-content-between">
+                <p class="fs-4 m-0 p-0">Total de elementos:</p> <p class="fs-4 m-0 p-0">'.$itemsList['rows'].'</p>
+                </div>
+                <hr>
+                <div class="p-0 ps-2 pe-2 d-flex align-items-center justify-content-between">
                 <p class="fs-4 m-0 p-0">Importe acumulado:</p> <p class="fs-4 m-0 p-0">'.$totalPrice.'</p>
                 </div>
                 <hr>
@@ -126,7 +130,7 @@ if($_SESSION['user']){
             <hr>
             <section class="mt-4 d-flex align-items-center justify-content-between w-100 p-2 m-0"> 
                 <p class="fs-4 p-0 m-0">Descargar en PDF</p> 
-                <button class="shadow-sm bg-primary text-white btn fs-5 d-flex justify-content-center align-items-center p-2 border rounded-4 h-100  section__btn--size" type="submit">Descargar</button>
+                <button class="shadow-sm bg-primary text-white btn fs-5 d-flex justify-content-center align-items-center p-2 border rounded-4 h-100" type="submit">Descargar</button>
             </section>
         </main>
         </body>

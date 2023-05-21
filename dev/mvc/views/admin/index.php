@@ -87,15 +87,15 @@ echo
         <form method="POST" class=" d-flex flex-column justify-content-center">
             <div class="mb-3">
                 <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-                <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Nombre" name="name">
+                <input type="text" class="form-control fs-5  p-2 form__input"  aria-describedby="nameHelp" placeholder="Nombre" name="name">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
-                <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="correo@correo.com" name="email">
+                <input type="email" class="form-control fs-5  p-2 form__input"  aria-describedby="emailHelp" placeholder="correo@correo.com" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
-                <input type="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+                <input type="password" class=" form-control fs-5  p-2"  placeholder="Contraseña" name="password">
             </div>';
 
             if($msg_register){
