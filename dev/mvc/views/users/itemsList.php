@@ -97,7 +97,7 @@ if($_SESSION['user']){
                     <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-1 fs-4">Atras</span>
                 </div>
                 <div class="d-flex align-items-center">
-                    <h2 class="m-0 fs-2 fw-semibold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a>
+                    <h2 class="m-0 fs-2 fw-bold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a>
                 </div>
             </div>
         </header>

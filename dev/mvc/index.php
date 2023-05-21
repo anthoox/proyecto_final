@@ -37,7 +37,7 @@
             <img class=" w-100 main__logo" src="http://localhost/proyecto/dev/mvc/resources/img/logo.svg" alt="Logotipo de la aplicación web">
         </figure>
         
-        <p class="d-none d-md-block fs-5 fw-bold text-center"> Simplifica, organiza y diviertete con la herramienta inteligente que optimiza tu productividad y tu rutina diaria. <br>Descubre un mundo de organización eficiente al alcance de tus manos.</p>
+        <p class="d-none d-md-block fs-4 fw-bold text-center"> Simplifica, organiza y diviertete con la herramienta inteligente que optimiza tu productividad y tu rutina diaria. Descubre un mundo de organización eficiente al alcance de tus manos.</p>
         <a class="d-none d-md-flex col-sm-2 text-decoration-none mt-4"href="./views/login/login.php"><button class=" fs-5 btn btn-primary text-white border p-2 button button__index">Entrar</button></a>
         <a class="d-md-none col-sm-8 text-decoration-none" href="./views/login/login.php"><button class=" fs-5 btn btn-primary text-white border p-2 button button__index">Entrar</button></a>
         <a class="d-md-none col-sm-8 text-decoration-none" href="./views/login/record.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>

@@ -48,12 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $msg_edited = '<p class="ms-2 mt-4 fs-5 m-0 text-secondary">Modificación de foto realizada.</p>';
                     }
                 }
-            }else{
-                $msg_edited = "error FILES";
             }
-            
-        }else{
-            $msg_edited = "error isset POST";
         }
     }
 }
@@ -107,7 +102,7 @@ echo'
             <img src="http://localhost/Proyecto/dev/mvc/resources/img/img-users/'.$photo.'" class="w-100 h-100 object-fit-cover m-0" alt="Descripción de la imagen">
         </figure>
    
-        <form  method="POST" class=" d-flex flex-column justify-content-center fw-semibold" enctype="multipart/form-data" >
+        <form  method="POST" class="row align-items-center d-flex flex-column justify-content-center fw-semibold" enctype="multipart/form-data" >
             <div class="form-group">
                 <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre de usuario</label>
                 <input type="text" class="mb-3 form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1"  value="' . $name . '" name="name">
@@ -122,7 +117,7 @@ echo'
             </section>
             <section class="p-2 d-flex justify-content-between align-items-center">
                 <p class="fs-5 m-0">Descargar datos</p>
-                <button class="shadow btn border rounded-4 btn-primary text-white border p-1 fs-5 button m-0">Descargar</button>
+                <button class="shadow btn border  btn-primary text-white border p-1 fs-5 col-4 m-0">Descargar</button>
             </section>';
             if($msg_edited){
                 
@@ -133,7 +128,7 @@ echo'
             
             }
             echo'         
-            <button type="submit" class="shadow border rounded-4 btn mt-4 btn-secondary fs-5 text-light p-1 button" name="saveData" >Guardar</button>
+            <button type="submit" class="shadow border btn mt-4 btn-secondary fs-5 text-light p-1 col-4" name="saveData" >Guardar</button>
         </form>
     </main>
 </body>

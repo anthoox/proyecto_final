@@ -62,13 +62,13 @@
                             <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
                                 <div class=" d-flex justify-content-between align-items-center header__cnt">
                                     <div class="d-flex align-items-center">
-                                        <a href="../users/itemsList.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                                        <a href="../users/itemsList.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
                                     </div>
                                     <h2 class="m-0  fs-2 fw-semibold">Editar</h2>
                                 </div>
                             </header>
                             <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user">
-                                <form method="POST" class="mt-3 d-flex flex-column justify-content-center fw-semibold ">
+                                <form method="POST" class="row align-items-center mt-3 d-flex flex-column justify-content-center fw-semibold ">
                                     <div class="mt-1 mb-3">
                                         <label for="itemName" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
                                         <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="itemNameHelp" value="'.$data_item[0]['item_name'].'" placeholder="'.$data_item[0]['item_name'].'" name="itemName">
@@ -91,7 +91,7 @@
                                     </div> 
                                     <div class="mt-5 mb-4 d-flex justify-content-center align-items-center ">
                                         <div class="d-flex flex-column align-items-center me-4">
-                                            <i class="la-3x las la-hourglass"></i>
+                                        <a class="text-black text-decoration-none" href="./timing.php"><i class="la-3x las la-hourglass"></i></a>
                                             <p class="fs-5">Temporizar</p>
                                         </div>
                                         <div class="d-flex flex-column align-items-center ms-4">
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
                                     
-                                    <button type="submit" class="btn__save border rounded-4 btn btn-secondary text-white border p-1 fs-5  button ">Guardar</button>
+                                    <button type="submit" class="btn__save border  btn btn-secondary text-white border p-1 fs-5  col-3 ">Guardar</button>
                                 
                                 </form>
                             </main>

@@ -24,9 +24,14 @@
 </head>
 
 <body class="d-flex flex-column p-3">
-    <?php
-        require "../layout/header.php";
-    ?>
+    <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <div class=" d-flex justify-content-between align-items-center header__cnt">
+            <div class="d-flex align-items-center">
+                <a href="../users/editItems.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+            </div>
+            <h2 class="m-0  fs-2 fw-semibold">Editar</h2>
+        </div>
+    </header>
     <main class="container-xxl d-flex flex-column p-0 main__trash"> 
     <form class="mt-3 d-flex flex-column justify-content-center ">
 

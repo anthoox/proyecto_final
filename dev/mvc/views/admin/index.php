@@ -84,7 +84,7 @@ echo
             Alta de <br>
             Usuarios
         </h2>
-        <form method="POST" class=" d-flex flex-column justify-content-center">
+        <form method="POST" class="row align-items-center d-flex flex-column justify-content-center">
             <div class="mb-3">
                 <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
                 <input type="text" class="form-control fs-5  p-2 form__input"  aria-describedby="nameHelp" placeholder="Nombre" name="name">
@@ -103,7 +103,7 @@ echo
                 '<p class="text-center  m-0 text-secondary fs-5 fw-semibold form__parraf--error ">' . $msg_register . '</p>';
             }
             
-           echo ' <button type="submit" class="mt-3 mb-5 btn btn-secondary text-white border mt-1 p-1 fs-5 button">Registrar</button>
+           echo ' <button type="submit" class="mt-3 mb-5 btn btn-secondary text-white border mt-1 p-1 fs-5 col-3 col-lg-2">Registrar</button>
         </form>
         
         <hr class="m-0">
@@ -112,7 +112,7 @@ echo
             Usuario
         </h2>
         
-        <form method="POST" class=" d-flex flex-column justify-content-center">    
+        <form method="POST" class="row d-flex flex-column justify-content-center align-items-center">    
             <div class="mb-3">
                 <label for="emailSearch" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
                 <input name="emailSearch"  type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
@@ -122,7 +122,7 @@ echo
                 echo
                 '<p class="text-center  m-0 text-secondary fs-5 fw-semibold form__parraf--error ">'. $msg_search .'</p> ';
             }  
-           echo' <button type="submit" class="mt-3 mb-5  btn btn-primary  text-white border mt-1 p-1 fs-5 button" value="search">Buscar</button>
+           echo' <button type="submit" class="mt-3 mb-5  btn btn-primary  text-white border mt-1 p-1 fs-5 col-3 col-lg-2" value="search">Buscar</button>
 
         </form>';
         

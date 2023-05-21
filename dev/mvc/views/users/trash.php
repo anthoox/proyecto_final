@@ -97,7 +97,7 @@
                             <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                                 <div class="w-100 ul__li__div--scroll">
                                 <form>
-                                    <p class="text-muted p-0 m-0 fs-4 fw-semibold " id="textToStrike">'.$user_list[$i]['list_name'].'</p>
+                                    <p class="text-muted p-0 m-0 fs-5 fw-bold " id="textToStrike">'.$user_list[$i]['list_name'].'</p>
                                     <p class="d-none ">'.$user_list[$i]['id_list'].'</p>
                                 </form>
                                 </div>

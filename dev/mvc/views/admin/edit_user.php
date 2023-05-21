@@ -135,7 +135,7 @@ if($_SESSION['user_data']==0){
                     Usuario
                 </h2>
                             
-                <form method="POST" class=" d-flex flex-column justify-content-center form">
+                <form method="POST" class="row d-flex flex-column justify-content-center align-items-center form">
 
                     <div class="mb-3">
                         <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
@@ -167,13 +167,13 @@ if($_SESSION['user_data']==0){
                     }                    
                     echo'
                     </div>
-                    <div class="d-flex  flex-wrap justify-content-between align-items-center ">
-                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Recuperar cuenta</button>
-                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar listas</button>
-                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Vaciar papelera</button>
-                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2">Borrar usuario</button>
+                    <div class="row d-flex  flex-wrap justify-content-between align-items-center ">
+                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 ">Recuperación</button>
+                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 ">Borrar listas</button>
+                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 ">Vaciar papelera</button>
+                        <button class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 ">Borrar usuario</button>
                     </div>
-                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>                    
+                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 col-lg-2 col-4">Guardar</button>                    
                 </form>
         </main>
     </body>
