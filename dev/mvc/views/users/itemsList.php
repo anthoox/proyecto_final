@@ -179,7 +179,7 @@ if($_SESSION['user']){
                     echo'
                     >
                 </div>
-                <div class="position-relative w-75 h-100">
+                <div class="position-relative w-100 h-100">
                     
                     <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end">
                         <div>                    

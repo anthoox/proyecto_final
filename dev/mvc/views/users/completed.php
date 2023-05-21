@@ -51,16 +51,16 @@ if($_SESSION['user']){
         echo'
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <form class="d-flex align-items-center justify-content-between" id="miForm">
-            <button id="btn-1" class="shadow-sm  btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-1" class=" shadow-sm  btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Mis listas
             </button>
-            <button id="btn-2" class="shadow-sm  btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-2" class=" shadow-sm  btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Próximas
             </button>
-            <button id="btn-3" class="shadow-sm  btn fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+            <button id="btn-3" class=" shadow-sm  btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                 Pendientes
             </button>
-            <button id="btn-4" class="shadow-sm  btn bg-primary text-white fs-6 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold " type="submit">
+            <button id="btn-4" class=" shadow-sm  btn bg-primary text-white fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold section__btn--size" type="submit">
                 Completas
             </button>
         </form>   
@@ -116,7 +116,7 @@ if($_SESSION['user']){
                             <span class="text-muted  fw-semibold ms-1 mb-2 m-0 p-0 fs-6">'.$quantity.'</span>
                             </div>
                             <div class="w-100 ul__li__div--scroll">
-                                <p class="p-0 m-0 fs-5 fw-semibold text-muted text-decoration-line-through" id="textToStrike"><span class="fs-4 fw-bold text-muted">' .$name_list['list_name']."</span><span class='fs-6 fw-bold text-secondary'> > </span>". $lists_items[$i]['item_name'] . '</p>
+                                <p class="p-0 m-0 fs-5 fw-semibold text-muted text-decoration-line-through" id="textToStrike"><span class="fs-5 fw-bol5 text-muted">' .$name_list['list_name']."</span><span class='fs-5 fw-bold text-secondary'> > </span>". $lists_items[$i]['item_name'] . '</p>
                             </div>
                             
                             <div class="d-flex align-items-center  li__div__icon">';
@@ -186,8 +186,6 @@ echo'
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <script src="http://localhost/proyecto/dev/mvc/resources/js/index.js"></script>
-<script src="http://localhost/proyecto/dev/mvc/resources/js/menu.js"></script>
-
 <script src="http://localhost/proyecto/dev/mvc/resources/js/addList.js"></script>
 </html>';
     }else{

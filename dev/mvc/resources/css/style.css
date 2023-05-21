@@ -19,6 +19,7 @@ body{
 .header__logo{
     min-width: 90px;
 }
+
 .title__h1{
     font-size: 2em;
 }
@@ -104,7 +105,7 @@ body{
 }
 
 .section__btn--size{
-    width: 80px;
+    width: 110px;
 }
 
 
