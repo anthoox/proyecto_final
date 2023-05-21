@@ -6,13 +6,19 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
-
+        $result ='';
         //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
                     $list = new UserList();
                     $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
+                    if($result){
+                        header("Location: " . $_SERVER['REQUEST_URI']);
+                        exit();
+                    }else{
+                        $result = "La lista " . $_POST["nameList"] . " ya existe.";
+                    } 
                 }
             }
         }
@@ -101,7 +107,7 @@ if($_SESSION['user']){
 
     
             echo 
-            '<li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-2 ul__li--size">
+            '<li class="li__hover d-flex  align-items-center justify-content-between border border-1 rounded-4 mt-2 ul__li--size">
             <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike"
                 ';
@@ -161,7 +167,7 @@ if($_SESSION['user']){
     }else{        
         $_SESSION['error_message']['loadLists'] = "No tiene próximas tareas";
         echo
-            '<ul class="p-0 m-0"> 
+            ' 
                 <li class="d-flex  align-items-center justify-content-between mt-5">
                     <div class="position-relative w-100 h-100">
                         <div class="p-0 ps-3 d-flex  m-0 form-check h-100 justify-content-center align-items-center w-100">        
@@ -169,7 +175,7 @@ if($_SESSION['user']){
                         </div>
                     </div>     
                 </li>
-            </ul>';
+            ';
     }
 
         echo'
@@ -179,7 +185,9 @@ if($_SESSION['user']){
         <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
 
-</main>';
+</main>
+<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
+';
 require "menu.php";
 require "../layout/addList.php";
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';

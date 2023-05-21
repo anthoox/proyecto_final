@@ -39,3 +39,18 @@ for(i = 0; i<= checkButtons; i++){
         
     })
 }
+
+//Configuración para que el texto flotante desaparezca
+var parraf = document.querySelector(".p-flotante");
+
+
+        console.log("1")
+        // window.onload = function(){
+            console.log("2")
+            setTimeout(() => {
+                console.log("3")
+                
+                parraf.style.display = "none";
+            }, 2000);
+        // }
+

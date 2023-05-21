@@ -16,7 +16,7 @@ if($_SESSION['user']){
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
                     }else{
-                        $result = "La lista ya " . $_POST["nameList"] . " ya existe.";
+                        $result = "La lista " . $_POST["nameList"] . " ya existe.";
                     }  
                 }
             }
@@ -132,7 +132,7 @@ if($_SESSION['user']){
             }
 
             echo
-            '<li class="shadow-sm align-items-center justify-content-between border rounded-4 mt-2 ul__li--size li__hover d-flex ">
+            '<li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex ">
                 <div class="position-relative w-75 h-100">
                     <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                         <div class="w-100 ul__li__div--scroll">
@@ -160,7 +160,7 @@ if($_SESSION['user']){
     }else{        
         $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
         echo
-            '<ul class="p-0 m-0"> 
+            '
                 <li class="d-flex  align-items-center justify-content-between mt-5">
                     <div class="position-relative w-100 h-100">
                         <div class="p-0 ps-3 d-flex  m-0 form-check h-100 justify-content-center align-items-center w-100">        
@@ -168,16 +168,17 @@ if($_SESSION['user']){
                         </div>
                     </div>     
                 </li>
-            </ul>';
+            ';
     }    
         echo'
             </ul>
-            <p class="fs-5 fw-semibold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
         </section>
     
         <button class="btn btn-secondary fs-5 fw-semibold text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="m-0 me-1 la-sm las la-plus"></i>Lista</button>
-</main>';
+</main>
+<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
+';
 require "menu.php";
 require "../layout/addList.php";
 require "../layout/editList.php";

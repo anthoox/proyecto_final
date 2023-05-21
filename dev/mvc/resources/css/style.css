@@ -170,7 +170,9 @@ body{
 .parraf__contact--justify{
     text-align: justify;
 }
-
+.p-flotante{
+    transition: all 250ms;
+}
 .section__contact--social{
     max-width: 200px;
 }

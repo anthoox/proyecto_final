@@ -5,16 +5,19 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
-
+        $result = '';
         //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
                     $list = new UserList();
                     $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
-                    // if(!$result){                    
-                    //     $prueba = '<p class="text-center fs-5 text-secondary desaparece">Lista no añadida</p>';
-                    // }
+                    if($result){
+                        header("Location: " . $_SERVER['REQUEST_URI']);
+                        exit();
+                    }else{
+                        $result = "La lista " . $_POST["nameList"] . " ya existe.";
+                    } 
                 }
             }
         }
@@ -174,7 +177,9 @@ if($_SESSION['user']){
         <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
 
-</main>';
+</main>
+<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
+';
 require "menu.php";
 require "../layout/addList.php";
 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/config/config.php';
