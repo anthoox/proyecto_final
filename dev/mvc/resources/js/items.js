@@ -20,3 +20,62 @@ function showAddItem(){
     }
 }
 
+//Selección de los checkbox y se añade addEvenListener con evento a cada una
+var checkButtons = document.querySelectorAll('.input-check');
+for(i = 0; i<= checkButtons.length; i++){
+ 
+    checkButtons[i].addEventListener("change", function (event){
+        //Selección del elemento target
+        var checkBox = event.target
+        var isChecked = checkBox.checked;
+        var idItem = checkBox.value;
+        //Comprobación si el elemento tiene activo el check
+        if (isChecked) {
+            activateItem(idItem);
+        } else {
+            deactivateItem(idItem);
+        }
+        console.log(idItem);
+    })
+}
+
+//Función para activar
+function activateItem(idItem) {
+    const xhr = new XMLHttpRequest();
+    const url = 'http://localhost/proyecto/dev/mvc/controllers/check.php';
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.error('Error en la petición: ' + xhr.status);
+            }
+        }
+    };
+
+    const params = 'action=activate&idItem=' + encodeURIComponent(idItem);
+    xhr.send(params);
+}
+//Función para desactivar el chek
+function deactivateItem(idItem) {
+    const xhr = new XMLHttpRequest();
+    const url = 'http://localhost/proyecto/dev/mvc/controllers/check.php';
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.error('Error en la petición: ' + xhr.status);
+            }
+        }
+    };
+
+    const params = 'action=deactivate&idItem=' + encodeURIComponent(idItem);
+    xhr.send(params);
+}

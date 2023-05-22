@@ -30,27 +30,12 @@ linksBotons.addEventListener("click", function(event) {
 });
 
 
-//Configuración para que el checkBox deje como completado el item.
-//Seleccionamos el check
-var checkButtons = document.querySelectorAll('form-check-input');
-for(i = 0; i<= checkButtons; i++){
-    // if(checkButtons[$i].checked ==true)
-    checkButtons.addEventListener("click", function (event){
-        
-    })
-}
+
 
 //Configuración para que el texto flotante desaparezca
 var parraf = document.querySelector(".p-flotante");
+setTimeout(() => {
+    parraf.style.display = "none";
+}, 2500);
 
-
-        console.log("1")
-        // window.onload = function(){
-            console.log("2")
-            setTimeout(() => {
-                console.log("3")
-                
-                parraf.style.display = "none";
-            }, 2000);
-        // }
 

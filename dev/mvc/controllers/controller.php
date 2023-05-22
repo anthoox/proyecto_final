@@ -167,7 +167,7 @@ class UserItems{
     public function timeItems($idList){
         return $this->items->totalItemsTime($idList);
     }
-
+    
 }
 // $prueba = new UserItems;
 // echo $prueba->deleteItem(93);

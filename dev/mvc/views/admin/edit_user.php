@@ -62,8 +62,10 @@ if($_SESSION['user']){
                             $result2 = $trash->emptyTrash($_GET['id']);
                             if($result2){
                                 $result2 = "Papelera vaciada";
+                                $msg_edit = $result2;
                             }else{
                                 $result2 = "No se ha podido vaciar la papelera";
+                                $msg_edit = $result2;
                             }
 
                         }
@@ -74,8 +76,10 @@ if($_SESSION['user']){
                             $result2 = $lists->deleteUserList($_GET['id']);
                             if($result2){
                                 $result2 = "Listas eliminadas";
+                                $msg_edit = $result2;
                             }else{
                                 $result2 = "No hay listas para eliminar";
+                                $msg_edit = $result2;
                             }
                         }
                         
@@ -93,6 +97,10 @@ if($_SESSION['user']){
                             }
                         }
 
+                        //Restaurar usuario
+                        if(isset($_POST['restoreUser'])){
+                            $msg_edit = "Funcionalidad no disponible aún";
+                        }
 
                     //Si existen datos de sesión de usuario
                     }else{
@@ -131,8 +139,10 @@ if($_SESSION['user']){
                             $result2 = $trash->emptyTrash($_SESSION['user_data'][0]['id_user']);
                             if($result2){
                                 $result2 = "Papelera vaciada";
+                                $msg_edit = $result2;
                             }else{
                                 $result2 = "No se ha podido vaciar la papelera";
+                                $msg_edit = $result2;
                             }
 
                         }
@@ -144,8 +154,10 @@ if($_SESSION['user']){
                             $result2 = $lists->deleteUserList($_SESSION['user_data'][0]['id_user']);
                             if($result2){
                                 $result2 = "Listas eliminadas";
+                                $msg_edit = $result2;
                             }else{
                                 $result2 = "No hay listas para eliminar";
+                                $msg_edit = $result2;
                             }
                         }
 
@@ -161,6 +173,11 @@ if($_SESSION['user']){
                                 $result2 = "No se ha podido eliminar al usuario";
                                 header('location:../admin/index.php');
                             }
+                        }
+
+                        //Restaurar usuario
+                        if(isset($_POST['restoreUser'])){
+                            $msg_edit = "Funcionalidad no disponible aún";
                         }
                     }
                 }
@@ -252,14 +269,11 @@ if($_SESSION['user_data']==0){
                     </div>
                     <div class="row d-flex  flex-wrap justify-content-between align-items-center ">
                         <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="restoreUser">Recuperación</button>
-                        <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUserLists">Borrar listas</button>
-                        <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="emptyTrash">Vaciar papelera</button>
-                        <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUser">Borrar usuario</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUserLists">Borrar listas</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="emptyTrash">Vaciar papelera</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUser">Borrar usuario</button>
                     </div>
-                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 col-lg-2 col-4">Guardar</button>  ';
-                    // $result2 = "sdasfd";
-                    var_dump($result2) ;
-                    echo'                 
+                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 col-lg-2 col-4">Guardar</button>                
                 </form>
         </main>
     </body>
@@ -318,7 +332,7 @@ if($_SESSION['user_data']==0){
                 </h2>
                 
             
-            <form method="POST"class=" d-flex flex-column justify-content-center  form">
+            <form method="POST"class=" row d-flex flex-column justify-content-center align-items-center form">
                 <div class="mb-3">
                     <label for="name" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
                     <input type="text" class="form-control fs-5 fw-semibold p-2 form__input" id="exampleInputEmail1" aria-describedby="emailHelp" value="'.$_SESSION['user_data'][0]['name'].'" name="name">
@@ -350,15 +364,13 @@ if($_SESSION['user_data']==0){
                 } 
                 echo'
                 </div>
-                <div class="d-flex  flex-wrap justify-content-between align-items-center ">
-                    <button type="submit" class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2" name="restoreUser">Recuperar cuenta</button>
-                    <button type="submit" type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2" name="delUserLists">Borrar listas</button>
-                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2" name="emptyTrash">Vaciar papelera</button>
-                    <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2" name="delUser">Borrar usuario</button>
+                <div class="row d-flex  flex-wrap justify-content-between align-items-center ">
+                        <button type="submit"  class="btn btn-primary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="restoreUser">Recuperación</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUserLists">Borrar listas</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="emptyTrash">Vaciar papelera</button>
+                        <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 ps-2 pe-2 col-lg-2 col-5 " name="delUser">Borrar usuario</button>
                 </div>
-                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 button">Guardar</button>     ';
-                var_dump($result2) ;
-                echo'           
+                <button type="submit" class="btn btn-secondary text-white border mt-5 p-1 fs-5 col-lg-2 col-4">Guardar</button>         
             </form>
         </main>
     </body>

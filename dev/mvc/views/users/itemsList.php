@@ -171,7 +171,7 @@ if($_SESSION['user']){
             '
             <li class="shadow-sm  d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size li__hover">
                 <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
-                    <input class="form-check-input" type="checkbox" value="'.$itemsList[$i]['id_item'].'" id="flexCheckDefault" data-target="textToStrike"
+                    <input class="input-check form-check-input" type="checkbox" value="'.$itemsList[$i]['id_item'].'" id="flexCheckDefault" data-target="textToStrike"
                     ';
                     if($itemsList[$i]['is_check'] == 1){
                         echo "checked";

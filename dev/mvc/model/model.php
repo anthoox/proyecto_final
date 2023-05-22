@@ -716,8 +716,26 @@ class Items{
 		}catch(PDOException $e){
 			echo "Error al realizar la modificación " . $e->getMessage();
 		}
-		// $this->connection->closeConnection();
 	}
+
+	/**Método para el check */
+	public function checkItem($idItem, $check) {
+        $sql = "UPDATE " . $this->table . " SET is_check = ? WHERE id_item = ?";
+        $query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $check);
+		$query->bindParam(2, $idItem);
+        try {
+          $query->execute([$check, $idItem]);
+          $rows = $query->rowCount();
+          if ($rows > 0) {
+            return true;
+          } else {
+            return false;
+          }
+        } catch (PDOException $e) {
+          echo "Error al realizar la modificación " . $e->getMessage();
+        }
+    }
 
 
 	/**Método para obtener las próximas listas */
