@@ -35,18 +35,48 @@
     </header>
     <main class="mt-3 container-xxl d-flex flex-column  p-0 main__trash">
         <section class="d-flex justify-content-between flex-column align-items-center m-0 p-2 pt-0">
-            <p class="p-1 fs-5 parraf__contact--justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce purus mauris, porttitor facilisis nisi sed, bibendum vestibulum lorem. Fusce non iaculis quam, quis laoreet dui. Donec sed sodales orci, sit amet accumsan ante. Fusce id purus sit amet dolor vestibulum pharetra. Donec id leo dapibus, rhoncus justo et, lacinia erat. In hac habitasse platea dictumst. Quisque eget risus neque. Maecenas sed lacus blandit, bibendum lectus non, fringilla magna.</p>
-            <p class="fs-5 text-left">Correo de contacto: <span class="fw-bolder fs-5">prueba@correo.com</span></p>
-            <p class="mt-5 fs-5 text-left">Siguenos en:</p>
-            <div class="d-flex justify-content-center  ">
-                <i class="me-4 la-3x lab la-facebook"></i>
-                <i class="la-3x lab la-youtube"></i>
-                <i class="ms-4 la-3x lab la-instagram"></i>
-            </div>
+            <p class="p-1 fs-5 parraf__contact--justify">En Lista Simple, valoramos tu opinión y estamos aquí para atender cualquier pregunta, sugerencia o consulta que puedas tener. Queremos asegurarnos de que tengas la mejor experiencia posible con nuestra aplicación y que te sientas apoyado en todo momento.
+
+Nuestra sección de contacto es el lugar perfecto para que puedas comunicarte con nosotros. Estamos listos para escuchar tus comentarios, resolver tus dudas y ayudarte en lo que necesites. Ya sea que tengas alguna sugerencia para mejorar la aplicación, necesites asistencia técnica o simplemente quieras dejarnos un mensaje de aprecio, estaremos encantados de recibirlo.
+
+</p>
+<p class="p-1 fs-5 parraf__contact--justify">Puedes comunicarte con nosotros enviándonos un correo electrónico a <span class="fw-bolder fs-5">contacto@listasimple.com</span>. Nos comprometemos a responder a la brevedad posible, porque tu satisfacción es nuestra prioridad.
+
+Tu opinión es valiosa para nosotros, ya que nos ayuda a crecer y mejorar continuamente. Así que no dudes en ponerte en contacto con nosotros. ¡Estamos ansiosos por escucharte!
+
+Gracias por ser parte de la comunidad de Lista Simple y por confiar en nosotros para organizar tu vida de manera sencilla y eficiente.</p>
+            <p class="fs-5 text-left">Correo de contacto: <span class="fw-bolder fs-5">contacto@listasimple.com</span></p>
+            <form class="mt-3 row d-flex align-items-center justify-content-center">
+                <div class="col-11 ">
+                    <select class=" mb-3 form-select fs-5" aria-label="Default select example" disabled>
+                        <option selected>Seleccione el asunto</option>
+                        <option class="fs-5" value="1">Consulta</option>
+                        <option class="fs-5" value="2">Comentarios</option>
+                        <option class="fs-5" value="3">Reclamación</option>
+                        <option class="fs-5" value="3">Otros</option>
+                    </select>
+                </div>              
+                <div class="mt-1 col-11 fs-5 mb-3">
+                    <label for="exampleFormControlTextarea1" class="ms-2 p-0 m-0 mb-2 fs-5 form-label">Escriba aquí su consulta</label>
+                    <textarea class=" fs-5 form-control" id="exampleFormControlTextarea1" rows="3" disabled></textarea>
+                </div>
+            </form>
+
+            
         </section>
     </main>
     <footer class="">
-        <p class="position-absolute bottom-0 start-50 translate-middle-x text-center p-2 fs-5 w-100">Desarrollado por <span class="fs-5 fw-bold">anthoox</span> todos los derechos reservados 2023</p>
+        <p class="fs-5 text-center">Siguenos en:</p>
+        <div class="d-flex justify-content-center  ">
+            <i class="me-4 lab la-3x la-linkedin"></i>
+            <i class="me-4 lab la-3x la-github"></i>
+            
+            <i class="la-3x lab la-youtube"></i>
+            <i class="ms-4 la-3x lab la-facebook"></i>
+        </div>
+        <p class="text-center p-2 fs-5 w-100">Desarrollado por <span class="fs-5 fw-bold">Anthony Alegría Alcántara</span> como proyecto final de DAW en el centro CCC.<br> Todos los derechos reservados 2023 <br>
+        Curso 2022-2023</p>
+
     </footer>
 </body>
 
