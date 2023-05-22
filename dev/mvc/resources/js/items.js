@@ -31,16 +31,16 @@ for(i = 0; i<= checkButtons.length; i++){
         var idItem = checkBox.value;
         //Comprobación si el elemento tiene activo el check
         if (isChecked) {
-            activateItem(idItem);
+            enableItem(idItem);
         } else {
-            deactivateItem(idItem);
+            disableItem(idItem);
         }
-        console.log(idItem);
+        // console.log(idItem);
     })
 }
 
 //Función para activar
-function activateItem(idItem) {
+function enableItem(idItem) {
     const xhr = new XMLHttpRequest();
     const url = 'http://localhost/proyecto/dev/mvc/controllers/check.php';
 
@@ -56,11 +56,11 @@ function activateItem(idItem) {
         }
     };
 
-    const params = 'action=activate&idItem=' + encodeURIComponent(idItem);
+    const params = 'action=enable&idItem=' + encodeURIComponent(idItem);
     xhr.send(params);
 }
 //Función para desactivar el chek
-function deactivateItem(idItem) {
+function disableItem(idItem) {
     const xhr = new XMLHttpRequest();
     const url = 'http://localhost/proyecto/dev/mvc/controllers/check.php';
 
@@ -76,6 +76,6 @@ function deactivateItem(idItem) {
         }
     };
 
-    const params = 'action=deactivate&idItem=' + encodeURIComponent(idItem);
+    const params = 'action=disable&idItem=' + encodeURIComponent(idItem);
     xhr.send(params);
 }
