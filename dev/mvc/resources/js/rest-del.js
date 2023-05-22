@@ -55,7 +55,6 @@ for (var i = 0; i < iconDelete.length; i++) {
       var secondChild = sonElement.children[1].innerHTML
   
       idList = secondChild
-      console.log(secondChild);
     });
   }
 
@@ -80,3 +79,5 @@ function showDeleteList(){
 
         }
 }
+
+//Vista admin - Borrar listas de usuario

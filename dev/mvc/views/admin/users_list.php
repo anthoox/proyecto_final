@@ -39,8 +39,10 @@ require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/controller.php';
      $lists;
      for($i = 0; $i<(sizeof($users)); $i++){
          echo
-         '<tr>
+         '
+         <tr>
          <th scope="row">'.$users[$i]['id_user'].'</th>
+         
          <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['name'].'</a></td>
          <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['email'].'</a></td>
          <td><a href="edit_user.php?id=' . $users[$i]['id_user'] . '&name=' . $users[$i]['name'] . '&email=' . $users[$i]['email'] . '&rol=' . $users[$i]['rol'] . '   " class="text-decoration-none text-black fw-semibold table__th--pointer">'.$users[$i]['registration_date'].'</a></td>';

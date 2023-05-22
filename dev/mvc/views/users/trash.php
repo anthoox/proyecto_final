@@ -23,7 +23,7 @@
 
 
                 if(isset($_POST['acceptDel'])) {
-                    // Llamar a la función en el controlador para restuarar el elemento
+                    // Llamar a la función en el controlador para eliminar la lista
                     $deleteList = new UserList();
                     $result = $deleteList->deleteList($_POST['id_list'], $_SESSION['user']['id_user'] );
                     if($result){

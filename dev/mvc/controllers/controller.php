@@ -56,6 +56,10 @@ class LoginController{
     public function limitUsers($offset, $users_per_page){
         return $this->user->limitListUsers($offset, $users_per_page);
     }
+
+    public function deleteUser($idUser){
+        return $this->user->deleteUser($idUser);
+    }
 }
 
 class UserList{//UserController
@@ -99,6 +103,14 @@ class UserList{//UserController
 
     public function editList($idList, $atribute, $data){
         return $this->lists->modifList($idList, $atribute, $data);
+    }
+
+    public function emptyTrash($idUser){
+        return $this->lists->emptyTrash($idUser);
+    }
+
+    public function deleteUserList($idUser){
+        return $this->lists->deleteUserList($idUser);
     }
 }
 

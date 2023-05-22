@@ -58,6 +58,25 @@ class Lists {
 		}
 	}
 
+	/**Método para borrar las litas de un usuario */
+	public function deleteUserList($idUser){				
+		$sql = "DELETE FROM $this->table WHERE id_user = ?";
+		$query = $this->connection->getConnection()->prepare($sql);
+		$query->bindParam(1, $idUser);
+		try{
+			$query->execute();
+			$rows = $query->rowCount();
+			if($rows > 0){
+				return true;
+			}else{
+				return false;
+			}
+		}catch(PDOException $e){
+			echo "Erro al borrar" . $e->getMessage();
+		}
+		// $this->connection->closeConnection();
+	}
+
 	/**Método para borrar una lista que esta en la papelera*/
 	public function delList($idList, $idUser){				
 		$sql = "DELETE FROM $this->table WHERE id_list = ? AND id_user = ? AND trash = 1";
@@ -180,21 +199,22 @@ class Lists {
 
 	//Metodo para eliminar/vaciar todas las listas que tienen un si en in_trash
 	public function emptyTrash($idUser){
-		$sql = "DELETE FROM $this->table WHERE in_trash = 1 and id_user = ?";
+		$sql = "DELETE FROM $this->table WHERE trash = 1 and id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $idUser);
 		try{
 			$query->execute();
 			$rows = $query->rowCount();
-			if($rows > 0){
-				echo "Se ha vaciado la papelera";
+			if($rows >= 0){
+				// echo "Se ha vaciado la papelera";
+				return true;
 			}else{
-				echo "La papelera esta vacia";
+				// echo "La papelera esta vacia";
+				return false;
 			}
 		}catch(PDOException $e){
 			echo "Error a la hora de vaciar de la papelera. " . $e->getMessage();
 		}
-		$this->connection->closeConnection();
 	}
 
 
@@ -404,10 +424,6 @@ class Users{
 	 * A esto le falta porque al eliminar elementos da error por las claves foraneas
 	*/
 	public function deleteUser($id){
-		$this->items = new Items();
-		$this->items->delItem( $id);
-		$this->lists = new Lists();
-		$this->lists->delList('id_user', $id);
 		$sql = "DELETE FROM " . $this->table . " WHERE id_user = ?";
 		$query = $this->connection->getConnection()->prepare($sql);
 		$query->bindParam(1, $id);
@@ -416,14 +432,15 @@ class Users{
 			$rows = $query->rowCount();
 			if($rows>0){
 				echo "usuario borrado";
+				return true;
 			}else{
 				echo "el usuario no existe";
+				return false;
 			}
 			
 		}catch(PDOException $e){
 			echo "Error al borrar al usuario." . $e->getMessage();
 		}
-		$this->connection->closeConnection();
 	}
 
 	/**Método para modificar cualquier atributo de user */
