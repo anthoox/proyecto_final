@@ -33,14 +33,9 @@ if($_SESSION['user']){
             <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
             <!-- Mis estilos -->
+            <link rel="shortcut icon" href="http://localhost/proyecto/dev/mvc/resources/img/simple_logo.ico" />
             <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
         </head>
 
@@ -91,17 +86,28 @@ if($_SESSION['user']){
     
         
         echo'
-        <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-1 fs-4">Atras</span>
+                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
                 </div>
-                <div class="d-flex align-items-center">
-                    <h2 class="m-0 fs-2 fw-bold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a>
-                </div>
+                <h2 class="m-0 fs-2 fw-bold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a>
             </div>
         </header>
-        <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
+
+        <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 p-3 shadow " >
+            <div class=" d-flex justify-content-between align-items-center ">
+                <div class="d-flex align-items-center">
+                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+                </div>
+               <div class="d-flex align-items-center">
+               <h2 class="m-0 fs-2 fw-bold">' . $_SESSION['list_name'] .'</h2><a href="listInfo.php" class="text-black"><i class="ms-2 la-3x las la-info-circle"></i></a></div>
+
+                
+            </div>
+        </header>
+
+        <main class="mt-2 mt-md-4 container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section class="p-0 m-0"> ';
         if($itemsList){
         //Precio total para la cabecera
@@ -118,7 +124,7 @@ if($_SESSION['user']){
         
         echo'
 
-        <header id="carouselExampleDark" class="shadow-sm carousel carousel-dark slide border rounded-4 mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
+        <header id="carouselExampleDark" class="shadow-sm carousel border border-2 rounded-4 carousel-dark slide mt-3 pt-3 pb-3 w-100" data-bs-interval="false">
         
             <div class="carousel-inner ">
             <div class="carousel-item active " >
@@ -169,7 +175,7 @@ if($_SESSION['user']){
             
             echo
             '
-            <li class="shadow-sm  d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size li__hover">
+            <li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex">
                 <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                     <input class="input-check form-check-input" type="checkbox" value="'.$itemsList[$i]['id_item'].'" id="flexCheckDefault" data-target="textToStrike"
                     ';

@@ -47,31 +47,38 @@ if($_SESSION['user']){
             <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
             <!-- Mis estilos -->
+            <link rel="shortcut icon" href="http://localhost/proyecto/dev/mvc/resources/img/simple_logo.ico" />
             <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
         </head>
 
         <body class="d-flex flex-column">  
 
        
-        <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+     
+        <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../users/itemsList.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-1 fs-4">Atras</span>
+                    <a href="../users/itemsList.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
                 </div>
-                <div class="d-flex align-items-center">
-                    <h2 class="m-0 fs-2 fw-semibold">Información lista</h2>
-                </div>
+                <h2 class="m-0 fs-2 fw-semibold">Información lista</h2>
             </div>
         </header>
-        <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
+
+        <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 p-4 shadow " >
+            <div class=" d-flex justify-content-between align-items-center ">
+                <div class="d-flex align-items-center">
+                    <a href="../users/itemsList.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+                </div>
+               <div class="d-flex align-items-center">
+                <h2 class="m-0 fs-2 fw-semibold">Información lista</h2>
+               </div>
+
+                
+            </div>
+        </header>
+        <main class="mt-2 mt-md-4 container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
             <section class="p-0 mt-3"> 
                 <div class="p-0 ps-2 pe-2 d-flex align-items-center justify-content-between">
                 <p class="fs-4 m-0 p-0">ID:</p> <p class="fs-4 m-0 p-0">'.$infoList['id_list'].'</p>
