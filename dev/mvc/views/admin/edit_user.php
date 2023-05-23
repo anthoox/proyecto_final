@@ -189,7 +189,7 @@ if($_SESSION['user']){
 if($_SESSION['user_data']==0){
     $rol;
     if($_GET['rol'] == 1){
-        $rol = "administrador";
+        $rol = "Admin";
     }else if($_GET['rol'] == 2){
         $rol = "usuario";
     }
@@ -219,16 +219,30 @@ if($_SESSION['user_data']==0){
         <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
     </head>
 
-    <body class="d-flex flex-column justify-content-between p-3">
-        <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+    <body class=" d-flex flex-column justify-content-between p-3">
+        <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../admin/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                    <a href="../admin/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
                 </div>
-                <span class="fw-semibold fs-3 align-self-start mt-3">Tipo de usuario: '.$rol.'</span>
+                <span class="fw-semibold fs-3 align-self-start mt-3">Perfil: '.$rol.'</span>
             </div>
         </header>
-            <main class="container-fluid d-flex  flex-column mb-5 position-relative main__trash">
+
+
+
+    <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow " >
+        <div class=" d-flex justify-content-between align-items-center ">
+            <div class="d-flex align-items-center">
+                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+            </div>
+            <h1 class="m-0 fs-2 fw-semibold">Perfil: '.$rol.'</h1>
+            <div>
+                <img class="logo" src="http://localhost/proyecto/dev/mvc/resources/img/logo.svg" alt="logo web" >
+            </div>
+        </div>
+    </header>
+            <main class="mt-md-5 mt-3 container-fluid d-flex  flex-column mb-5 position-relative main__trash">
             
                 <h2 class="mt-3 text-success title title__h2 fw-bolder ">
                     Editar <br>
@@ -284,7 +298,7 @@ if($_SESSION['user_data']==0){
 }else{
     $rol;
     if($_SESSION['user_data'][0]['rol'] == 1){
-        $rol = "administrador";
+        $rol = "Admin";
     }else if($_SESSION['user_data'][0]['rol'] == 2){
         $rol = "usuario";
     }
@@ -316,15 +330,29 @@ if($_SESSION['user_data']==0){
     </head>
 
     <body class="d-flex flex-column justify-content-between p-3">
-        <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
-                    <a href="../admin/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                    <a href="../admin/index.php"><i class="la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
                 </div>
                 <span class="fw-semibold fs-3 align-self-start mt-3">Perfil: '.$rol.'</span>
             </div>
         </header>
-            <main class="container-fluid d-flex  flex-column mb-5 position-relative main__trash">
+
+
+
+        <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow " >
+            <div class=" d-flex justify-content-between align-items-center ">
+                <div class="d-flex align-items-center">
+                    <a href="../admin/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+                </div>
+                <h1 class="m-0 fs-2 fw-semibold">Perfil: '.$rol.'</h1>
+                <div>
+                    <img class="logo" src="http://localhost/proyecto/dev/mvc/resources/img/logo.svg" alt="logo web" >
+                </div>
+            </div>
+        </header>
+            <main class="mt-3 mt-md-5 container-fluid d-flex  flex-column mb-5 position-relative main__trash">
             
                 <h2 class="mt-3 text-success title title__h2 fw-bolder ">
                     Editar <br>

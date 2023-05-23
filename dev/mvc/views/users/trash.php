@@ -65,7 +65,7 @@
 
         echo
         '
-        <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+        <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
             <div class=" d-flex justify-content-between align-items-center header__cnt">
                 <div class="d-flex align-items-center">
                     <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
@@ -73,8 +73,22 @@
                 <h1 class="m-0 fs-2 fw-semibold">Papelera</h1>
             </div>
         </header>
-        
-        <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
+
+        <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow " >
+            <div class=" d-flex justify-content-between align-items-center ">
+                <div class="d-flex align-items-center">
+                    <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+                </div>
+                <h1 class="m-0 fs-2 fw-semibold">Papelera</h1>
+                <div>
+                    <img class="logo" src="http://localhost/proyecto/dev/mvc/resources/img/logo.svg" alt="logo web" >
+                </div>
+            </div>
+        </header>
+
+  
+
+        <main class="container-xxl mt-2 mt-md-5  d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section class="p-0 m-0"> 
             <ul class="p-0 m-0">';
         if($user_list){       
@@ -93,7 +107,7 @@
                 } 
                 echo
                 '
-                    <li class="bg-light d-flex  align-items-center justify-content-between border rounded-4 mt-3 ul__li--size">
+                    <li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex">
                         <div class="position-relative w-75 h-100">
                             <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
                                 <div class="w-100 ul__li__div--scroll">

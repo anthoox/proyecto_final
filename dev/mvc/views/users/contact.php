@@ -25,15 +25,27 @@
 
 <body class="d-flex flex-column justify-content-between p-3">
 <!-- body__grid--contact -->
-    <header class="container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3" >
+    <header class="d-md-none container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow" >
         <div class=" d-flex justify-content-between align-items-center header__cnt">
             <div class="d-flex align-items-center">
-                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-5">Atras</span>
+                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
             </div>
             <h1 class="m-0 fs-2 fw-semibold">Contacto</h1>
         </div>
     </header>
-    <main class="mt-3 container-xxl d-flex flex-column  p-0 main__trash">
+
+    <header class="d-none d-md-block container-fluid border-bottom fixed-top z-3 bg-white ps-3 pe-3 shadow " >
+        <div class=" d-flex justify-content-between align-items-center ">
+            <div class="d-flex align-items-center">
+                <a href="../users/index.php"><i class="text-black la-2x las la-angle-left"></i></a><span class="ms-2 fs-4">Atras</span>
+            </div>
+            <h1 class="m-0 fs-2 fw-semibold">Contacto</h1>
+            <div>
+                <img class="logo" src="http://localhost/proyecto/dev/mvc/resources/img/logo.svg" alt="logo web" >
+            </div>
+        </div>
+    </header>
+    <main class="mt-3 mt-md-5 container-xxl d-flex flex-column  p-0 main__trash">
         <section class="d-flex justify-content-between flex-column align-items-center m-0 p-2 pt-0">
             <p class="p-1 fs-5 parraf__contact--justify">En Lista Simple, valoramos tu opinión y estamos aquí para atender cualquier pregunta, sugerencia o consulta que puedas tener. Queremos asegurarnos de que tengas la mejor experiencia posible con nuestra aplicación y que te sientas apoyado en todo momento.
 
