@@ -48,10 +48,11 @@ if($_SESSION['user']){
         <link rel="stylesheet" href="http://localhost/proyecto/dev/mvc/resources/css/style.css">
         </head>
 
-        <body class="d-flex flex-column">';
+        <body id="head" class="d-flex flex-column">';
 
         require "../layout/header.php";
         require "../layout/headerDesk.php";
+        
         if($_SESSION['user']['photo'] == ""){
             $photo = "img-user.png";
         }else{

@@ -73,6 +73,7 @@
                 <h1 class="m-0 fs-2 fw-semibold">Papelera</h1>
             </div>
         </header>
+        
         <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
         <section class="p-0 m-0"> 
             <ul class="p-0 m-0">';

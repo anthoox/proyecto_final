@@ -3,7 +3,7 @@
     <h3 class="text-center">Editar lista</h3>
         <div class="w-75 mb-3">
             <label for="newNameList" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-            <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="newNameList" placeholder="nombre lista" name="newNameList">
+            <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="newNameList" placeholder="nombre lista" name="newNameList" required>
         </div>
         <!-- input para enviar el id_list -->
         <input id="editNameInput" type="hidden" name="id_list" value="">

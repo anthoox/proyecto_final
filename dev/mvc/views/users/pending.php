@@ -49,26 +49,48 @@ if($_SESSION['user']){
         </head>
 
         <body class="d-flex flex-column">';
-
+        require "../layout/headerDesk.php";
         require "../layout/header.php";
+        if($_SESSION['user']['photo'] == ""){
+            $photo = "img-user.png";
+        }else{
+            $photo = $_SESSION['user']['photo'];
+        }
         echo'
-        <main class="container-xxl d-flex flex-column ps-3 pe-3 pb-3 main__user"> 
-            <section id="miForm" class="d-flex align-items-center justify-content-between">
-                <button id="btn-1" class=" shadow-sm btn fs-5 d-flex  justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
-                    Mis listas
-                </button>
-                <button id="btn-2" class=" shadow-sm btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
-                    Próximas
-                </button>
-                <button id="btn-3" class=" shadow-sm btn bg-primary text-white fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+        <main class="mt-md-5 mt-3 position-relative container-xxl d-flex flex-column flex-md-row ps-3 pe-3 pb-3 main__user h-100"> 
+        <nav class="h-100 d-none d-md-flex  justify-content-center w-25 border  shadow border-2  rounded-4 bg-white ps-2 pe-2 me-3">
+            <ul class="rounded-4 list-group list-group-flush">
+                <li class="mt-1 p-4 d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
+                    <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/dev/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
+                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">Perfil de '.$_SESSION['user']['name'] .'</a>
+                </li>
+                <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
+                <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>
+                <li class="p-4 list-group-item list-group-item-action"><a href="./../users/guide.php" class="fs-5 text-decoration-none text-black">Guía de usuario</a></li>
+                <li class="p-4 list-group-item list-group-item-action"><a href="../../controllers/exit.php" class="fs-5 text-decoration-none text-black">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+        <div class="p-2 pe-3 ps-3 w-100 d-flex  align-items-center flex-column shadow border  border-2  rounded-4 overflow-auto" >
+            <form id="miForm" class="w-100 d-flex  align-items-center  flex-column flex-sm-row ">
+                <div class="pb-2 d-flex w-100 justify-content-around ">
+                    <button id="btn-1" class="shadow-sm btn fs-5 d-flex  justify-content-center  align-items-center p-2 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+                        Mis listas
+                    </button>
+                    <button id="btn-2" class="shadow-sm btn fs-5 d-flex  justify-content-center  align-items-center p-2 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
+                        Próximas
+                    </button>
+                </div>
+                <div class="pb-2 d-flex w-100 justify-content-around ">
+                <button id="btn-3" class="shadow-sm btn fs-5 d-flex  justify-content-center  align-items-center p-2 border rounded-4 mt-3 h-100  fw-semibold section__btn--size bg-primary text-white" type="submit">
                     Pendientes
                 </button>
-                <button id="btn-4" class=" shadow-sm btn fs-5 d-flex justify-content-center align-items-center p-1 border rounded-4 mt-3 h-100 fw-semibold section__btn--size" type="submit">
+                <button id="btn-4" class="shadow-sm btn fs-5 d-flex  justify-content-center  align-items-center p-2 border rounded-4 mt-3 h-100  fw-semibold section__btn--size" type="submit">
                     Completas
                 </button>
-            </section>   
+                </div>
+            </form>   
 
-            <section class="p-0 m-0 position-relative">
+            <section class="p-0 m-0 w-100">
                 <ul class="p-0 m-0 mt-3 ">';
             
                 require_once 'C:/xampp/htdocs/proyecto/dev/mvc/controllers/functions.php';
@@ -102,7 +124,7 @@ if($_SESSION['user']){
                             $name_list = $name_list->getNameList($lists_items[$i]['id_list']);
                 
                         echo 
-                        '<li class="li__hover d-flex  align-items-center justify-content-between border rounded-4 mt-2 ul__li--size">
+                        '<li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex">
                             <div class="d-flex justify-content-center align-items-center m-0 form-check border-end h-100  ul__li___div--size">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-target="textToStrike"
                                 ';
@@ -166,6 +188,7 @@ if($_SESSION['user']){
         
         <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
+        </div>
     </main>
     <p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>';
 
