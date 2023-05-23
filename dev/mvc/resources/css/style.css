@@ -19,6 +19,9 @@ body{
 .header__logo{
     min-width: 90px;
 }
+.logo{
+    max-width: 120px;
+}
 
 .title__h1{
     font-size: 2em;
@@ -106,6 +109,7 @@ body{
 
 .section__btn--size{
     width: 110px;
+
 }
 
 
@@ -121,6 +125,13 @@ body{
     max-width: 80px;
     min-height: 80px;
     max-height: 80px;
+}
+
+.img-user-2{
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
 }
 
 .main__trash{
