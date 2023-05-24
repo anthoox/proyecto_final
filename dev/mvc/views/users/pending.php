@@ -181,7 +181,7 @@ if($_SESSION['user']){
             
         </section>
         
-        <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
+        <button class="me-1 btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
         </div>
     </main>

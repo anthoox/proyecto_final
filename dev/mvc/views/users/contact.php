@@ -75,11 +75,10 @@ Gracias por ser parte de la comunidad de Lista Simple y por confiar en nosotros 
     <footer class="">
         <p class="fs-5 text-center">Siguenos en:</p>
         <div class="d-flex justify-content-center  ">
-            <i class="me-4 lab la-3x la-linkedin"></i>
-            <i class="me-4 lab la-3x la-github"></i>
-            
-            <i class="la-3x lab la-youtube"></i>
-            <i class="ms-4 la-3x lab la-facebook"></i>
+            <a class="text-decoration-none text-black" target="_blank" href="https://www.linkedin.com/in/anthony-alegr%C3%ADa-alc%C3%A1ntara-58920a233/"><i class="me-4 lab la-3x la-linkedin"></i></a>
+            <a class="text-decoration-none text-black" target="_blank" href="https://github.com/anthoox/proyecto_final"><i class="me-4 lab la-3x la-github"></i></a> 
+            <a class="text-decoration-none text-black" target="_blank" href="https://www.youtube.com/channel/UCoDBM6mX49A52d_RYcPbv-Q"><i class="la-3x lab la-youtube"></i></a>
+            <a class="text-decoration-none text-black" target="_blank" href="https://www.facebook.com/anthony.laos"><i class="ms-4 la-3x lab la-facebook"></i></a>
         </div>
         <p class="text-center p-2 fs-5 w-100">Desarrollado por <span class="fs-5 fw-bold">Anthony Alegría Alcántara</span> como proyecto final de DAW en el centro CCC.<br> Todos los derechos reservados 2023 <br>
         Curso 2022-2023</p>

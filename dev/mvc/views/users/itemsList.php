@@ -253,7 +253,7 @@ if($_SESSION['user']){
         }    
             echo'
             </section>
-            <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 button rounded-circle shadow button__add_item">
+            <button class="me-1 btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 button rounded-circle shadow button__add_item">
             <i class="la-lg las la-plus"></i></button>
             </main>';
             require "../layout/addItem.php";

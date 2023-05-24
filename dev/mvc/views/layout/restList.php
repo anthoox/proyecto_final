@@ -1,5 +1,5 @@
 <section class="w-100 z-3 fixed-bottom modals  section__restList">   
-    <form method="POST" class="bg-white h-100 d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
+    <form method="POST" class="bg-white h-100 d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-4">
         <div class="w-75">
             <p class="fw-semibold fs-5 text-center">¿Quiere restaurar la lista?<p>
         </div>

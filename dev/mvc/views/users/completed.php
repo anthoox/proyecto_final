@@ -110,8 +110,13 @@ if($_SESSION['user']){
                         $item_time = format_time($item_time);
                         
             
+      
                         $notif_date  = $lists_items[$i]['alarm_date'];
-                        $notif_date =  format_date_time($notif_date);
+            if($notif_date != "0000-00-00 00:00:00"){
+                $notif_date =  format_date_time($notif_date);
+            }else{
+                $notif_date = '';
+            }
         
                         $name_list = new UserList();
                         $name_list = $name_list->getNameList($lists_items[$i]['id_list']);
@@ -182,7 +187,7 @@ if($_SESSION['user']){
             </ul>
         </section>
     
-        <button class="btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
+        <button class="me-1 btn btn-secondary fs-5 text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="me-1 la-ms las la-plus"></i>Lista</button>
     </div>
 </main>

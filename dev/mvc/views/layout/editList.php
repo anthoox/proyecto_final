@@ -1,5 +1,5 @@
 <section class="w-100 z-3 fixed-bottom modals  section__editList">   
-    <form method="POST" class="bg-white h-100 d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-3">
+    <form method="POST" class="bg-white h-100 d-flex flex-column justify-content-evenly align-items-center container-xxl p-3 d-flex mb-5 flex-column border shadow rounded-4">
     <h3 class="text-center">Editar lista</h3>
         <div class="w-75 mb-3">
             <label for="newNameList" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
