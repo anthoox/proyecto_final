@@ -14,7 +14,6 @@ linksBotons.addEventListener("click", function(event) {
         break;
     case "btn-2":
         window.location.href = "./upcoming.php";
-       
         break;
     case "btn-3":
         window.location.href = "./pending.php";
