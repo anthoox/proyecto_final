@@ -1,57 +1,45 @@
 <?php
-    session_start();
-    require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controller.php';
-    $result = 'dsd';
-    if($_SESSION['user']){
-        if($_SESSION['user']['rol'] === 2){
-            
-            $date = date("Y-m-d");
-            $hour = date("H:i");
-            $full_date = $date . "T" . $hour;
-            
-            if(isset($_SESSION['id_item']) && !empty($_SESSION['id_item'])){
-                $data_item = new UserItems();
-                $data_item = $data_item->itemsUser('id_item', $_SESSION['id_item']);
-                if($data_item){
-                    $result=  $data_item;
-                    if($data_item[0]['alarm_date']){
-                        $notification = $data_item[0]['alarm_date'];
-                        $notification = date('Y-m-d H:i', strtotime($notification));
-                    }else{
-                        $notification = '';
-                    }
+session_start();
+require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controller.php';
+$result = 'dsd';
+if ($_SESSION['user']) {
+    if ($_SESSION['user']['rol'] === 2) {
 
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-                        if (isset($_POST['itemName']) && isset($_POST['quantity']) && isset($_POST['itemPrice']) && isset($_POST['notification']) && isset($_POST['notes'])) {
-                            $new_data_item = new UserItems();
-                            $new_data_item->editItem('item_name', $_POST['itemName'], $data_item[0]['id_item']);
-                            $new_data_item->editItem('quantity', $_POST['quantity'], $data_item[0]['id_item']);
-                            $new_data_item->editItem('price', $_POST['itemPrice'], $data_item[0]['id_item']);
-                            $new_data_item->editItem('alarm_date', $_POST['notification'], $data_item[0]['id_item']);
-                            $new_data_item->editItem('notes', $_POST['notes'], $data_item[0]['id_item']);
-                            header("Location: ./itemsList.php");
-                            exit();
-                        }
+        $date = date("Y-m-d");
+        $hour = date("H:i");
+        $full_date = $date . "T" . $hour;
+
+        if (isset($_SESSION['id_item']) && !empty($_SESSION['id_item'])) {
+            $data_item = new UserItems();
+            $data_item = $data_item->itemsUser('id_item', $_SESSION['id_item']);
+            if ($data_item) {
+                $result = $data_item;
+                if ($data_item[0]['alarm_date']) {
+                    $notification = $data_item[0]['alarm_date'];
+                    $notification = date('Y-m-d H:i', strtotime($notification));
+                } else {
+                    $notification = '';
+                }
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    if (isset($_POST['itemName']) && isset($_POST['quantity']) && isset($_POST['itemPrice']) && isset($_POST['notification']) && isset($_POST['notes'])) {
+                        $new_data_item = new UserItems();
+                        $new_data_item->editItem('item_name', $_POST['itemName'], $data_item[0]['id_item']);
+                        $new_data_item->editItem('quantity', $_POST['quantity'], $data_item[0]['id_item']);
+                        $new_data_item->editItem('price', $_POST['itemPrice'], $data_item[0]['id_item']);
+                        $new_data_item->editItem('alarm_date', $_POST['notification'], $data_item[0]['id_item']);
+                        $new_data_item->editItem('notes', $_POST['notes'], $data_item[0]['id_item']);
+                        header("Location: ./itemsList.php");
+                        exit();
                     }
-                    echo'
+                }
+                echo '
                     <!DOCTYPE html>
-                        <html lang="es">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Principal</title>
-                            <!-- Link Bootstrap compilado -->
-                            <link rel="stylesheet" href="http://localhost/proyecto/mvc/resources/css/bootstrap.css">
-                            <!-- Iconos de iconos8 -->
-                            <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-                            <link rel="preconnect" href="https://fonts.googleapis.com">
-                            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                            <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
-                            <!-- Mis estilos -->
-                            <link rel="shortcut icon" href="http://localhost/proyecto/mvc/resources/img/simple_logo.ico" />
-                            <link rel="stylesheet" href="http://localhost/proyecto/mvc/resources/css/style.css">
-                        </head>
+                    <html lang="es">';
+
+                require "../layout/head.php";
+
+                echo '
 
                         <body class="d-flex flex-column">
 
@@ -79,23 +67,23 @@
                                 <form method="POST" class="row align-items-center mt-3 d-flex flex-column justify-content-center fw-semibold ">
                                     <div class="mt-1 mb-3">
                                         <label for="itemName" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Nombre</label>
-                                        <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="itemNameHelp" value="'.$data_item[0]['item_name'].'" placeholder="'.$data_item[0]['item_name'].'" name="itemName">
+                                        <input type="text" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1" aria-describedby="itemNameHelp" value="' . $data_item[0]['item_name'] . '" placeholder="' . $data_item[0]['item_name'] . '" name="itemName">
                                     </div>
                                     <div class="mt-1 mb-3">
                                         <label for="quantity" class="form-label text-muted fs-5 fw-semibold" >Cantidad</label>
-                                        <input type="number"  class=" form-control fs-5  p-2" id="exampleInputPassword1" value="'.$data_item[0]['quantity'].'" placeholder="'.$data_item[0]['quantity'].'" name="quantity">
+                                        <input type="number"  class=" form-control fs-5  p-2" id="exampleInputPassword1" value="' . $data_item[0]['quantity'] . '" placeholder="' . $data_item[0]['quantity'] . '" name="quantity">
                                     </div>
                                     <div class="mt-1 mb-3">
                                         <label for="itemPrice" class="form-label text-muted fs-5 fw-semibold" >Precio</label>
-                                        <input type="number" min="0" step="0.01" class=" form-control fs-5  p-2" id="exampleInputPassword1" value="'.$data_item[0]['price'].'" placeholder="'.$data_item[0]['price'].'" name="itemPrice">
+                                        <input type="number" min="0" step="0.01" class=" form-control fs-5  p-2" id="exampleInputPassword1" value="' . $data_item[0]['price'] . '" placeholder="' . $data_item[0]['price'] . '" name="itemPrice">
                                     </div>
                                     <div class="mt-1 mb-3">
                                         <label for="notification" class="form-label text-muted fs-5 fw-semibold" >Notificación</label>
-                                        <input type="datetime-local" class=" form-control fs-5  p-2" id="exampleInputPassword1" name="notification" min="'.$full_date.'" value="'.$notification.'">
+                                        <input type="datetime-local" class=" form-control fs-5  p-2" id="exampleInputPassword1" name="notification" min="' . $full_date . '" value="' . $notification . '">
                                     </div>
                                     <div class="mt-1 mb-3 d-flex flex-column">
                                         <label for="notes" class="form-label text-muted fs-5 fw-semibold" >Notas</label>
-                                        <textarea name="notes" maxlength="500" class="w-100 fs-5 form-control textarea-size" aria-label="With textarea" placeholder="Añade tus notas aquí">'.$data_item[0]['notes'].'</textarea>
+                                        <textarea name="notes" maxlength="500" class="w-100 fs-5 form-control textarea-size" aria-label="With textarea" placeholder="Añade tus notas aquí">' . $data_item[0]['notes'] . '</textarea>
                                     </div> 
                                     <div class="mt-5 mb-4 d-flex justify-content-center align-items-center ">
                                         <div class="d-flex flex-column align-items-center me-4">
@@ -117,10 +105,10 @@
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
                         <script src="http://localhost/proyecto/mvc/resources/js/items.js"></script>
                     </html>';
-                    $close = new Db_connection();
-                    $close->closeConnection();
-                }else{
-                    echo'
+                $close = new Db_connection();
+                $close->closeConnection();
+            } else {
+                echo '
                     <!DOCTYPE html>
                         <html lang="es">
                         <head>
@@ -157,8 +145,8 @@
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
                     <script src="http://localhost/proyecto/mvc/resources/js/items.js"></script>
                     </html>';
-                }
             }
         }
     }
+}
 ?>

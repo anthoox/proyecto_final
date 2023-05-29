@@ -1,6 +1,6 @@
 <?php
 //posibilidad de añadir un hesk
-echo'
+echo '
 <section class="rounded-start rounded-4 border bg-white  shadow menu">
     <ul class="rounded-4 list-group list-group-flush pt-1">
         <li class="d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">

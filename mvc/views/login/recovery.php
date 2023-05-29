@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperación</title>
-    <!-- Link Bootstrap compilado -->
-    <link rel="stylesheet" href="http://localhost/proyecto/mvc/resources/css/bootstrap.css">
-    <!-- Iconos de iconos8 -->
-    <link rel="stylesheet"href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Mis estilos -->
-    <link rel="shortcut icon" href="http://localhost/proyecto/dev/mvc/resources/img/simple_logo.ico" />
-    <link rel="stylesheet" href="http://localhost/proyecto/mvc/resources/css/style.css">
-</head>
+<?php
+require "../layout/head.php";
+?>
 
 <body class="d-flex flex-column justify-content-between ">
     <header class="d-md-none container-xxl  d-flex justify-content-around align-items-center">
@@ -48,11 +35,7 @@
                 <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1"
                     aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com">
             </div>
-            <!-- <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
-                <p class="m-0  mb-3 text-center fw-bold fs-5 text-secondary">Correo no regitrado/Correo enviado</p>
-            </div> -->
 
-            <!-- La clase form__parraf--error solo debe salir si hay un error en el usuario o contraseña -->
             <button type="submit" class="mt-2 btn btn-primary text-white border  p-1 fs-5 col-2">Enviar</button>
             <p class="text-center m-0 mt-3"><a class="fw-bold fs-5 text-success text-decoration-none"
                     href="./login.php">Volver</a></p>
