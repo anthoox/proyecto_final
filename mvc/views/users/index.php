@@ -33,7 +33,7 @@ if($_SESSION['user']){
         <body id="head" class="d-flex flex-column">';
 
         require "../layout/header.php";
-        require "../layout/headerDesk.php";
+        require "../layout/headerDesk2.php";
         
         if($_SESSION['user']['photo'] == ""){
             $photo = "img-user.png";
@@ -72,7 +72,7 @@ if($_SESSION['user']){
             <ul class="rounded-4 list-group list-group-flush">
                 <li class="mt-1 p-4 d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
                     <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
-                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">Perfil de '.$_SESSION['user']['name'] .'</a>
+                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['user']['name'] .'</a>
                 </li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>

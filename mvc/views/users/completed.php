@@ -2,11 +2,11 @@
 session_start();
 
 require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controller.php';
-//Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
+// * Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if ($_SESSION['user']) {
     if ($_SESSION['user']['rol'] === 2) {
         $result = '';
-        //POST para añadir una lista de un usuario
+        // * POST para añadir una lista de un usuario
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!empty($_POST)) {
                 if (isset($_POST['nameList'])) {
@@ -197,6 +197,7 @@ if ($_SESSION['user']) {
 <script src="http://localhost/proyecto/mvc/resources/js/addList.js"></script>
 <script src="http://localhost/proyecto/mvc/resources/js/menu.js"></script>
 </html>';
+        // añadir destrucción de sesión
     } else {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');

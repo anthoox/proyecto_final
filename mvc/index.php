@@ -5,7 +5,7 @@
     require "./views/layout/head.php";
 ?>
 
-<body class="d-flex flex-column  justify-content-between align-items-center">
+<body class="w-100 d-flex flex-column  justify-content-between align-items-center">
     <header class="d-md-none container-xxl  d-flex justify-content-around align-items-center">
         <h1 class="text-success title title__h1 align-self-start mt-1 fw-bold ">Bienvenido</h1>
     </header>

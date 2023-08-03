@@ -169,5 +169,3 @@ class UserItems{
     }
     
 }
-// $prueba = new UserItems;
-// echo $prueba->deleteItem(93);
