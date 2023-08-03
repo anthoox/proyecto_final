@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body class="d-flex flex-column justify-content-between ">
     <header class="d-md-none container-xxl  d-flex justify-content-around align-items-center mt-2">
-        <h1 class="text-success title title__h1 align-self-start mt-1 fw-bold ">Bienvenido</h1>
+        <h1 class="text-success title title__h1 align-self-start mt-1 fw-bold ">Bienvenidos</h1>
     </header>
 
     <header class="d-none d-md-flex justify-content-between container-fluid d-flex w-100 border-bottom">
