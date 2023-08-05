@@ -1,16 +1,10 @@
 <?php 
 
-    class controlador_usuarios{        
+    class Controlador_usuarios{        
         private $usuario;
         public function __construct(){
             require_once 'C:/xampp/htdocs/proyecto/mvc/model/model_usuarios.php';
-            $this->usuario = new Usuarios();
-        }
-
-        /**Método para crear usuarios */
-        public function nuevo_usuario($nombre,$correo, $password){
-            $registro = $this->usuario->crear_usuario($nombre,$this->limpiar_correo($correo), $this->encriptar_password($this->limpiar_password($password)));
-            return $registro;
+            $this->usuario = new Model_usuarios();
         }
 
         /**Método para limpiar contraseña */
@@ -40,7 +34,16 @@
             return (password_verify($password,$clave)) ? true : false;
         }
 
-       
+        /**Método para crear usuarios */
+        public function nuevo_usuario($nombre,$correo, $password){
+            $registro = $this->usuario->crear_usuario($nombre,$this->limpiar_correo($correo), $this->encriptar_password($this->limpiar_password($password)));
+            return $registro;
+        }
+
+        /**Método para obtener datos del usuario */
+        public function datos_usuario($correo){
+            
+        }
 
     }
 ?>

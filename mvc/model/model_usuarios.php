@@ -1,6 +1,6 @@
 <?php
 
-class Usuarios{
+class Model_Usuarios{
 	private $tabla = 'users'; //Para que puedan usarlo sus clases hijas
 	private $conexion;
 
@@ -20,11 +20,9 @@ class Usuarios{
 		$query->bindParam(3, $password);
 		$query->bindParam(4, $fecha_registro);
 		try{
-			$resultado = $query->execute();
+			$query->execute();
 			return true;			
 		}catch(PDOException $e){
-			//La siguiente linea se puede quitar para que al devolver false se muestre un mensaje
-			echo "Error o usuario ya registrado" . $e->getMessage();
 			return false;
 		}
     }

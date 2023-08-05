@@ -1,42 +1,38 @@
 <?php
-require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controller.php';
-
-
-if (isset($_SESSION['user'])) {
-    if ($_SESSION['user']['rol'] == 1) {
+require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
+$errores['log'] = '';
+//Comprobación de si el usuario tiene la sesión iniciada
+if (isset($_SESSION['usuario'])) {
+    if ($_SESSION['usuario']['rol'] == 1) {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../admin/index.php');
-    } else if ($_SESSION['user']['rol'] == 2) {
+    } else if ($_SESSION['usuario']['rol'] == 2) {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../users/index.php');
     }
 }
 
-//Eliminar los datos de sesión
-unset($_SESSION['user']['id_user']);
-unset($_SESSION['user']['email']);
-unset($_SESSION['user']['password']);
-unset($_SESSION['user']['rol']);
-unset($_SESSION['error_message']);
 
-$_SESSION['error_message'] = [];
-
+//Comprobaciñon del login del usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
         if (isset($_POST['email']) && isset($_POST['password'])) {
-            $validator = new LoginController();
-            $result = $validator->startSession($_POST["email"], $_POST["password"]);
-            if (!$result) {
-                $_SESSION['error_message']['log'] = "Usuario o contraseña incorrectos";
-            } else {
+            $datos_sesion = new controlador_usuarios();
+            $correo = $datos_sesion ->limpiar_correo($_POST['email']);
+            $password = $datos_sesion->limpiar_password($_POST['password']);
+            $resultado = $datos_sesion->verificar_usuario($correo,$password);
+
+            if ($resultado) {
                 session_start();
-                $_SESSION['user']['id_user'] = $result['id_user'];
-                $_SESSION['user']['name'] = $result['name'];
-                $_SESSION['user']['password'] = $result['password'];
-                $_SESSION['user']['email'] = $result['email'];
-                $_SESSION['user']['rol'] = $result['rol'];
-                $_SESSION['user']['registration_date'] = $result['registration_date'];
-                $_SESSION['user']['photo'] = $result['photo'];
+                $_SESSION['usuario']['id_user'] = $result['id_user'];
+                $_SESSION['usuario']['name'] = $result['name'];
+                $_SESSION['usuario']['password'] = $result['password'];
+                $_SESSION['usuario']['email'] = $result['email'];
+                $_SESSION['usuario']['rol'] = $result['rol'];
+                $_SESSION['usuario']['registration_date'] = $result['registration_date'];
+                $_SESSION['usuario']['photo'] = $result['photo'];
+            } else {
+                $errores['log'] = "Usuario o contraseña incorrectos";                
             }
         }
     }
@@ -47,10 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="es">
 
-<?php
-    require "../layout/head.php";
-?>
-
+<?php require "../layout/head.php";?>
 
 <body class="d-flex flex-column justify-content-between ">
     <header class="d-md-none container-xxl  d-flex justify-content-around align-items-center mt-2">
@@ -64,9 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="me-3 w-25 row d-flex flex-column justify-content-center align-items-center ">
             <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"
-                href="./record.php"><button
-                    class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear
-                    cuenta</button></a>
+                href="./registro.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
         </div>
     </header>
 
@@ -87,15 +78,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     placeholder="Contraseña" name="password">
             </div>
             <?php
-            if ($_SESSION['error_message']) {
+   
+            if ($errores['log']) {
                 echo '<div class="m-0 mb-1 d-flex justify-content-center align-items-center" id="pruebax">
-                    <p class="m-0 text-center fw-bold fs-5 text-secondary ">' . $_SESSION['error_message']['log'] . '</p>
+                    <p class="m-0 text-center fw-bold fs-5 text-secondary ">' . $errores['log'] . '</p>
                 </div>';
             }
             ?>
 
             <p class="text-center m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none"
-                    href="./recovery.php">¿Olvidaste la contraseña?</a></p>
+                    href="./recuperacion.php">¿Olvidaste la contraseña?</a></p>
 
             <button type="submit" class="btn btn-primary text-white border p-1 fs-5 col-2">Entrar</button>
             <p class="text-center mt-3"><a class="fw-bold fs-5 text-success text-decoration-none"
@@ -103,12 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         </form>
     </main>
-    <?php
-    //Carga del fichero footer.php
-    require "../layout/footer.php";
-
-    ?>
+    <?php require "../layout/footer.php"; ?>
 </body>
-
 
 </html>

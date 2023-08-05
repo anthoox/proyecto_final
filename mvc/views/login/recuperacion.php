@@ -17,7 +17,7 @@ require "../layout/head.php";
         </div>
         <div class="me-3 w-25 row d-flex flex-column justify-content-center align-items-center ">
             <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"
-                href="./record.php"><button
+                href="./registro.php"><button
                     class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear
                     cuenta</button></a>
         </div>
