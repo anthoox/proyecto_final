@@ -1,10 +1,16 @@
 <?php 
 
-    class Controlador_usuarios{        
+    class Controlador_usuarios extends Controller{        
         private $usuario;
+        private $view;
+        
         public function __construct(){
             require_once 'C:/xampp/htdocs/proyecto/mvc/model/model_usuarios.php';
             $this->usuario = new Model_usuarios();
+        }
+
+        public function render(){
+            $this->view->render('/index');
         }
 
         /**Método para limpiar contraseña */
@@ -41,8 +47,8 @@
         }
 
         /**Método para obtener datos del usuario */
-        public function datos_usuario($correo){
-            
+        public function datos_usuario($atributo,$dato){
+            return $this->usuario->get_datos_usuario($atributo, $dato);
         }
 
     }

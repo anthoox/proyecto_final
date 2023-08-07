@@ -1,14 +1,14 @@
 <?php
-
-class Model_Usuarios{
+//Esto lo exije para mostrar la información en el mismo archivo para hacer efectivos los metodos usados aqui
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
+class Model_Usuarios extends Model{
 	private $tabla = 'users'; //Para que puedan usarlo sus clases hijas
-	private $conexion;
+	public $conexion;
 
 	/**Contructor para conectar con el servidor al crear llamar a cualquier función de esta clase */
-	public function __construct() {
-        require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
-		$this->conexion = new BD();
-	}
+	function __construct(){
+        parent::__construct();
+    }
 
     /**Método para crear usuario */
     public function crear_usuario($nombre, $correo, $password){        
@@ -26,7 +26,7 @@ class Model_Usuarios{
 			return false;
 		}
     }
-
+	/**Método para obtener la contraseña del usuario */
 	public function obtener_password($correo){
 		$sql = "SELECT password FROM " . $this->tabla . " WHERE email = ?";
 		$query = $this->conexion->conectar_bd()->prepare($sql);
@@ -37,64 +37,29 @@ class Model_Usuarios{
 		}catch(PDOException $e){
 			echo "Error al obtener la clave" . $e->getMessage();
 		}
+	
 	}
 
-	// public function existEmail($data){
-	// 	$sql = "SELECT email FROM " . $this->table . " WHERE email = ?";
-	// 	$query = $this->connection->getConnection()->prepare($sql);
-	// 	$query->bindParam(1, $data);
-	// 	try{
-	// 		$query->execute();
-	// 		$result = $query->fetch(PDO::FETCH_NUM);
-	// 		if($result){
-	// 			return $result;
-	// 		}else{
-	// 			return false;
-	// 		}
-			
-	// 	}catch(PDOException $e){
-	// 		echo "Erro en la comprobación del email. " . $e->getMessage();
-	// 	}
-	// }
-	
-	// /**Método para crear usuarios en la base de datos. Los usuarios creados por este método son usuarios normales */
-	// public function createUser($name, $email, $password){
-	// 	//Añador sal aquí
-	// 	$passwordHased = hash('sha512', $password); 
-	// 	$registration_date = date('Y-m-d H:i:s');
-	// 	$result = $this->existEmail($email);
-	// 	if(!$result){
-	// 		$sql = "INSERT INTO " . $this->table . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 2)";
-	// 		$query = $this->connection->getConnection()->prepare($sql);
-	// 		$query->bindParam(1, $name);
-	// 		$query->bindParam(2, $email);
-	// 		$query->bindParam(3, $passwordHased);
-	// 		$query->bindParam(4, $registration_date);
-
-	// 		try{
-	// 			$query->execute();
-	// 			$rows = $query->rowCount();
-	// 			if($rows>0){
-	// 				// echo "usuario creado";
-	// 				return true;
-	// 			}else{
-	// 				// echo "usuario no creado";
-	// 				return false;
-	// 			}
-				
-	// 		}catch(PDOException $e){
-	// 			echo "Error en la creación del usuario." . $e->getMessage();
-	// 		}
-	// 	}else{
-	// 		return false;
-	// 	}
-	// 	// $this->connection->closeConnection();
-	// }
-
-	
+	/**Método para obtener cualquier dato del usuario */
+	public function get_datos_usuario($atributo,$dato){
+		$sql = "SELECT * FROM " . $this->tabla . "  WHERE $atributo = ?";
+		$query = $this->conexion->conectar_bd()->prepare($sql);
+		$query->bindParam(1, $dato);
+		try{
+			$query->execute();
+			$resultado = $query->fetch(PDO::FETCH_ASSOC);
+			if($resultado){
+				return $resultado;
+			}else{
+				return false;
+			}
+		}catch(PDOException){
+			return false;
+		}
+	}
 
 	
 }
 
-// $prueba = new Usuarios();
-// echo $prueba->obtener_password("prueba@p2rueba2.com");
+// $prueba = new Model_usuarios();
+// var_dump($prueba->get_datos_usuario('email',"prueba@prueba.com"));

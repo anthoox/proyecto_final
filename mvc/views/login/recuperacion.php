@@ -1,8 +1,16 @@
+<?php
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <?php
 require "../layout/head.php";
+
 ?>
 
 <body class="d-flex flex-column justify-content-between ">

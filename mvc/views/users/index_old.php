@@ -1,26 +1,22 @@
 <?php
 session_start();
 
-// require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controller.php';
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
-if($_SESSION['usuario']){
-    if($_SESSION['usuario']['rol'] === 2){
-        $resultado = '';
+if($_SESSION['user']){
+    if($_SESSION['user']['rol'] === 2){
+        $result = '';
+        //POST para añadir una lista de un usuario
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
                     $list = new UserList();
-                    $resultado = $list->addList($_SESSION['usuario']['id_user'], $_POST["nameList"]);
-                    if($resultado){
+                    $result = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
+                    if($result){
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
                     }else{
-                        $resultado = "La lista " . $_POST["nameList"] . " ya existe.";
+                        $result = "La lista " . $_POST["nameList"] . " ya existe.";
                     }  
                 }
             }
@@ -30,6 +26,7 @@ if($_SESSION['usuario']){
         <!DOCTYPE html>
         <html lang="es">';
 
+        
         require "../layout/head.php";
 
         echo'
@@ -38,18 +35,18 @@ if($_SESSION['usuario']){
         require "../layout/header.php";
         require "../layout/headerDesk2.php";
         
-        if($_SESSION['usuario']['photo'] == ""){
+        if($_SESSION['user']['photo'] == ""){
             $photo = "img-user.png";
         }else{
-            $photo = $_SESSION['usuario']['photo'];
+            $photo = $_SESSION['user']['photo'];
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Realizar la validación de los datos recibidos
             if (!empty($_POST['id_list']) && !empty($_POST['newNameList'])) {
                 $newName = new UserList();
-                $resultado = $newName->editList($_POST['id_list'], 'list_name',$_POST['newNameList'] );
-                if($resultado){
+                $result = $newName->editList($_POST['id_list'], 'list_name',$_POST['newNameList'] );
+                if($result){
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 }    
@@ -59,8 +56,8 @@ if($_SESSION['usuario']){
             if(isset($_POST['accept'])) {
                 // Llamar a la función en el controlador para borrar el elemento
                 $newName = new UserList();
-                $resultado = $newName->editList($_POST['id_list'], 'trash',1 );
-                if($resultado){
+                $result = $newName->editList($_POST['id_list'], 'trash',1 );
+                if($result){
 
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
@@ -75,7 +72,7 @@ if($_SESSION['usuario']){
             <ul class="rounded-4 list-group list-group-flush">
                 <li class="mt-1 p-4 d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
                     <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
-                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['usuario']['name'] .'</a>
+                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['user']['name'] .'</a>
                 </li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>
@@ -110,7 +107,7 @@ if($_SESSION['usuario']){
             $items = new Items();
     
             $user_list = new UserList();
-            $user_list = $user_list->toList($_SESSION['usuario']['id_user']);
+            $user_list = $user_list->toList($_SESSION['user']['id_user']);
         
             $user_items = new UserItems();
 
@@ -188,7 +185,7 @@ if($_SESSION['usuario']){
         <i class="m-0 me-1 la-sm las la-plus"></i>Lista</button>
         </div>
 </main>
-<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $resultado . '</p>
+<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $result . '</p>
 ';
 require "menu.php";
 require "../layout/addList.php";
@@ -204,8 +201,8 @@ echo'
 <script src="http://localhost/proyecto/mvc/resources/js/index.js"></script>
 </html>';
 
-$cerrar = new BD();
-$cerrar->desconectar_bd();
+$close = new Db_connection();
+$close->closeConnection();
     }else{
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');

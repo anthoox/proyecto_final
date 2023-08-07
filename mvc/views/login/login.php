@@ -1,4 +1,14 @@
 <?php
+
+
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+
+$app = new App();
+
 require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 $errores['log'] = '';
 //Comprobación de si el usuario tiene la sesión iniciada
@@ -23,14 +33,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultado = $datos_sesion->verificar_usuario($correo,$password);
 
             if ($resultado) {
-                session_start();
-                $_SESSION['usuario']['id_user'] = $result['id_user'];
-                $_SESSION['usuario']['name'] = $result['name'];
-                $_SESSION['usuario']['password'] = $result['password'];
-                $_SESSION['usuario']['email'] = $result['email'];
-                $_SESSION['usuario']['rol'] = $result['rol'];
-                $_SESSION['usuario']['registration_date'] = $result['registration_date'];
-                $_SESSION['usuario']['photo'] = $result['photo'];
+                $datos_usuario = $datos_sesion->datos_usuario('email', $correo);
+                if($datos_usuario){
+                    session_start();
+                    $_SESSION['usuario']['id_user'] = $datos_usuario['id_user'];
+                    $_SESSION['usuario']['name'] = $datos_usuario['name'];
+                    $_SESSION['usuario']['password'] = $datos_usuario['password'];
+                    $_SESSION['usuario']['email'] = $datos_usuario['email'];
+                    $_SESSION['usuario']['rol'] = $datos_usuario['rol'];
+                    $_SESSION['usuario']['registration_date'] = $datos_usuario['registration_date'];
+                    $_SESSION['usuario']['photo'] = $datos_usuario['photo'];
+                    header('location:../users/index.php');
+                }
+                
             } else {
                 $errores['log'] = "Usuario o contraseña incorrectos";                
             }

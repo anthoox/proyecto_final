@@ -1,3 +1,14 @@
+
+<?php
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+
+$app = new App();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
