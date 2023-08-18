@@ -1,21 +1,22 @@
 <?php 
 //Controlador que cargaría las vistas
 class Controller{
-    private $view;
-    private  $model;
+    public $view;
+    public  $model;
 
     //función constructora para generar la vista
     function __construct(){
-        $this->view= new views();
+        $this->view= new View();
     }
 
     /**Función para llamar a los modelos */
-    function cargarModelo($modelo){
-        $url = 'model/'.$modelo.'.php';
-        if(file_exists($url)){
-            require $url;
+    function loadModel($modelo){
+        $url = 'model/'.$modelo.'_model.php';
 
-            $model_name = $model.'Model';
+        if(file_exists($url)){
+            require_once $url;
+
+            $model_name = $model.'_model';
             $this->model = new $model_name();
         }
     }

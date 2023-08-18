@@ -1,13 +1,16 @@
 <?php 
 
-class Views{
-
+class View{
+    
+    public $d;//lo dejo como public por ahora.
     function __construct(){
-       echo "<p>Vista base</p>";
+       
     }
 
-    function render($nombre){
-        require 'views/' . $nombre . '.php';
+    function render($nombre, $datos = []){
+        $this->d = $datos;
+        require_once 'views/' . $nombre . '.php';
+        
     }
 }
-?>
+?>  

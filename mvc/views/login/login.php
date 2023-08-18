@@ -5,9 +5,9 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
 
-$app = new App();
+
+
 
 require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 $errores['log'] = '';

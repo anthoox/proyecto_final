@@ -1,15 +1,16 @@
 <?php 
 
     class Controlador_usuarios extends Controller{        
-        private $usuario;
-        private $view;
+        public $usuario;
+        public $view;
         
         public function __construct(){
-            require_once 'C:/xampp/htdocs/proyecto/mvc/model/model_usuarios.php';
+            require_once 'C:/xampp/htdocs/proyecto/mvc/model/usuarios_model.php';
             $this->usuario = new Model_usuarios();
         }
 
         public function render(){
+            //Aquí lo que se debería de cargar es la vista del usuario y sus listas o por lo menos en el controlador de las listas del usuario
             $this->view->render('/index');
         }
 

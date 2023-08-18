@@ -7,5 +7,14 @@ class Model{
     function __construct(){
         $this->conexion = new BD();
     }
+
+    function query($query){
+        //Ejecuta una consulta SQL y devuelve el resultado como un objeto PDOStatement
+        return $this->conexion->conectar_bd()->query($query);
+    }
+
+    function prepare($query){
+        return $this->conexion->conectar_bd()->prepare($query);
+    }
 }
 ?>
