@@ -13,7 +13,7 @@ class Model_Usuarios extends Model{
     }
 
     /**Método para crear usuario */
-    public function crear_usuario($nombre, $correo, $password){        
+    public function new_user($nombre, $correo, $password){        
 		$fecha_registro = date('Y-m-d H:i:s');
 		$sql = "INSERT INTO " . $this->tabla . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 2)";
 		// $query = $this->conexion->connect_db()->prepare($sql);
@@ -45,16 +45,16 @@ class Model_Usuarios extends Model{
 	}
 
 	/**Método para obtener cualquier dato del usuario */
-	public function get_datos_usuario($atributo,$dato){
+	public function get_user_data($atributo,$dato){
 		$sql = "SELECT * FROM " . $this->tabla . "  WHERE $atributo = ?";
 		// $query = $this->conexion->connect_db()->prepare($sql);
 		$query = $this->statement->prepare($sql);
 		$query->bindParam(1, $dato);
 		try{
 			$query->execute();
-			$resultado = $query->fetch(PDO::FETCH_ASSOC);
-			if($resultado){
-				return $resultado;
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			if($result){
+				return $result;
 			}else{
 				return false;
 			}

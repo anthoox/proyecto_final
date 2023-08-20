@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
@@ -9,14 +9,14 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
 // require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php'; // Lo comento para que me cargue, puede que tenga que borrarlo.
 
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
-if($_SESSION['usuario']){
-    if($_SESSION['usuario']['rol'] === 2){
+if($_SESSION['user']){
+    if($_SESSION['user']['rol'] === 2){
         $resultado = '';
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
                     $list = new UserList();
-                    $resultado = $list->addList($_SESSION['usuario']['id_user'], $_POST["nameList"]);
+                    $resultado = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
                     if($resultado){
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
@@ -39,10 +39,10 @@ if($_SESSION['usuario']){
         require "../layout/header.php";
         require "../layout/headerDesk2.php";
         
-        if($_SESSION['usuario']['photo'] == ""){
+        if($_SESSION['user']['photo'] == ""){
             $photo = "img-user.png";
         }else{
-            $photo = $_SESSION['usuario']['photo'];
+            $photo = $_SESSION['user']['photo'];
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -76,7 +76,7 @@ if($_SESSION['usuario']){
             <ul class="rounded-4 list-group list-group-flush">
                 <li class="mt-1 p-4 d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
                     <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
-                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['usuario']['name'] .'</a>
+                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['user']['name'] .'</a>
                 </li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>
@@ -111,7 +111,7 @@ if($_SESSION['usuario']){
             $items = new Items();
     
             $user_list = new UserList();
-            $user_list = $user_list->toList($_SESSION['usuario']['id_user']);
+            $user_list = $user_list->toList($_SESSION['user']['id_user']);
         
             $user_items = new UserItems();
 

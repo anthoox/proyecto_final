@@ -9,6 +9,7 @@ ini_set('log_errors', TRUE); //Error/Exception file loggin engine
 ini_set('error_log', 'C:/xampp/htdocs/proyecto/mvc/php-error.log');
 error_log('Inicio de aplicación web');
 
+
 // require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
 // require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
 
@@ -16,6 +17,8 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+
+
 
 //Si dejo activo esto no se va a la web de index poniendo index en el navegador pero si a otro como prueba
 $app = new App();

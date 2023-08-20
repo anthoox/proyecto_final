@@ -123,3 +123,579 @@ Stack trace:
 [20-Aug-2023 18:11:10 Europe/Madrid] Inicio de aplicación web
 [20-Aug-2023 18:11:10 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
 [20-Aug-2023 18:11:10 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:17:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:17:13 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:17:13 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:18:09 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:18:09 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:18:09 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:21:34 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:21:34 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:21:34 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:33:18 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:33:18 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "Controlador_usuarios" not found in C:\xampp\htdocs\proyecto\mvc\index.php:21
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 21
+[20-Aug-2023 18:33:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:33:23 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "Controlador_usuarios" not found in C:\xampp\htdocs\proyecto\mvc\index.php:21
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 21
+[20-Aug-2023 18:33:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:33:25 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "Controlador_usuarios" not found in C:\xampp\htdocs\proyecto\mvc\index.php:21
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 21
+[20-Aug-2023 18:33:34 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:33:34 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:33:34 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:42:18 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:42:18 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:42:18 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:42:19 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:42:19 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:42:19 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:48:31 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:48:31 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:48:31 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:48:36 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:48:36 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:48:36 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:48:40 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:48:40 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:48:40 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:49:12 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:49:12 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:49:12 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:49:14 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:49:14 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:49:14 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:06 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:06 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:06 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:12 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:12 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:12 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:13 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:51:13 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:51:17 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:17 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:17 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:18 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:18 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:51:18 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:51:46 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:46 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:46 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:48 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:48 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:48 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:49 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:49 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:49 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:49 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:49 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:51:49 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:51:50 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:51:50 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:51:50 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:52:28 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:28 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:52:28 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:52:29 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:29 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:52:29 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:52:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:52:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 26
+[20-Aug-2023 18:52:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:52:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 26
+[20-Aug-2023 18:52:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:52:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:52:43 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 26
+[20-Aug-2023 18:52:44 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:52:44 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:52:44 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:26 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:26 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:26 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:39 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:39 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:39 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:53 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:53 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:53 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:54 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:54 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:54 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:55 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:55 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:55 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:53:58 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:53:58 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:53:58 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:03 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:54:03 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:04 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:04 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:54:04 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:54:06 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:06 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:54:06 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:13 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:54:13 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:54:14 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:54:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:32 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:32 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:54:32 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:41 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:41 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:54:41 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:54:44 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:44 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(23): App->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[20-Aug-2023 18:54:44 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:44 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(23): App->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[20-Aug-2023 18:54:49 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:49 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:54:49 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:54:59 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:54:59 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:54:59 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:55:00 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:00 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:55:00 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:55:16 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:16 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:55:16 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:55:17 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:17 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:55:17 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:55:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:47 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:55:47 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:55:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:47 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:55:47 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:55:55 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:55:55 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:55:55 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:56:01 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:01 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:01 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:03 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:56:03 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:56:04 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:04 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:04 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:19 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:19 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:19 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:25 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:25 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:25 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:25 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:27 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:27 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:56:27 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:56:37 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:37 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:56:37 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:56:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:38 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:38 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:56:48 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:48 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:56:48 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:56:49 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:56:49 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:56:49 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:57:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:57:03 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:57:03 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:57:04 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:57:04 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:57:04 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:57:17 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:57:17 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:57:17 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:35:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:35:13 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:35:13 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:35:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:35:13 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:35:13 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:37:53 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:37:53 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:37:53 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:37:54 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:37:54 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 19:37:54 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 19:38:02 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:38:02 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:38:02 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:38:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:38:25 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 19:38:25 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 19:39:18 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:39:18 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 19:39:18 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 19:39:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:39:25 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:39:25 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:40:00 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:40:00 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:40:00 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:40:29 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:40:29 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:40:29 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:40:40 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:40:40 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:40:40 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:40:40 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:40:40 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:40:40 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:40:49 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:40:49 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:40:49 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:42:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:42:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:42:38 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:49:53 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:49:53 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 19:49:53 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 19:49:59 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:49:59 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:49:59 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:50:36 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:50:36 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:50:36 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:25 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:25 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:25 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:27 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:27 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:27 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:35 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:35 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:35 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:36 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:36 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:36 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:36 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:36 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:36 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:51:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:51:47 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:51:47 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:55:00 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:55:00 Europe/Madrid] PHP Warning:  require_once(controllers/errores.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 3
+[20-Aug-2023 19:55:00 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'controllers/errores.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\libs\app.php:3
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(18): require_once()
+#1 C:\xampp\htdocs\proyecto\mvc\views\login\login.php(28): include_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 3
+[20-Aug-2023 19:55:11 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:55:11 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:55:11 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 19:55:12 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:55:12 Europe/Madrid] PHP Warning:  require_once(controllers/errores.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 3
+[20-Aug-2023 19:55:12 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'controllers/errores.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\libs\app.php:3
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(18): require_once()
+#1 C:\xampp\htdocs\proyecto\mvc\views\login\login.php(28): include_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 3
+[20-Aug-2023 19:55:37 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 19:55:37 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 19:55:37 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:03:22 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:03:22 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:03:22 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:03:35 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:03:35 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:03:35 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:03:37 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:03:37 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:03:37 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:08:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:08:47 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:08:47 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:12:02 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:12:03 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:12:03 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:12:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:12:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:12:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:12:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:12:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:12:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:12:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:12:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:08 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:08 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:08 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:08 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:20 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:20 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:20 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:20 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:37 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:37 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:37 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:37 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:38 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:38 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:13:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:13:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:13:38 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:16:16 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:16:16 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:16:16 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:16:16 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:17:37 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:17:37 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:17:37 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:17:37 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:18:32 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:18:32 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:18:32 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:18:32 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:18:50 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:18:50 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:18:50 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:18:50 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:18:51 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:18:51 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:18:51 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:18:51 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:19:12 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:19:12 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:19:12 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:19:12 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:19:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:19:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:19:24 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:19:24 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:20:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:20:03 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:20:03 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:20:03 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:20:07 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:20:07 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:20:07 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:20:07 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:20:07 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:20:07 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:20:07 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:20:07 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:20:54 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:20:54 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:20:54 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:20:54 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:20:58 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:20:58 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:20:58 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:20:58 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:21:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:21:03 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:21:03 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:21:03 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:21:03 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:21:03 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:21:03 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:21:03 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:21:04 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:21:04 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:21:04 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:21:04 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:25:29 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:25:29 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:25:29 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:25:29 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:26:20 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:26:20 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:26:20 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:26:20 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:26:35 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:26:35 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:26:35 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:26:35 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:24 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:24 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:24 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:24 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:53 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:53 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:53 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:53 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:54 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:54 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:54 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:54 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:55 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:55 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:55 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:55 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:55 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:55 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:55 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:55 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:29:57 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:29:57 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:29:57 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:29:57 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:30:46 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:30:46 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:30:46 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:30:46 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:30:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:30:47 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:30:47 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:30:47 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:35:39 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:35:39 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:35:39 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:35:39 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:42:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:42:47 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:42:47 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:42:47 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:44:07 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:44:07 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:44:07 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:44:07 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:44:08 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:44:08 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:44:08 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:44:08 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:44:09 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:44:09 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:44:09 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:44:09 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:44:09 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:44:09 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:44:09 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:44:09 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:44:27 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:44:27 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:44:27 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:44:27 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:45:12 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:45:12 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:45:12 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:45:12 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:45:32 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:45:32 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:45:32 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:45:32 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:45:33 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:45:33 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:45:33 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:45:33 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:45:34 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:45:34 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:45:34 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:45:34 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:45:34 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:45:34 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:45:34 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:45:34 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:46:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:46:38 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:46:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:46:38 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:48:43 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:48:43 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:48:43 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:48:43 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:22 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:22 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:22 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:22 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:23 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:24 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:24 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:24 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:24 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:24 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:24 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:50:29 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:50:29 Europe/Madrid] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 20:50:29 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:50:29 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:56:26 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:56:26 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:56:26 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 20:57:14 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:57:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 20:57:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 20:59:07 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 20:59:07 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 20:59:07 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 21:04:59 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:04:59 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 21:04:59 Europe/Madrid] APP::construct-> no hay controlador especificado

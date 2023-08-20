@@ -10,47 +10,69 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
 
 
 require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
+
 $errores['log'] = '';
-//Comprobación de si el usuario tiene la sesión iniciada
-if (isset($_SESSION['usuario'])) {
-    if ($_SESSION['usuario']['rol'] == 1) {
+//Comprobación de si el user tiene la sesión iniciada
+if (isset($_SESSION['user'])) {
+    if ($_SESSION['user']['rol'] == 1) {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../admin/index.php');
-    } else if ($_SESSION['usuario']['rol'] == 2) {
+        // include_once 'C:/xampp/htdocs/proyecto/mvc/views/admin/index.php';
+    } else if ($_SESSION['user']['rol'] == 2) {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../users/index.php');
+        // include_once 'C:/xampp/htdocs/proyecto/mvc/views/users/index.php';
     }
+}else{
+    echo "sdao";
 }
 
 
-//Comprobaciñon del login del usuario
+//Comprobaciñon del login del user
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
         if (isset($_POST['email']) && isset($_POST['password'])) {
+            // echo " asdf ";
+            var_dump($_POST);
             $datos_sesion = new controlador_usuarios();
-            $correo = $datos_sesion ->limpiar_correo($_POST['email']);
-            $password = $datos_sesion->limpiar_password($_POST['password']);
-            $resultado = $datos_sesion->verificar_usuario($correo,$password);
+            $correo = $datos_sesion ->clean_email($_POST['email']);
+            $password = $datos_sesion->clean_password($_POST['password']);
+            $resultado = $datos_sesion->verify_user($correo,$password);
+
+  
 
             if ($resultado) {
-                $datos_usuario = $datos_sesion->datos_usuario('email', $correo);
-                if($datos_usuario){
+                echo "dsoasd";
+                $datos_user = $datos_sesion->get_user_info('email', $correo);
+                if($datos_user){
+                    echo " asdfjbsdjfbklasdbfa ";
                     session_start();
-                    $_SESSION['usuario']['id_user'] = $datos_usuario['id_user'];
-                    $_SESSION['usuario']['name'] = $datos_usuario['name'];
-                    $_SESSION['usuario']['password'] = $datos_usuario['password'];
-                    $_SESSION['usuario']['email'] = $datos_usuario['email'];
-                    $_SESSION['usuario']['rol'] = $datos_usuario['rol'];
-                    $_SESSION['usuario']['registration_date'] = $datos_usuario['registration_date'];
-                    $_SESSION['usuario']['photo'] = $datos_usuario['photo'];
-                    header('location:../users/index.php');
+                    $_SESSION['user']['id_user'] = $datos_user['id_user'];
+                    $_SESSION['user']['name'] = $datos_user['name'];
+                    $_SESSION['user']['password'] = $datos_user['password'];
+                    $_SESSION['user']['email'] = $datos_user['email'];
+                    $_SESSION['user']['rol'] = $datos_user['rol'];
+                    $_SESSION['user']['registration_date'] = $datos_user['registration_date'];
+                    $_SESSION['user']['photo'] = $datos_user['photo'];
+                    // header('location:../users/index.php');
+                    // echo "sdaf";
+                    include_once 'C:/xampp/htdocs/proyecto/mvc/views/users/index.php';
                 }
                 
             } else {
-                $errores['log'] = "Usuario o contraseña incorrectos";                
+                $errores['log'] = "user o contraseña incorrectos";                
             }
+        }else{
+            echo " trddddddol ";
         }
+        
+        echo "trdol";
     }
+    
+}else{
+    
+    var_dump($_POST);
+  
 }
 
 ?>
@@ -81,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img class=" w-100 main__logo" src="http://localhost/proyecto/mvc/resources/img/logo.svg"
                 alt="Logotipo de la aplicación web">
         </figure>
-        <form method="POST" class="row d-flex flex-column justify-content-center align-items-center fw-semibold w-100">
+        <form method="post" class="row d-flex flex-column justify-content-center align-items-center fw-semibold w-100">
             <div class="mb-3 col-sm-9 col-md-9 col-lg-7 col-xl-6">
                 <label for="email" class="form-label text-muted text-decoration-none fs-5 fw-semibold">Correo</label>
                 <input type="email" class="form-control fs-5  p-2 form__input" id="exampleInputEmail1"
