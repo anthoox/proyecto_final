@@ -23,10 +23,7 @@ if (isset($_SESSION['user'])) {
         header('location:../users/index.php');
         // include_once 'C:/xampp/htdocs/proyecto/mvc/views/users/index.php';
     }
-}else{
-    echo "sdao";
 }
-
 
 //Comprobaciñon del login del user
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "dsoasd";
                 $datos_user = $datos_sesion->get_user_info('email', $correo);
                 if($datos_user){
-                    echo " asdfjbsdjfbklasdbfa ";
+                    
                     session_start();
                     $_SESSION['user']['id_user'] = $datos_user['id_user'];
                     $_SESSION['user']['name'] = $datos_user['name'];
@@ -62,17 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $errores['log'] = "user o contraseña incorrectos";                
             }
-        }else{
-            echo " trddddddol ";
-        }
-        
-        echo "trdol";
+        }        
     }
     
-}else{
-    
-    var_dump($_POST);
-  
 }
 
 ?>
