@@ -5,7 +5,7 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-
+require_once 'C:/xampp/htdocs/proyecto/mvc/includes/user_session.php';
 
 
 
@@ -29,8 +29,8 @@ if (isset($_SESSION['user'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
         if (isset($_POST['email']) && isset($_POST['password'])) {
-            // echo " asdf ";
-            var_dump($_POST);
+
+
             $datos_sesion = new controlador_usuarios();
             $correo = $datos_sesion ->clean_email($_POST['email']);
             $password = $datos_sesion->clean_password($_POST['password']);
@@ -39,20 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 
             if ($resultado) {
-                echo "dsoasd";
+
                 $datos_user = $datos_sesion->get_user_info('email', $correo);
                 if($datos_user){
-                    
-                    session_start();
-                    $_SESSION['user']['id_user'] = $datos_user['id_user'];
-                    $_SESSION['user']['name'] = $datos_user['name'];
-                    $_SESSION['user']['password'] = $datos_user['password'];
-                    $_SESSION['user']['email'] = $datos_user['email'];
-                    $_SESSION['user']['rol'] = $datos_user['rol'];
-                    $_SESSION['user']['registration_date'] = $datos_user['registration_date'];
-                    $_SESSION['user']['photo'] = $datos_user['photo'];
-                    // header('location:../users/index.php');
-                    // echo "sdaf";
+                    $userSession = new User_session();
+                    $userSession->setCurrentUser($datos_user);
                     include_once 'C:/xampp/htdocs/proyecto/mvc/views/users/index.php';
                 }
                 

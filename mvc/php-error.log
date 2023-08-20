@@ -729,3 +729,30 @@ Stack trace:
 [20-Aug-2023 21:15:02 Europe/Madrid] Inicio de aplicación web
 [20-Aug-2023 21:15:02 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
 [20-Aug-2023 21:15:02 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 21:17:00 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:17:00 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 21:17:00 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 21:17:55 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:17:55 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 21:17:55 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 21:21:16 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:21:16 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 21:21:16 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 21:21:38 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:21:38 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 21:21:38 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 21:23:41 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:23:41 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 21:23:41 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 21:36:10 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:36:10 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 21:36:10 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 21:49:50 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:49:50 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 21:49:50 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 21:50:39 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 21:50:39 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 21:50:39 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 22:08:04 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 22:08:04 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 22:08:04 Europe/Madrid] Errores::render -> Renderizando vista errores/index

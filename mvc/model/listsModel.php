@@ -344,7 +344,6 @@ class Lists {
 		}catch(PDOException $e){
 			echo "Error al obtener la/s lista/s " . $e->getMessage();
 		}
-
 	}
 
 }

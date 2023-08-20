@@ -6,12 +6,13 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-// require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php'; // Lo comento para que me cargue, puede que tenga que borrarlo.
+require_once 'C:/xampp/htdocs/proyecto/mvc/includes/user_session.php';
 
-//Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
+
 if($_SESSION['user']){
     if($_SESSION['user']['rol'] === 2){
         $resultado = '';
+        
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST)){        
                 if(isset($_POST['nameList'])) {
@@ -27,17 +28,8 @@ if($_SESSION['user']){
             }
         }   
         
-        echo'
-        <!DOCTYPE html>
-        <html lang="es">';
+        
 
-        require "../layout/head.php";
-
-        echo'
-        <body id="head" class="d-flex flex-column">';
-
-        require "../layout/header.php";
-        require "../layout/headerDesk2.php";
         
         if($_SESSION['user']['photo'] == ""){
             $photo = "img-user.png";
@@ -69,7 +61,18 @@ if($_SESSION['user']){
         } 
     }
         echo'
+
+        <!DOCTYPE html>
+        <html lang="es">';
+
+        require "../layout/head.php";
+
+        echo'
+        <body id="head" class="d-flex flex-column">';
+        require "../layout/header.php";
+        require "../layout/headerDesk2.php";
         
+        echo'
         <main class="mt-md-5 mt-3 position-relative h-100 container-xxl d-flex flex-column flex-md-row ps-3 pe-3 pb-3 main__user"> 
 
         <nav class="h-100 d-none d-md-flex  justify-content-center w-25 border  shadow border-2  rounded-4 bg-white ps-2 pe-2 me-3">

@@ -13,5 +13,18 @@ class Errores extends Controller{
         $this->view->render('errores/index');
         die();
     }
+
+    function error_create_list(){
+        error_log('Errores::listas -> Error en creación de listas');
+        die();
+    }
+    function error_del_list(){
+        error_log('Errores::listas -> Error borrando la lista');
+        die();
+    }
+    function error_update_list(){
+        error_log('Errores::listas -> Error en la modificación de la lista');
+        die();
+    }
 }
 ?>
