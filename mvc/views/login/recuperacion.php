@@ -1,9 +1,9 @@
 <?php
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+// require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

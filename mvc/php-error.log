@@ -1,258 +1,125 @@
-[17-Aug-2023 17:09:09 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:09:15 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:09:33 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:09:56 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:10:17 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:10:17 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:10:17 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:11:28 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:11:28 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:11:28 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:12:03 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:03 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:12:03 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:12:09 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+[20-Aug-2023 17:26:09 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:09 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:09 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:12:09 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:11 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:11 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:11 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:12:13 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:13 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:12:13 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:12:16 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:16 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:12:16 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:12:16 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:12:16 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:12:22 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:17 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:17 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:17 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:12:32 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:32 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:12:32 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:12:32 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:12:32 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:12:49 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:12:49 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:12:49 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:13:01 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:01 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:13:01 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:13:01 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:13:01 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:13:19 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:17 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:17 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:17 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:13:23 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:23 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:13:23 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:13:23 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:13:23 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:13:31 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:36 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:36 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:36 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:13:52 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:28
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:39 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:39 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:39 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 28
-[17-Aug-2023 17:13:55 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:13:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:28
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:50 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:50 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:50 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 28
-[17-Aug-2023 17:14:08 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:14:13 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:14:13 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:14:13 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:14:17 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:14:50 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:14:50 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:14:50 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:14:53 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:14:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:25
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:56 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:56 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:56 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 25
-[17-Aug-2023 17:15:15 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:15:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:26
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:59 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:59 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:59 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 26
-[17-Aug-2023 17:15:27 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:16:31 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:16:35 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:16:39 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:01 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:01 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:17:01 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:17:07 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:10 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:17 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:46 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:59 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:26:59 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:26:59 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:17:49 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:49 Europe/Berlin] PHP Warning:  require_once(pruebo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 22
-[17-Aug-2023 17:17:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'pruebo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\libs\app.php:22
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:27:47 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:27:47 Europe/Madrid] PHP Warning:  require_once(C:/xampp/htdocs/proyecto/mvc/config/conexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:27:47 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\index.php:13
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 22
-[17-Aug-2023 17:17:49 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:49 Europe/Berlin] PHP Warning:  require_once(pruebo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 22
-[17-Aug-2023 17:17:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'pruebo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\proyecto\mvc\libs\app.php:22
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 13
+[20-Aug-2023 17:28:00 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:28:00 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "App" not found in C:\xampp\htdocs\proyecto\mvc\index.php:21
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 22
-[17-Aug-2023 17:17:53 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:53 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:17:53 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:17:57 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:17:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+#0 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\index.php on line 21
+[20-Aug-2023 17:28:48 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:28:48 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:28:48 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:29:08 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:29:08 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 17:29:08 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 17:29:13 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:29:13 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(21): App->__construct()
 #1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:18:14 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:18:58 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:10 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:18 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:21 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:24 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:35 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:45 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:45 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:19:45 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:19:49 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:19:49 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[17-Aug-2023 17:19:49 Europe/Berlin] APP::construct-> no hay controlador especificado
-[17-Aug-2023 17:22:09 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:22:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[20-Aug-2023 17:29:14 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:29:14 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
 Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(21): App->__construct()
 #1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 17:22:18 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:22:18 Europe/Berlin] PHP Warning:  Undefined variable $controller in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 52
-[17-Aug-2023 17:22:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function render() on null in C:\xampp\htdocs\proyecto\mvc\libs\app.php:52
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 52
-[17-Aug-2023 17:22:25 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:22:51 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 17:22:51 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 17:22:51 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 17:22:54 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:45:30 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:45:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:46:07 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:46:34 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:46:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:46:56 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:46:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:47:05 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:47:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:47:25 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:47:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:47:28 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:47:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:47:33 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:47:37 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:47:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "index" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:27
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 27
-[17-Aug-2023 18:47:47 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 18:48:07 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 23:43:19 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 23:43:37 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 23:43:37 Europe/Berlin] Errores::construct -> Inicio de errores
-[17-Aug-2023 23:43:37 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[17-Aug-2023 23:43:42 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 23:44:08 Europe/Berlin] Inicio de aplicación web
-[17-Aug-2023 23:44:10 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:12:06 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:12:06 Europe/Berlin] PHP Parse error:  syntax error, unexpected token ";", expecting "function" or "const" in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 72
-[18-Aug-2023 01:12:09 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:12:09 Europe/Berlin] PHP Parse error:  syntax error, unexpected token ";", expecting "function" or "const" in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 72
-[18-Aug-2023 01:12:21 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:12:33 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:12:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:28
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 28
-[18-Aug-2023 01:12:41 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:40:25 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:40:30 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:40:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:28
-Stack trace:
-#0 C:\xampp\htdocs\proyecto\mvc\index.php(20): App->__construct()
-#1 {main}
-  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 28
-[18-Aug-2023 01:41:32 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:41:32 Europe/Berlin] Errores::construct -> Inicio de errores
-[18-Aug-2023 01:41:32 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[18-Aug-2023 01:41:36 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:41:36 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[18-Aug-2023 01:41:36 Europe/Berlin] APP::construct-> no hay controlador especificado
-[18-Aug-2023 01:42:28 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:42:28 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[18-Aug-2023 01:42:28 Europe/Berlin] APP::construct-> no hay controlador especificado
-[18-Aug-2023 01:42:33 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:42:33 Europe/Berlin] Errores::construct -> Inicio de errores
-[18-Aug-2023 01:42:33 Europe/Berlin] Errores::render -> Renderizando vista errores/index
-[18-Aug-2023 01:42:36 Europe/Berlin] Inicio de aplicación web
-[18-Aug-2023 01:42:36 Europe/Berlin] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
-[18-Aug-2023 01:42:36 Europe/Berlin] APP::construct-> no hay controlador especificado
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[20-Aug-2023 17:29:19 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:29:19 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:29:19 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:52:08 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:52:08 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:52:08 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:52:45 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:52:45 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:52:45 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:54:15 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:54:15 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:54:15 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:54:45 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:54:45 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:54:45 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 17:57:44 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 17:57:44 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 17:57:44 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:00:20 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:00:20 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:00:20 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:07:33 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:07:33 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:07:33 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:10:08 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:10:08 Europe/Madrid] Errores::construct -> Inicio de errores
+[20-Aug-2023 18:10:08 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[20-Aug-2023 18:10:10 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:10:10 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:10:10 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:10:20 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:10:20 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:10:20 Europe/Madrid] APP::construct-> no hay controlador especificado
+[20-Aug-2023 18:11:10 Europe/Madrid] Inicio de aplicación web
+[20-Aug-2023 18:11:10 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[20-Aug-2023 18:11:10 Europe/Madrid] APP::construct-> no hay controlador especificado

@@ -2,12 +2,12 @@
 require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
 
 //Clase para conectar y desconectar a la base de datos:
-class BD{
+class DB{
     private $host = DB_HOST;
 	private $db = DB;
 	private $user = DB_USER;
 	private $pass = DB_PASS;
-	public $conexion;
+	private $conexion;
 
 	//Constructor para establecer directamente la conexión al instanciar un objeto de la clase bd
 	public function __construct() {		
@@ -21,12 +21,12 @@ class BD{
 	}
 
 	/**Método para establecer la conexión */
-	public function conectar_bd() {
+	public function connect_db() {
         return $this->conexion;
     }
 
 	//Método para cerrar la conexion con la base de datos
-	public function desconectar_bd() {
+	public function disconnect_db() {
         $this->conexion = null;
     }
 } 

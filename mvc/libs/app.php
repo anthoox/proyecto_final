@@ -23,37 +23,37 @@ require_once 'controllers/errores.php';
 
                 if(file_exists($archivoController)){
                     require_once $archivoController;
-                    
+        
                     //Lo dejo comentado porque sino, no carga el index y tambien cargaria el archivo de prueba en el mismo index. 
                     //Yo diría que con esto ya funciona y puedo avanzar
                     $controller = new $url[0];
                     
-                    if(isset($url[1])){
-                        if(method_exists($controller, $url[1])){
-                            if(isset($url[2])){
-                                //nº de parámetros
-                                $nparam = count($url)-2;
-                                $params = [];
+                    // if(isset($url[1])){
+                    //     if(method_exists($controller, $url[1])){
+                    //         if(isset($url[2])){
+                    //             //nº de parámetros
+                    //             $nparam = count($url)-2;
+                    //             $params = [];
     
-                                for($i = 0; $i<$nparam; $i++){
-                                    array_push($params, $url[$i]+2);
-                                }
+                    //             for($i = 0; $i<$nparam; $i++){
+                    //                 array_push($params, $url[$i]+2);
+                    //             }
     
-                                $controller->{$url[1]}($params);
+                    //             $controller->{$url[1]}($params);
     
-                            }else{
-                                //SE llama el método tal cual sin esos parametros
-                                $controller->{$url[1]}();
-                            }
-                        }else{
-                            // No existe el método
-                            $controller = new Errores();
-                        }
-                        $controller->{$url[1]}();
-                    }else{
-                        //Si no hay método para cargar, se carga el por defecto
-                        // $controller->render();
-                    }
+                    //         }else{
+                    //             //SE llama el método tal cual sin esos parametros
+                    //             $controller->{$url[1]}();
+                    //         }
+                    //     }else{
+                    //         // No existe el método
+                    //         $controller = new Errores();
+                    //     }
+                    //     $controller->{$url[1]}();
+                    // }else{
+                    //     //Si no hay método para cargar, se carga el por defecto
+                    //     // $controller->render();
+                    // }
                 }else{      
                     
                     $controller = new Errores();

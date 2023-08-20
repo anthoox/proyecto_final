@@ -37,7 +37,7 @@
         }
         /**Método para verificar al usuario */
         public function verificar_usuario($correo, $password){
-            $clave = $this->usuario->obtener_password($correo);        
+            $clave = $this->usuario->get_password($correo);        
             return (password_verify($password,$clave)) ? true : false;
         }
 

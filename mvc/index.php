@@ -1,5 +1,6 @@
 
 <?php
+date_default_timezone_set('Europe/Madrid');
 /**Forma de imprimir errores de log en un archivo independiente */
 error_reporting(E_ALL); //Error/Exception engine, always use E_ALL
 ini_set('ignore_repeated_errors', TRUE); //alway use TRUE
@@ -8,8 +9,8 @@ ini_set('log_errors', TRUE); //Error/Exception file loggin engine
 ini_set('error_log', 'C:/xampp/htdocs/proyecto/mvc/php-error.log');
 error_log('Inicio de aplicación web');
 
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+// require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
+// require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
 
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';

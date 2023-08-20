@@ -2,11 +2,12 @@
 session_start();
 
 // require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/conexion.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+// require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php'; // Lo comento para que me cargue, puede que tenga que borrarlo.
+
 //Esto es para probar si al cambiar a una dirección directamente deja acceder a la web
 if($_SESSION['usuario']){
     if($_SESSION['usuario']['rol'] === 2){
@@ -204,8 +205,8 @@ echo'
 <script src="http://localhost/proyecto/mvc/resources/js/index.js"></script>
 </html>';
 
-$cerrar = new BD();
-$cerrar->desconectar_bd();
+$cerrar = new DB();
+$cerrar->disconnect_db();
     }else{
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');
