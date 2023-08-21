@@ -20,12 +20,12 @@ require "../layout/head.php";
 
     <header class="d-none d-md-flex justify-content-between container-fluid d-flex w-100 border-bottom">
         <div class="row w-50">
-            <a href="../../index.php"><img class="col-1 p-0 m-0 header__logo"
+            <a href="<?php echo constant('URL')?>index.php"><img class="col-1 p-0 m-0 header__logo"
                     src="http://localhost/proyecto/mvc/resources/img/logo_mini.svg" alt="logo en miniatura"></a>
         </div>
         <div class="me-3 w-25 row d-flex flex-column justify-content-center align-items-center ">
             <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"
-                href="./registro.php"><button
+                href="<?php echo constant('URL')?>views/login/registro.php"><button
                     class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear
                     cuenta</button></a>
         </div>
@@ -46,7 +46,7 @@ require "../layout/head.php";
 
             <button type="submit" class="mt-2 btn btn-primary text-white border  p-1 fs-5 col-2">Enviar</button>
             <p class="text-center m-0 mt-3"><a class="fw-bold fs-5 text-success text-decoration-none"
-                    href="./login.php">Volver</a></p>
+                    href="<?php echo constant('URL')?>views/login/login.php">Volver</a></p>
         </form>
     </main>
     <?php

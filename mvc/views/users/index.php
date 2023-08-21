@@ -3,6 +3,7 @@
 
 // require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';

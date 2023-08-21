@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])) {
             $nuevo_usuario = new Controlador_usuarios();
 
-            $resultado = $nuevo_usuario->nuevo_usuario($_POST["name"], $_POST["email"], $_POST["password"]);
+            $resultado = $nuevo_usuario->create_user($_POST["name"], $_POST["email"], $_POST["password"]);
             if ($resultado) {
                 $mensaje = "Usuario <span class='fs-5 fw-semibold text-primary'>" . $_POST["name"] . "</span> registrado correctamente.";
             } else {
@@ -55,7 +55,7 @@ echo '
             <a href="../../index.php"><img class="col-1 p-0 m-0 header__logo" src="http://localhost/proyecto/mvc/resources/img/logo_mini.svg" alt="logo en miniatura"></a>
         </div>
         <div class="me-3 w-25 row d-flex flex-column justify-content-center align-items-center ">
-            <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"href="./record.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
+            <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"href="'; echo constant('URL') . '/views/login/registro.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
         </div>        
     </header>
     <main class="container-xxl d-flex  flex-column mb-5 align-items-center">
@@ -83,7 +83,7 @@ echo '
         }
         echo '
             <button type="submit" class="mt-2 btn btn-secondary text-white border  p-1 fs-5  col-2 ">Registrar</button>
-            <p class="text-center mt-3 m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="../../index.php">Volver atras</a></p>
+            <p class="text-center mt-3 m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="'; echo constant('URL') . '/views/login/login.php">Volver atras</a></p>
         </form>
     </main>';
 require "../layout/footer.php";
