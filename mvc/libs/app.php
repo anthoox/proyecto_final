@@ -5,7 +5,7 @@ require_once 'controllers/errores.php';
     class App{
 
         function __construct(){
-            //Si existe una url nos quedamos con ese valor o es nulo
+            //Si existe una url nos quedamos con ese valor si no, lo hacemos nulo
             $url = isset($_GET['url']) ? $url = $_GET['url']: null;
             //Borra cualquier "/" que se encuentre al final de la url
             $url = rtrim($url, '/');
@@ -16,7 +16,7 @@ require_once 'controllers/errores.php';
             if(empty($url[0])){
                 error_log('APP::construct-> no hay controlador especificado');
                 $archivoController =  'index.php';
-                require_once $archivoController;            
+                require_once $archivoController;        
             }else{
                 $archivoController = $url[0] . '.php';  
 

@@ -1,7 +1,8 @@
 <?php 
 
 class View{
-    
+    public $view;
+    public $mensaje;
     public $d;//lo dejo como public por ahora.
     function __construct(){
        

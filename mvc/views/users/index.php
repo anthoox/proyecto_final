@@ -7,6 +7,7 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/includes/user_session.php';
+// require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/lists_controller.php';
 
 
 if($_SESSION['user']){
@@ -58,8 +59,8 @@ if($_SESSION['user']){
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
                 }   
-        } 
-    }
+            } 
+        }
         echo'
 
         <!DOCTYPE html>
@@ -84,7 +85,7 @@ if($_SESSION['user']){
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/guide.php" class="fs-5 text-decoration-none text-black">Guía de usuario</a></li>
-                <li class="p-4 list-group-item list-group-item-action"><a href="../../controllers/exit.php" class="fs-5 text-decoration-none text-black">Cerrar sesión</a></li>
+                <li class="p-4 list-group-item list-group-item-action"><a href="../../config/exit.php" class="fs-5 text-decoration-none text-black">Cerrar sesión</a></li>
             </ul>
         </nav>
 
@@ -111,79 +112,81 @@ if($_SESSION['user']){
         <section class="p-0 m-0 w-100">
             <ul class="p-0 m-0 mt-3">';
             
-            $items = new Items();
-    
-            $user_list = new UserList();
-            $user_list = $user_list->toList($_SESSION['user']['id_user']);
-        
-            $user_items = new UserItems();
+        $items = new Items();
+
+        $user_list = new UserList();
+        $user_list = $user_list->toList($_SESSION['user']['id_user']);
+
+        $user_items = new UserItems();
+
+        require_once 'C:/xampp/htdocs/proyecto/mvc/views/users/user_lists.php';
 
             
 
-    //Si tiene listas:
-    if($user_list){        
-        for($i = 0; $i<sizeof($user_list); $i++){
-            $items = $user_items->itemsUser('id_list', $user_list[$i]['id_list']);
+        // //Si tiene listas:
+        // if($user_list){        
+        //     for($i = 0; $i<sizeof($user_list); $i++){
+        //         $items = $user_items->itemsUser('id_list', $user_list[$i]['id_list']);
 
-            if($items){
-                $items = $items['rows'];
-            }else{
-                $items = 0;
-            }
+        //         if($items){
+        //             $items = $items['rows'];
+        //         }else{
+        //             $items = 0;
+        //         }
 
-            $item_price = $user_items->itemsPrice($user_list[$i]['id_list']);
-            if($item_price[0]>0){
-                $item_price = $item_price[0];
-                $item_price = round($item_price, 3) . "€";
-                
-            }else{
-                $item_price = '';
-            }
+        //         $item_price = $user_items->itemsPrice($user_list[$i]['id_list']);
+        //         if($item_price[0]>0){
+        //             $item_price = $item_price[0];
+        //             $item_price = round($item_price, 3) . "€";
+                    
+        //         }else{
+        //             $item_price = '';
+        //         }
 
-            $items_check = $user_items->itemsChecked($user_list[$i]['id_list']);
-            if($items_check == false){
-                $items_check['items'] = 0;
-            }
+        //         $items_check = $user_items->itemsChecked($user_list[$i]['id_list']);
+        //         if($items_check == false){
+        //             $items_check['items'] = 0;
+        //         }
 
-            echo
-            '<li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex ">
-                <div class="position-relative w-75 h-100">
-                    <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
-                        <div class="w-100 ul__li__div--scroll">
-                            <form  action="../users/itemsList.php" method="post">
-                                <input type="hidden" name="id_list" value="' . $user_list[$i]["id_list"] . '">
-                                <input name="nameList" class="form-control-plaintext text-start w-100 btn btn-link fs-5  ps-0 fw-bold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
-                            </form>
-                        </div>
-                        
-                        <div class="d-flex align-items-center  li__div__icon">
-                            <i class="mb-1 la-lg las la-check-circle"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
-                            <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6">' . $item_price .'</span>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
-                    <div class="d-flex ">
-                        <button class="mt-0 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
-                        <button class="btn mt-0 btn-link text-black"><i class="la-2x las la-trash-alt icon__trashList"></i></button>
-                    </div>            
-                </div>
-            </li>';
-    }
-    }else{        
-        $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
-        echo
-            '
-                <li class="d-flex  align-items-center justify-content-between mt-5">
-                    <div class="position-relative w-100 h-100">
-                        <div class="p-0 ps-3 d-flex  m-0 form-check h-100 justify-content-center align-items-center w-100">        
-                            <p class="p-0 m-0 fs-5 fw-semibold text-muted" id="textToStrike">' . $_SESSION['error_message']['loadLists'] .'</p>
-                        </div>
-                    </div>     
-                </li>
-            ';
-    }    
+        //         echo
+        //         '<li class="shadow-sm align-items-center justify-content-between border border-2 rounded-4 mt-2 ul__li--size li__hover d-flex ">
+        //             <div class="position-relative w-75 h-100">
+        //                 <div class="p-0 ps-3 d-flex flex-column m-0 form-check h-100 justify-content-end w-100">
+        //                     <div class="w-100 ul__li__div--scroll">
+        //                         <form  action="../users/itemsList.php" method="post">
+        //                             <input type="hidden" name="id_list" value="' . $user_list[$i]["id_list"] . '">
+        //                             <input name="nameList" class="form-control-plaintext text-start w-100 btn btn-link fs-5  ps-0 fw-bold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
+        //                         </form>
+        //                     </div>
+                            
+        //                     <div class="d-flex align-items-center  li__div__icon">
+        //                         <i class="mb-1 la-lg las la-check-circle"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
+        //                         <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6">' . $item_price .'</span>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        
+        //             <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
+        //                 <div class="d-flex ">
+        //                     <button class="mt-0 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
+        //                     <button class="btn mt-0 btn-link text-black"><i class="la-2x las la-trash-alt icon__trashList"></i></button>
+        //                 </div>            
+        //             </div>
+        //         </li>';
+        //     }
+        // }else{        
+        //     $_SESSION['error_message']['loadLists'] = "No tiene listas creadas aún";
+        //     echo
+        //         '
+        //             <li class="d-flex  align-items-center justify-content-between mt-5">
+        //                 <div class="position-relative w-100 h-100">
+        //                     <div class="p-0 ps-3 d-flex  m-0 form-check h-100 justify-content-center align-items-center w-100">        
+        //                         <p class="p-0 m-0 fs-5 fw-semibold text-muted" id="textToStrike">' . $_SESSION['error_message']['loadLists'] .'</p>
+        //                     </div>
+        //                 </div>     
+        //             </li>
+        //         ';
+        // }    
         echo'
             </ul>
         </section>
@@ -191,25 +194,25 @@ if($_SESSION['user']){
         <button class="me-1 btn btn-secondary fs-5 fw-semibold text-light d-flex justify-content-center align-items-center p-1 shadow button border rounded-4 button__add_list">
         <i class="m-0 me-1 la-sm las la-plus"></i>Lista</button>
         </div>
-</main>
-<p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $resultado . '</p>
-';
-require "menu.php";
-require "../layout/addList.php";
-require "../layout/editList.php";
-require "../layout/trashList.php";
-echo'    
-</body>
+    </main>
+    <p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $resultado . '</p>
+    ';
+    require "menu.php";
+    require "../layout/addList.php";
+    require "../layout/editList.php";
+    require "../layout/trashList.php";
+    echo'    
+    </body>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="http://localhost/proyecto/mvc/resources/js/addList.js"></script>
-<script src="http://localhost/proyecto/mvc/resources/js/menu.js"></script>
-<script src="http://localhost/proyecto/mvc/resources/js/index.js"></script>
-</html>';
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="http://localhost/proyecto/mvc/resources/js/addList.js"></script>
+    <script src="http://localhost/proyecto/mvc/resources/js/menu.js"></script>
+    <script src="http://localhost/proyecto/mvc/resources/js/index.js"></script>
+    </html>';
 
-$cerrar = new DB();
-$cerrar->disconnect_db();
+    $cerrar = new DB();
+    $cerrar->disconnect_db();
     }else{
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');

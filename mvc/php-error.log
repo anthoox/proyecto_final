@@ -756,3 +756,133 @@ Stack trace:
 [20-Aug-2023 22:08:04 Europe/Madrid] Inicio de aplicación web
 [20-Aug-2023 22:08:04 Europe/Madrid] Errores::construct -> Inicio de errores
 [20-Aug-2023 22:08:04 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:25:09 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:09 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:09 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:12 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:12 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[21-Aug-2023 21:25:12 Europe/Madrid] APP::construct-> no hay controlador especificado
+[21-Aug-2023 21:25:15 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:15 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:15 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:33 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:33 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:33 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:34 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:34 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:34 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:39 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:39 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:39 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:40 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:40 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:25:40 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:25:51 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:25:51 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:26:13 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:26:13 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(24): App->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[21-Aug-2023 21:26:14 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:26:14 Europe/Madrid] PHP Fatal error:  Uncaught Error: Class "prueba" not found in C:\xampp\htdocs\proyecto\mvc\libs\app.php:29
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\mvc\index.php(24): App->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 29
+[21-Aug-2023 21:26:23 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:26:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[21-Aug-2023 21:26:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[21-Aug-2023 21:26:29 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:26:29 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:26:48 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:26:48 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:26:48 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:27:33 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:27:33 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:27:33 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:27:33 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:27:36 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:27:36 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:27:36 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:27:36 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:14 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:14 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:28:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:14 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:14 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:28:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:16 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:16 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:28:16 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:16 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:27 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:27 Europe/Madrid] PHP Deprecated:  Creation of dynamic property View::$mensaje is deprecated in C:\xampp\htdocs\proyecto\mvc\controllers\errores.php on line 7
+[21-Aug-2023 21:28:27 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:27 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:50 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:50 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:50 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:51 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:51 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:51 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:28:52 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:28:52 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:28:52 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:32 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:32 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:32 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:32 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:32 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:45 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:45 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:45 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:46 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:46 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:46 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:29:47 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:29:47 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:29:47 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:30:03 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:30:03 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:30:03 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:30:08 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:30:08 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:30:08 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:30:14 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:30:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:30:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:30:15 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:30:15 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:30:15 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:33:00 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:33:00 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:33:00 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:33:12 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:33:12 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:33:12 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:33:45 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:33:45 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:33:45 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:33:49 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:33:49 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[21-Aug-2023 21:33:49 Europe/Madrid] APP::construct-> no hay controlador especificado
+[21-Aug-2023 21:50:14 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:50:14 Europe/Madrid] Errores::construct -> Inicio de errores
+[21-Aug-2023 21:50:14 Europe/Madrid] Errores::render -> Renderizando vista errores/index
+[21-Aug-2023 21:50:23 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:50:23 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[21-Aug-2023 21:50:23 Europe/Madrid] APP::construct-> no hay controlador especificado
+[21-Aug-2023 21:51:38 Europe/Madrid] Inicio de aplicación web
+[21-Aug-2023 21:51:38 Europe/Madrid] PHP Deprecated:  rtrim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\proyecto\mvc\libs\app.php on line 11
+[21-Aug-2023 21:51:38 Europe/Madrid] APP::construct-> no hay controlador especificado
