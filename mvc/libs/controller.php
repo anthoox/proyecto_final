@@ -1,8 +1,6 @@
 <?php 
 //Controlador que cargaría las vistas
 class Controller{
-    public $view;
-    public  $model;
 
     //función constructora para generar la vista
     function __construct(){
@@ -21,4 +19,3 @@ class Controller{
         }
     }
 }
-?>
