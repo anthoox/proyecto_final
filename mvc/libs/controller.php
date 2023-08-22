@@ -14,7 +14,7 @@ class Controller{
         $url = 'model/'.$modelo.'_model.php';
 
         if(file_exists($url)){
-            require_once $url;
+            require $url;
 
             $model_name = $model.'_model';
             $this->model = new $model_name();

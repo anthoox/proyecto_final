@@ -20,7 +20,7 @@ require_once 'controllers/errores.php';
             }else{
                 $archivoController = $url[0] . '.php';  
 
-
+                //Video 4 minuto 20:00
                 if(file_exists($archivoController)){
                     require_once $archivoController;
         

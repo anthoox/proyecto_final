@@ -4,12 +4,11 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
-// require_once 'C:/xampp/htdocs/proyecto/mvc/libs/app.php';
+require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/user_controller.php';
 
-// $app = new App();
-
-require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 $errores['log'] = '';
+$mensaje = '';
+
 //Comprobación de si el usuario tiene la sesión iniciada
 if (isset($_SESSION['usuario'])) {
     if ($_SESSION['usuario']['rol'] == 1) {
@@ -22,14 +21,13 @@ if (isset($_SESSION['usuario'])) {
 }
 
 
-$mensaje = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
         //Confirmación de definicion de las variables 
         if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-            $nuevo_usuario = new Controlador_usuarios();
-
-            $resultado = $nuevo_usuario->create_user($_POST["name"], $_POST["email"], $_POST["password"]);
+            $nuevo_usuario = new User_controller();
+            $resultado = $nuevo_usuario->create_user();
             if ($resultado) {
                 $mensaje = "Usuario <span class='fs-5 fw-semibold text-primary'>" . $_POST["name"] . "</span> registrado correctamente.";
             } else {
@@ -39,12 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-echo '
+?>
 <!DOCTYPE html>
-<html lang="es">';
+<html lang="es">
 
-require "../layout/head.php";
-echo '
+<?php require "../layout/head.php"; ?>
+
 <body class="d-flex flex-column justify-content-between ">
     <header class="d-md-none container-xxl  d-flex justify-content-around align-items-center">
         <h1 class="text-success title title__h1 align-self-start mt-1 fw-bold ">Bienvenido</h1>
@@ -52,10 +50,10 @@ echo '
 
     <header class="d-none d-md-flex justify-content-between container-fluid d-flex w-100 border-bottom">
         <div class="row w-50">
-            <a href="../../index.php"><img class="col-1 p-0 m-0 header__logo" src="http://localhost/proyecto/mvc/resources/img/logo_mini.svg" alt="logo en miniatura"></a>
+            <a href="<?php echo constant('URL') ?>index.php"><img class="col-1 p-0 m-0 header__logo" src="http://localhost/proyecto/mvc/resources/img/logo_mini.svg" alt="logo en miniatura"></a>
         </div>
         <div class="me-3 w-25 row d-flex flex-column justify-content-center align-items-center ">
-            <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"href="'; echo constant('URL') . '/views/login/registro.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
+            <a class=" col-sm-6 col-md-9 col-lg-7 col-xl-6  align-self-end text-decoration-none"href="<?php echo constant('URL') ?>views/login/registro.php"><button class=" fs-5 btn btn-secondary text-white border p-2  button button__index">Crear cuenta</button></a>
         </div>        
     </header>
     <main class="container-xxl d-flex  flex-column mb-5 align-items-center">
@@ -75,19 +73,16 @@ echo '
                 <label for="password" class="form-label text-muted fs-5 fw-semibold" >Contraseña</label>
                 <input type="password" name="password" class=" form-control fs-5  p-2" id="exampleInputPassword1" placeholder="Contraseña">
             </div>';
-        if ($mensaje) {
-            echo '
+        <?php if ($mensaje) { echo '
             <div class="m-0 mb-1 d-flex justify-content-center align-items-center">
                 <p class="m-0 text-center text-secondary fs-5">' . $mensaje . '</p>
-            </div>';
-        }
-        echo '
+            </div>';}?>
             <button type="submit" class="mt-2 btn btn-secondary text-white border  p-1 fs-5  col-2 ">Registrar</button>
-            <p class="text-center mt-3 m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="'; echo constant('URL') . '/views/login/login.php">Volver atras</a></p>
+            <p class="text-center mt-3 m-0 mb-3"><a class="fw-bold fs-5 text-success text-decoration-none" href="<?php echo constant('URL') ?>views/login/login.php">Volver atras</a></p>
         </form>
-    </main>';
-require "../layout/footer.php";
-echo '
+    </main>
+<?php require "../layout/footer.php";?>
+
 </body>
 
 </html>';

@@ -1,41 +1,39 @@
 <?php
-// session_start();
 
-// require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/controlador_usuarios.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/config/config.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/controller.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/model.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/libs/views.php';
 require_once 'C:/xampp/htdocs/proyecto/mvc/includes/user_session.php';
-// require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/lists_controller.php';
 
 
-if($_SESSION['user']){
-    if($_SESSION['user']['rol'] === 2){
+
+if ($_SESSION['user']) {
+    if ($_SESSION['user']['rol'] === 2) {
         $resultado = '';
-        
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
-            if(!empty($_POST)){        
-                if(isset($_POST['nameList'])) {
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (!empty($_POST)) {
+                if (isset($_POST['nameList'])) {
                     $list = new UserList();
                     $resultado = $list->addList($_SESSION['user']['id_user'], $_POST["nameList"]);
-                    if($resultado){
+                    if ($resultado) {
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
-                    }else{
+                    } else {
                         $resultado = "La lista " . $_POST["nameList"] . " ya existe.";
-                    }  
+                    }
                 }
             }
-        }   
-        
-        
+        }
 
-        
-        if($_SESSION['user']['photo'] == ""){
+
+
+
+        if ($_SESSION['user']['photo'] == "") {
             $photo = "img-user.png";
-        }else{
+        } else {
             $photo = $_SESSION['user']['photo'];
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,45 +41,46 @@ if($_SESSION['user']){
             // Realizar la validación de los datos recibidos
             if (!empty($_POST['id_list']) && !empty($_POST['newNameList'])) {
                 $newName = new UserList();
-                $resultado = $newName->editList($_POST['id_list'], 'list_name',$_POST['newNameList'] );
-                if($resultado){
+                $resultado = $newName->editList($_POST['id_list'], 'list_name', $_POST['newNameList']);
+                if ($resultado) {
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
-                }    
-            } 
+                }
+            }
 
             // Post para enviar la lista a la papelera
-            if(isset($_POST['accept'])) {
+            if (isset($_POST['accept'])) {
                 // Llamar a la función en el controlador para borrar el elemento
                 $newName = new UserList();
-                $resultado = $newName->editList($_POST['id_list'], 'trash',1 );
-                if($resultado){
+                $resultado = $newName->editList($_POST['id_list'], 'trash', 1);
+                if ($resultado) {
 
                     header("Location: " . $_SERVER['REQUEST_URI']);
                     exit();
-                }   
-            } 
+                }
+            }
         }
-        echo'
+
+        echo '
 
         <!DOCTYPE html>
         <html lang="es">';
 
         require "../layout/head.php";
 
-        echo'
+        echo '
         <body id="head" class="d-flex flex-column">';
         require "../layout/header.php";
         require "../layout/headerDesk2.php";
-        
-        echo'
+
+        echo '
         <main class="mt-md-5 mt-3 position-relative h-100 container-xxl d-flex flex-column flex-md-row ps-3 pe-3 pb-3 main__user"> 
 
         <nav class="h-100 d-none d-md-flex  justify-content-center w-25 border  shadow border-2  rounded-4 bg-white ps-2 pe-2 me-3">
             <ul class="rounded-4 list-group list-group-flush">
                 <li class="mt-1 p-4 d-flex  flex-column justify-content-center align-items-center list-group-item list-group-item-action">
-                    <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/mvc/resources/img/img-users/'.$photo.'" alt="imagen de usuario">
-                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">'.$_SESSION['user']['name'] .'</a>
+                    <img class="img-user-2 m-2 shadow border border-3 border-primary d-flex justify-content-center align-items-center rounded-circle overflow-hidden " src="/proyecto/mvc/resources/img/img-users/' . $photo . '" alt="imagen de usuario">
+                    <a href="./../users/user_profile.php" class="align-self-start mt-3 fs-5 text-decoration-none text-black">' . $_SESSION['user']['name'] . '</a>
                 </li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/trash.php" class="fs-5 text-decoration-none text-black">Papelera</a></li>
                 <li class="p-4 list-group-item list-group-item-action"><a href="./../users/contact.php" class="fs-5 text-decoration-none text-black">Contacto</a></li>
@@ -112,7 +111,7 @@ if($_SESSION['user']){
 
         <section class="p-0 m-0 w-100">
             <ul class="p-0 m-0 mt-3">';
-            
+
         $items = new Items();
 
         $user_list = new UserList();
@@ -122,7 +121,7 @@ if($_SESSION['user']){
 
         require_once 'C:/xampp/htdocs/proyecto/mvc/views/users/user_lists.php';
 
-            
+
 
         // //Si tiene listas:
         // if($user_list){        
@@ -139,7 +138,7 @@ if($_SESSION['user']){
         //         if($item_price[0]>0){
         //             $item_price = $item_price[0];
         //             $item_price = round($item_price, 3) . "€";
-                    
+
         //         }else{
         //             $item_price = '';
         //         }
@@ -159,14 +158,14 @@ if($_SESSION['user']){
         //                             <input name="nameList" class="form-control-plaintext text-start w-100 btn btn-link fs-5  ps-0 fw-bold text-decoration-none text-black" type="submit" value="' . $user_list[$i]["list_name"] . '">
         //                         </form>
         //                     </div>
-                            
+
         //                     <div class="d-flex align-items-center  li__div__icon">
         //                         <i class="mb-1 la-lg las la-check-circle"></i><span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6 ">' . $items_check['items'] .  '/'. $items . '</span>
         //                         <span class="fw-semibold mb-1 ms-2 m-0 p-0 fs-6">' . $item_price .'</span>
         //                     </div>
         //                 </div>
         //             </div>
-        
+
         //             <div class="d-flex flex-column p-1 pe-3 h-100 justify-content-between ">
         //                 <div class="d-flex ">
         //                     <button class="mt-0 btn btn-link text-black"><i class="la-2x las la-pen icon__editList"></i></button> 
@@ -188,7 +187,7 @@ if($_SESSION['user']){
         //             </li>
         //         ';
         // }    
-        echo'
+        echo '
             </ul>
         </section>
     
@@ -198,11 +197,11 @@ if($_SESSION['user']){
     </main>
     <p class="fs-5 fw-bold text-primary text-center position-absolute top-50 start-50 translate-middle p-flotante">' . $resultado . '</p>
     ';
-    require "menu.php";
-    require "../layout/addList.php";
-    require "../layout/editList.php";
-    require "../layout/trashList.php";
-    echo'    
+        require "menu.php";
+        require "../layout/addList.php";
+        require "../layout/editList.php";
+        require "../layout/trashList.php";
+        echo '    
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -212,15 +211,13 @@ if($_SESSION['user']){
     <script src="http://localhost/proyecto/mvc/resources/js/index.js"></script>
     </html>';
 
-    $cerrar = new DB();
-    $cerrar->disconnect_db();
-    }else{
+        $cerrar = new DB();
+        $cerrar->disconnect_db();
+    } else {
         header('Content-Type: text/html; charset=utf-8');
         header('location:../login/login.php');
     }
-}else{
+} else {
     header('Content-Type: text/html; charset=utf-8');
     header('location:../login/login.php');
 }
-
-?>

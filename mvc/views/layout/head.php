@@ -1,5 +1,3 @@
-<?php
-echo '
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,5 +15,4 @@ echo '
     <!-- Mis estilos -->
     <link rel="shortcut icon" href="http://localhost/proyecto/mvc/resources/img/simple_logo.ico" />
     <link rel="stylesheet" href="http://localhost/proyecto/mvc/resources/css/style.css">
-</head>'
-    ?>
+</head>
