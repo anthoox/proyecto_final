@@ -1,10 +1,9 @@
 <?php
-//Esto lo exije para mostrar la información en el mismo archivo para hacer efectivos los metodos usados aqui y en otras ventanas
-require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
+
+// require_once 'C:/xampp/htdocs/proyecto/mvc/config/db.php';
+
 class Model
 {
-    private $conexion;
-
     //*Función constructora que establece la conexión con la base de datos
     function __construct()
     {
@@ -13,7 +12,6 @@ class Model
 
     function query($query)
     {
-        //Ejecuta una consulta SQL y devuelve el resultado como un objeto PDOStatement
         return $this->conexion->connect_db()->query($query);
     }
 

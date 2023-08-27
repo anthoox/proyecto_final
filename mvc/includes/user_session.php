@@ -4,6 +4,7 @@ class User_session{
 
     public function __construct(){
         session_start();
+        //TODO Esto produce un error de session la primera vez que se loga hasta que se reinicia, probablemente sea porque carga la misma web de login. Carga el index pero no cambia la url.
     }
 
     public function setCurrentUser($user_data){

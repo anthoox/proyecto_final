@@ -7,7 +7,7 @@ class Users_model extends Model
 	function __construct()
 	{
 		parent::__construct();
-		// *Instanciamos un objeto Model para llamar a las funciones de la clase Model
+		// *Instanciamos un objeto Model para llamar a las funciones de la clase Model cosa que se deberia hacer automaticamente al llamar al constructor arriba.
 		$this->statement = new Model();
 	}
 
@@ -16,7 +16,6 @@ class Users_model extends Model
 	{
 		$fecha_registro = date('Y-m-d H:i:s');
 		$sql = "INSERT INTO " . $this->tabla . " (name, email, password, registration_date, rol) VALUES (?, ?, ?, ?, 2)";
-		// $query = $this->conexion->connect_db()->prepare($sql);
 		$query = $this->statement->prepare($sql);
 		$query->bindParam(1, $nombre);
 		$query->bindParam(2, $correo);

@@ -14,7 +14,7 @@ require_once 'C:/xampp/htdocs/proyecto/mvc/controllers/user_controller.php';
 $errores['log'] = '';
 
 
-//*Comprobación de si el user tiene la sesión iniciada. Es necesario poner session_start() para que se cargue la sessión
+//TODO Comprobación de si el user tiene la sesión iniciada. Es necesario poner session_start() para que se cargue la sessión. probablemente haya que corregirlo.
 session_start();
 if (isset($_SESSION['user'])) {
     if ($_SESSION['user']['rol'] == 1) {

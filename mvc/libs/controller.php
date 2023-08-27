@@ -1,13 +1,12 @@
 <?php 
 //Controlador que cargaría las vistas
 class Controller{
-
-    //función constructora para generar la vista
+    
+    
     function __construct(){
         $this->view= new View();
     }
 
-    /**Función para llamar a los modelos */
     function loadModel($modelo){
         $url = 'model/'.$modelo.'_model.php';
 

@@ -2,22 +2,20 @@
 
 class User_controller extends Controller
 {
-    public $usuario;
-    public $view;
 
     public function __construct()
     {
-        /**
-         * *Este require_one se necesita para que funcione
-         */
+        parent::__construct();
+        $this->view->mensaj = "Mensjae de prueba";
         require_once 'C:/xampp/htdocs/proyecto/mvc/model/users_model.php';
         $this->usuario = new Users_model();
+        
+        
     }
 
-    public function render()
+    function render()
     {
-        //Aquí lo que se debería de cargar es la vista del usuario y sus listas o por lo menos en el controlador de las listas del usuario
-        $this->view->render('/index');
+        // $this->view->render('login/registro');
     }
 
     /**Método para clean contraseña */
@@ -58,8 +56,17 @@ class User_controller extends Controller
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $registro = $this->usuario->new_user($name, $this->clean_email($email), $this->encrypt_password($this->clean_password($password)));
-        return $registro;
+        $message = "";
+        if($this->usuario->new_user($name, $this->clean_email($email), $this->encrypt_password($this->clean_password($password)))){
+            $message = "Usuario <span class='fs-5 fw-semibold text-primary'>" . $_POST["name"] . "</span> registrado correctamente.";
+        }else{
+            $message = "La cuenta de correo <span class='fs-5 fw-semibold text-primary'>" . $_POST["email"] . "</span> ya se encuentra registrada.";
+        }
+        $this->view->mensaj = "asdf";
+        return $message;
+        // $this->view->render('login/regisstro');   
+        
+       
     }
 
     /**Método para obtener datos del usuario */
